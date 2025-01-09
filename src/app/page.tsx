@@ -7,20 +7,24 @@ import Footer from "@/sections/footer";
 import Navbar from "@/components/Navbar";
 import AboutSection from "@/sections/About";
 import Hero from "@/sections/Hero";
-// import Timeline from "@/sections/Timeline";
-import PrizePool from "@/sections/PrizePool";
+import Timeline from "@/sections/Timeline";
+import SponsorCard from "@/components/sponsor-card";
+import Sponsors from "@/sections/sponsors";
+import {sponsors} from "@/constants/sponsors";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background font-roboto">
-      <Navbar />
-      <Hero />
-      <PrizePool />
-      <AboutSection />
-      {/* <Timeline/> */}
-      <div className="w-full flex justify-center items-center mx-auto">
-        <Events events={events} />
-      </div>
+    <div className="min-h-screen w-full bg-black">
+      {/*<Navbar />*/}
+      {/*<Hero />*/}
+      {/*<AboutSection />*/}
+      {/*<Timeline/>*/}
+      <div className="flex flex-col justify-center items-center mb-16">
+        <div className={'w-full max-w-screen-xl flex flex-col items-center gap-16'}>
+            <Events events={events} />
+            <Sponsors sponsors={sponsors} />
+          </div>
+        </div>
       <Footer />
     </div>
   );
