@@ -1,11 +1,11 @@
-import React from 'react'
-import Image from 'next/image'
-import HeroCenter from '@/components/Hero-Center'
+import React from "react";
+import Image from "next/image";
+import HeroCenter from "@/components/Hero-Center";
 
 const Hero = () => {
   return (
     <>
-    <div className="bg-background flex justify-center items-center relative">
+      <div className="bg-background flex justify-center items-center relative">
         <HeroCenter />
         <div className="absolute top-1/2 left-1/2 transform -translate-x-[40%] -translate-y-1/2">
           <Image src="/robot.webp" width={600} height={600} alt="Robot" />
@@ -48,8 +48,8 @@ const Hero = () => {
           </button>
         </div>
       </div>
-      </>
-  )
-}
+    </>
+  );
+};
 
-export default Hero
+export default Hero;
