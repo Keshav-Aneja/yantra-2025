@@ -18,7 +18,7 @@ const Sponsors = ({
                     alt={"arrow-right"}
                 />
                 <div className={"font-roboto_mono text-white text-4xl font-semibold"}>
-                    OUR EVENTS
+                    OUR SPONSORS
                 </div>
             </div>
             <div className={"w-full h-full grid grid-cols-2 grid-rows-2"}>
