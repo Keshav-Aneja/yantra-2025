@@ -11,11 +11,16 @@ const Hero = () => {
           <Image src="/robot.webp" width={600} height={600} alt="Robot" />
         </div>
       </div>
-      <div className="absolute bottom-0 left-0 p-4 space-y-1">
-        <div className="text-white p-2 text-2xl w-2/3 font-roboto">
-          OFFICE OF STUDENTS’ WELFARE PRESENTS
+      <div className="absolute bottom-4 left-8 p-4 space-y-1">
+        <div className="text-white p-2 text-xl w-2/3 font-roboto">
+          <span className="text-nowrap">OFFICE OF STUDENTS&apos; WELFARE</span>{" "}
+          PRESENTS
         </div>
-        <div className="text-white p-2 font-bold text-8xl">YANTRA'25</div>
+        <div className="text-white p-2 text-8xl font-armstrong">
+          YANTRA
+          <br />
+          &apos;25
+        </div>
       </div>
       <div className="absolute right-0 top-1/2 transform -translate-y-1/2 flex flex-col items-center space-y-12 mr-4 mt-8">
         <div className="flex flex-col items-center space-y-12">

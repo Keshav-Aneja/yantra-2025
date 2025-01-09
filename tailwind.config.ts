@@ -11,19 +11,22 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "#1D1D1D",
+        background: "black",
+        border: "#353539",
       },
-      // fontFamily: {
-      //   roboto: ['Roboto Mono', 'Plus Jakarta Sans'],
-      // },
-      gridTemplateRows: {
-        16: 'repeat(16, minmax(0, 1fr))',
+      width: {
+        wrapper: "75%",
       },
       fontFamily: {
-        roboto: ["Roboto", 'Plus Jakarta Sans', 'serif'],
-        space_mono: ["Space Mono", 'serif'],
-        roboto_mono: [ "Roboto Mono", 'serif']
-      }
+        roboto: ["Roboto Mono", "Plus Jakarta Sans"],
+        space_mono: ["Space Mono", "serif"],
+        roboto_mono: ["Roboto Mono", "serif"],
+        armstrong: ["Armstrong", "Plus Jakarta Sans"],
+        armstrongBold: ["ArmstrongBold", "Plus Jakarta Sans"],
+      },
+      gridTemplateRows: {
+        16: "repeat(16, minmax(0, 1fr))",
+      },
     },
   },
   plugins: [],

@@ -1,6 +1,7 @@
 import React from "react";
 import EventCard, { EventCardProps } from "@/components/event-card";
 import Image from "next/image";
+import { BiSolidRightArrow } from "react-icons/bi";
 
 interface EventsProps {
   events: EventCardProps[];
