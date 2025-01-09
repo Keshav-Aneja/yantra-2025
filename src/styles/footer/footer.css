@@ -1,0 +1,34 @@
+.footer-border {
+    position: relative;
+    background-color: #373737;
+    clip-path: polygon(
+            calc(0% + 25px) 0%,
+            calc(100% - 25px) 0%,
+            100% calc(0% + 25px),
+            100% 100%,
+            0% 100%,
+            0% calc(0% + 25px)
+    );
+    width: 100%;
+    height: 100%;
+    padding: 1px;
+    box-sizing: border-box;
+}
+
+.footer {
+    background-color: #000;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(
+            calc(0% + 25px) 0%,
+            calc(100% - 25px) 0%,
+            100% calc(0% + 25px),
+            100% 100%,
+            0% 100%,
+            0% calc(0% + 25px)
+    );
+}
+
+.footer-title {
+    @apply bg-gradient-to-tr from-[#76C38F] via-[#60CF8C] to-[#A7C12C] text-transparent bg-clip-text
+}

@@ -1,0 +1,4 @@
+.event-image-gradient {
+    background: rgb(43,54,29);
+    background: linear-gradient(217deg, rgba(43,54,29,1) 49%, rgba(0,0,0,1) 100%);
+}
