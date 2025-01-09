@@ -8,7 +8,7 @@ interface EventsProps {
 
 const Events = ({ events }: EventsProps) => {
   return (
-    <section className={"w-[60%] h-full my-12"}>
+    <section className={"h-full my-12"}>
       <div className={"m-5 flex gap-5"}>
         <Image
           src={"/icons/arrow-right-solid.svg"}

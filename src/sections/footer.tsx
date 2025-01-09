@@ -47,7 +47,7 @@ const contactDetails = [
 
 const Footer = () => {
     return (
-        <FooterContainer className={"font-space_mono pb-5"}>
+        <FooterContainer className={"font-space_mono pb-5 text-neutral-200"}>
             <div className={"grid grid-cols-3 pl-8 py-10"}>
                 <div className={"flex flex-col justify-start"}>
                     <Image

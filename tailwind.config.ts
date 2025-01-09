@@ -13,14 +13,14 @@ export default {
       colors: {
         background: "#1D1D1D",
       },
-      fontFamily: {
-        roboto: ['Roboto Mono', 'Plus Jakarta Sans'],
-      },
+      // fontFamily: {
+      //   roboto: ['Roboto Mono', 'Plus Jakarta Sans'],
+      // },
       gridTemplateRows: {
         16: 'repeat(16, minmax(0, 1fr))',
       },
       fontFamily: {
-        roboto: ["Roboto", 'serif'],
+        roboto: ["Roboto", 'Plus Jakarta Sans', 'serif'],
         space_mono: ["Space Mono", 'serif'],
         roboto_mono: [ "Roboto Mono", 'serif']
       }
