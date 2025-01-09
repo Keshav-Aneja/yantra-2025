@@ -11,19 +11,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "#1D1D1D",
+        background: "black",
       },
       fontFamily: {
         roboto: ['Roboto Mono', 'Plus Jakarta Sans'],
+        space_mono: ["Space Mono", 'serif'],
+        roboto_mono: ["Roboto Mono", 'serif']
       },
       gridTemplateRows: {
         16: 'repeat(16, minmax(0, 1fr))',
       },
-      fontFamily: {
-        roboto: ["Roboto", 'serif'],
-        space_mono: ["Space Mono", 'serif'],
-        roboto_mono: [ "Roboto Mono", 'serif']
-      }
     },
   },
   plugins: [],

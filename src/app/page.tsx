@@ -8,12 +8,14 @@ import Navbar from "@/components/Navbar";
 import AboutSection from "@/sections/About";
 import Hero from "@/sections/Hero";
 import Timeline from "@/sections/Timeline";
+import PrizePool from "@/sections/PrizePool";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background font-roboto">
       <Navbar />
       <Hero />
+      <PrizePool/>
       <AboutSection />
       <Timeline/>
       <div className="w-full flex justify-center items-center mx-auto">
