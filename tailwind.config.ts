@@ -12,14 +12,20 @@ export default {
     extend: {
       colors: {
         background: "black",
+        border: "#353539",
+      },
+      width: {
+        wrapper: "75%",
       },
       fontFamily: {
-        roboto: ['Roboto Mono', 'Plus Jakarta Sans'],
-        space_mono: ["Space Mono", 'serif'],
-        roboto_mono: ["Roboto Mono", 'serif']
+        roboto: ["Roboto Mono", "Plus Jakarta Sans"],
+        space_mono: ["Space Mono", "serif"],
+        roboto_mono: ["Roboto Mono", "serif"],
+        armstrong: ["Armstrong", "Plus Jakarta Sans"],
+        armstrongBold: ["ArmstrongBold", "Plus Jakarta Sans"],
       },
       gridTemplateRows: {
-        16: 'repeat(16, minmax(0, 1fr))',
+        16: "repeat(16, minmax(0, 1fr))",
       },
     },
   },

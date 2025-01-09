@@ -7,7 +7,7 @@ import Footer from "@/sections/footer";
 import Navbar from "@/components/Navbar";
 import AboutSection from "@/sections/About";
 import Hero from "@/sections/Hero";
-import Timeline from "@/sections/Timeline";
+// import Timeline from "@/sections/Timeline";
 import PrizePool from "@/sections/PrizePool";
 
 export default function Home() {
@@ -15,9 +15,9 @@ export default function Home() {
     <div className="min-h-screen bg-background font-roboto">
       <Navbar />
       <Hero />
-      <PrizePool/>
+      <PrizePool />
       <AboutSection />
-      <Timeline/>
+      {/* <Timeline/> */}
       <div className="w-full flex justify-center items-center mx-auto">
         <Events events={events} />
       </div>

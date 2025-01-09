@@ -70,10 +70,12 @@ const EventCard = ({ organisation, event }: EventCardProps) => {
       </div>
 
       <div className={"flex flex-col p-4 space-y-2 text-white"}>
-        <p className={"font-roboto text-lg font-semibold uppercase"}>
+        <p className={"font-roboto text-lg font-medium uppercase"}>
           {event.name}
         </p>
-        <p className={"font-space_mono text-sm"}>{event.description}</p>
+        <p className={"font-space_mono text-xs text-white/70"}>
+          {event.description}
+        </p>
       </div>
     </EventCardContainer>
   );

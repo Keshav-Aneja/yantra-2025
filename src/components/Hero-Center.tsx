@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function HeroCenter() {
   return (
-    <div className="relative flex space-x-24 flex-row justify-center items-center w-[60%] text-white px-4 font-roboto h-[92.9vh]">
+    <div className="relative flex space-x-24 flex-row justify-center items-center w-wrapper text-white px-4 font-roboto h-[92.9vh] border-border border-2">
       <div className="flex justify-center items-center w-1/2">
         <div className="grid grid-rows-12 w-full">
           <div className="row-span-2 p-2 justify-center items-center flex border border-b-0 border-1 border-gray-300 w-[15%]">
