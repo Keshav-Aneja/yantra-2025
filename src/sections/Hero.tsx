@@ -1,58 +1,55 @@
-import Image from "next/image";
+import React from 'react'
+import Image from 'next/image'
+import HeroCenter from '@/components/Hero-Center'
 
-export default function Hero() {
+const Hero = () => {
   return (
-    <div className="relative flex space-x-24 flex-row justify-center items-center w-[60%] text-white px-4 font-roboto h-[92.9vh]">
-      <div className="flex justify-center items-center w-1/2">
-        <div className="grid grid-rows-12 w-full">
-          <div className="row-span-2 p-2 justify-center items-center flex border border-b-0 border-1 border-gray-300 w-[15%]">
-            <Image src="/1.png" width={40} height={40} alt="" />
-          </div>
-          <div className="row-span-2 justify-left p-6 text-sm items-center flex border border-1 border-r-0 border-gray-300">
-            A WEEK OF TECHNICAL INNOVATION
-          </div>
-          <div className="row-span-2 justify-left p-6 text-sm items-center flex text-gray-400 border-r-0">
-            WITH 30+ HACKATHONS
-          </div>
+    <>
+    <div className="bg-background flex justify-center items-center relative">
+        <HeroCenter />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-[40%] -translate-y-1/2">
+          <Image src="/robot.webp" width={600} height={600} alt="Robot" />
         </div>
       </div>
-      <div className="flex justify-center items-center w-1/2 mt-28">
-        <div className="grid grid-rows-16 w-full">
-          <div className="row-span-2 text-sm grid grid-cols-[85%_15%]">
-            <div className="flex items-center justify-end text-right border border-gray-300 p-6 border-l-0">
-              PARTICIPANTS
-            </div>
-            <div className="flex items-center justify-center border border-gray-300 p-6 border-l-0">
-              10L+
-            </div>
-          </div>
-          <div className="row-span-1 text-sm flex items-center justify-end text-gray-400 text-right"></div>
-          <div className="row-span-1 text-sm flex items-center justify-end text-white text-right border border-[#353539] border-b-0 pr-6 border-l-0 uppercase">
-            HACKATHONS
-          </div>
-          <div className="row-span-1 text-sm flex items-center justify-end text-gray-200 text-right border border-[#353539] border-b-0 pr-6 border-l-0 uppercase">
-            WORKSHOPS
-          </div>
-          <div className="row-span-1 text-sm flex items-center justify-end text-gray-300 text-right border border-[#353539] border-b-0 pr-6 border-l-0 uppercase">
-            GUEST SESSIONS
-          </div>
-          <div className="row-span-1 text-sm flex items-center justify-end text-gray-400 text-right border border-[#353539] pr-6 border-l-0 uppercase">
-            AND MUCH MORE
-          </div>
-          <div className="row-span-4 text-sm flex items-center justify-end text-gray-400 text-right pr-6"></div>
-          <div className="row-span-2 justify-end p-4 text-xl items-center flex border border-1 border-gray-300 border-l-0 border-b-0">
-            06D:06H:06M:06S
-          </div>
-          <div className="row-span-2 text-sm grid grid-cols-[85%_15%]">
-            <div className="flex items-center  justify-end text-right border border-gray-300 p-4 border-l-0">
-              FEBRUARY, 2025
-            </div>
-            <div className="flex text-lg items-center justify-center border border-gray-300 p-4 border-l-0">
-              3-9
-            </div>
-          </div>
+      <div className="absolute bottom-0 left-0 p-4 space-y-1">
+        <div className="text-white p-2 text-2xl w-2/3 font-roboto">
+          OFFICE OF STUDENTS’ WELFARE PRESENTS
+        </div>
+        <div className="text-white p-2 font-bold text-8xl">YANTRA'25</div>
+      </div>
+      <div className="absolute right-0 top-1/2 transform -translate-y-1/2 flex flex-col items-center space-y-12 mr-4 mt-8">
+        <div className="flex flex-col items-center space-y-12">
+          <div className="w-3 h-3 bg-gray-500 rounded-full"></div>
+          <div className="w-3 h-3 bg-gray-500 rounded-full"></div>
+          <div className="w-3 h-3 bg-gray-500 rounded-full"></div>
+          <div className="w-3 h-3 bg-gray-500 rounded-full"></div>
+          <div className="w-3 h-3 bg-gray-500 rounded-full"></div>
+          <div className="w-3 h-3 bg-gray-500 rounded-full"></div>
+          <div className="w-3 h-3 bg-gray-500 rounded-full"></div>
+          <div className="w-3 h-3 bg-gray-500 rounded-full"></div>
+          <div className="w-3 h-3 bg-gray-500 rounded-full"></div>
+        </div>
+        <div className="mt-4">
+          <button className="w-8 h-8 bg-gray-500 rounded-full flex items-center justify-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              className="w-4 h-4 text-white"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </button>
         </div>
       </div>
-    </div>
-  );
+      </>
+  )
 }
+
+export default Hero
