@@ -25,6 +25,13 @@
     );
   }
 }
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-tr from-[#76C38F] via-[#60CF8C] to-[#A7C12C] text-transparent bg-clip-text;
+  }
+}
+
 @font-face {
   font-family: Armstrong;
   src: url("/fonts/Armstrong.otf");
