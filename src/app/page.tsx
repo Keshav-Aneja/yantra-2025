@@ -11,14 +11,16 @@ import Timeline from "@/sections/Timeline";
 import SponsorCard from "@/components/sponsor-card";
 import Sponsors from "@/sections/sponsors";
 import {sponsors} from "@/constants/sponsors";
+import PrizePool from "@/sections/PrizePool";
 
 export default function Home() {
   return (
     <div className="min-h-screen w-full bg-black">
-      {/*<Navbar />*/}
-      {/*<Hero />*/}
-      {/*<AboutSection />*/}
-      {/*<Timeline/>*/}
+      <Navbar />
+      <Hero />
+      <PrizePool/>
+      <AboutSection />
+      <Timeline/>
       <div className="flex flex-col justify-center items-center mb-16">
         <div className={'w-full max-w-screen-xl flex flex-col items-center gap-16'}>
             <Events events={events} />

@@ -14,11 +14,13 @@ interface Event {
   image: string;
   name: string;
   description: string;
+  startDate: string;
+  endDate: string;
 }
 
 const EventCardContainer = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className={"w-fit h-fit max-w-80"}>
+    <div className={"w-fit h-[24rem] max-w-80"}>
       <div className={"event-card-border"}>
         <div className={"event-card"}>{children}</div>
       </div>
@@ -27,8 +29,17 @@ const EventCardContainer = ({ children }: { children: React.ReactNode }) => {
 };
 
 export interface EventCardProps {
+  id: number;
   organisation: Organisation;
   event: Event;
+}
+
+function truncateText(text: string, wordLimit: number): string {
+  const words = text.split(" ");
+  if (words.length > wordLimit) {
+    return words.slice(0, wordLimit).join(" ") + "...";
+  }
+  return text;
 }
 
 const EventCard = ({ organisation, event }: EventCardProps) => {
@@ -74,7 +85,7 @@ const EventCard = ({ organisation, event }: EventCardProps) => {
           {event.name}
         </p>
         <p className={"font-space_mono text-xs text-white/70"}>
-          {event.description}
+          {truncateText(event.description, 23)}
         </p>
       </div>
     </EventCardContainer>
