@@ -14,6 +14,8 @@ interface Event {
   image: string;
   name: string;
   description: string;
+  startDate: string;
+  endDate: string;
 }
 
 const EventCardContainer = ({ children }: { children: React.ReactNode }) => {
@@ -27,8 +29,17 @@ const EventCardContainer = ({ children }: { children: React.ReactNode }) => {
 };
 
 export interface EventCardProps {
+  id: number;
   organisation: Organisation;
   event: Event;
+}
+
+function truncateText(text: string, wordLimit: number): string {
+  const words = text.split(" ");
+  if (words.length > wordLimit) {
+    return words.slice(0, wordLimit).join(" ") + "...";
+  }
+  return text;
 }
 
 const EventCard = ({ organisation, event }: EventCardProps) => {
@@ -73,8 +84,8 @@ const EventCard = ({ organisation, event }: EventCardProps) => {
         <p className={"font-roboto text-lg font-medium uppercase"}>
           {event.name}
         </p>
-        <p className={"font-space_mono text-sm text-white/70"}>
-          {event.description}
+        <p className={"font-space_mono text-xs text-white/70"}>
+          {truncateText(event.description, 23)}
         </p>
       </div>
     </EventCardContainer>
