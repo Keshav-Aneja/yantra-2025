@@ -20,7 +20,7 @@ interface Event {
 
 const EventCardContainer = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className={"w-fit h-[24rem] max-w-80"}>
+    <div className={"w-fit h-fit"}>
       <div className={"event-card-border"}>
         <div className={"event-card"}>{children}</div>
       </div>
@@ -45,7 +45,7 @@ function truncateText(text: string, wordLimit: number): string {
 const EventCard = ({ organisation, event }: EventCardProps) => {
   return (
     <EventCardContainer>
-      <div className={"flex justify-between items-center py-2 px-4"}>
+      <div className={"flex justify-between items-center py-3 px-4"}>
         <div className={"flex items-center gap-1"}>
           <Image
             src={organisation.logo}
@@ -80,11 +80,11 @@ const EventCard = ({ organisation, event }: EventCardProps) => {
         </EventImageContainer>
       </div>
 
-      <div className={"flex flex-col p-4 space-y-2 text-white"}>
+      <div className={"flex flex-col p-4 py-6 space-y-2 text-white"}>
         <p className={"font-roboto text-lg font-medium uppercase"}>
           {event.name}
         </p>
-        <p className={"font-space_mono text-xs text-white/70"}>
+        <p className={"font-space_mono text-sm text-white/70"}>
           {truncateText(event.description, 23)}
         </p>
       </div>
