@@ -8,6 +8,7 @@ import {Search} from "lucide-react";
 import useDebounce from "@/hooks/use-debounce";
 import usePagination from "@/hooks/use-pagination";
 import {NextBtn, PrevBtn} from "@/components/carousel-helper";
+import {VerticalLine} from "@/components/lines";
 
 const EventsPage = () => {
     const [ data, setData ] = useState<EventCardProps[]>(events);
@@ -33,6 +34,7 @@ const EventsPage = () => {
     }, [currentPage, maxPages]);
 
     const onSelectEventType = (eventType: string) => {
+        jumpToPage(1);
         setSelectedEventType(eventType);
     }
 
@@ -52,14 +54,20 @@ const EventsPage = () => {
                     />
                 </div>
             </div>
-            <div className={'w-wrapper py-10 border border-border'}>
-                <div className={'grid grid-cols-3 gap-x-0 gap-y-10 justify-items-center content-start place-content-start'}>
+            <div className={'w-wrapper border border-border relative'}>
+                <div className={"flex justify-between h-full w-full absolute"}>
+                    <VerticalLine className={'invisible'} />
+                    <VerticalLine />
+                    <VerticalLine />
+                    <VerticalLine className={'invisible'} />
+                </div>
+                <div className={'grid grid-cols-3 gap-x-0 gap-y-10 my-10 justify-items-center content-start place-content-start'}>
                     {pageData.map(({ organisation, event }, index)=>(
                         <EventCard organisation={organisation} event={event} key={index} />
                     ))}
                 </div>
                 <div className={'flex justify-end'}>
-                    <div className={'grid grid-cols-5 w-fit py-4 px-4 gap-2 text-white select-none'}>
+                    <div className={'grid grid-cols-5 w-fit py-4 px-4 gap-2 text-white select-none z-50'}>
                         <div className={`flex justify-center items-center cursor-pointer ${currentPage == 1 && 'invisible'}`}><PrevBtn className={'size-3'} onClick={goToPrevPage} /></div>
                         {pageRange.map(page=>(
                             <div key={page} className={`

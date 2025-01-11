@@ -20,7 +20,7 @@ const Events = ({ events }: EventsProps) => {
     } = usePrevNextButtons(api);
 
   return (
-    <section className={"h-full my-12"}>
+    <section className={"h-full my-12 w-full"}>
       <div className={"m-5 flex gap-5"}>
         <Image
           src={"/icons/arrow-right-solid.svg"}
@@ -41,7 +41,7 @@ const Events = ({ events }: EventsProps) => {
 
       }}
         setApi={setApi}
-        className={""}
+        className={"w-full"}
       >
           <CarouselContent className={"ml-0"}>
               {events.map((eventCardProps, index) => (
