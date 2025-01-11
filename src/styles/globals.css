@@ -40,3 +40,11 @@
   font-family: ArmstrongBold;
   src: url("/fonts/Armstrong-Extrabold.otf");
 }
+
+.--see-more-btn {
+  clip-path: polygon(0 0, 80% 0, 100% 5%, 100% 100%, 20% 100%, 0 95%);
+}
+
+.--timeline-banner {
+  clip-path: polygon(5% 0, 100% 0, 100% 85%, 95% 100%, 0% 100%, 0 15%);
+}

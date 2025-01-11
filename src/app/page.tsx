@@ -10,23 +10,25 @@ import Hero from "@/sections/Hero";
 import Timeline from "@/sections/Timeline";
 import SponsorCard from "@/components/sponsor-card";
 import Sponsors from "@/sections/sponsors";
-import {sponsors} from "@/constants/sponsors";
+import { sponsors } from "@/constants/sponsors";
 import PrizePool from "@/sections/PrizePool";
+import Team from "@/sections/Team";
 
 export default function Home() {
   return (
     <div className="min-h-screen w-full bg-black">
       <Navbar />
       <Hero />
-      <PrizePool/>
+      <PrizePool />
       <AboutSection />
-      <Timeline/>
-      <div className="flex flex-col justify-center items-center mb-16">
-        <div className={'w-full max-w-screen-xl flex flex-col items-center gap-16'}>
-            <Events events={events} />
-            <Sponsors sponsors={sponsors} />
-          </div>
+      <Timeline />
+      <div className="flex flex-col justify-center items-center">
+        <div className={"max-w-screen-xl w-wrapper flex flex-col items-center"}>
+          <Events events={events} />
+          <Sponsors sponsors={sponsors} />
         </div>
+      </div>
+      <Team />
       <Footer />
     </div>
   );

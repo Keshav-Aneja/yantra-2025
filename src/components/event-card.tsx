@@ -29,7 +29,7 @@ const EventCardContainer = ({ children }: { children: React.ReactNode }) => {
 };
 
 export interface EventCardProps {
-  id: number;
+  id?: number;
   organisation: Organisation;
   event: Event;
 }
@@ -44,6 +44,7 @@ function truncateText(text: string, wordLimit: number): string {
 
 const EventCard = ({ organisation, event }: EventCardProps) => {
   return (
+    //TODO: Fix the event card component, add big textual data in sample events, and fix the overflowing issue.
     <EventCardContainer>
       <div className={"flex justify-between items-center py-3 px-4"}>
         <div className={"flex items-center gap-1"}>

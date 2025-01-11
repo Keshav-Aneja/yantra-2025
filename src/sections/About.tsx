@@ -1,5 +1,5 @@
 import { BiSolidRightArrow } from "react-icons/bi";
-
+import Image from "next/image";
 export default function AboutSection() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2  bg-[#0a0a0a] text-white border border-border w-wrapper mx-auto">
@@ -27,7 +27,13 @@ export default function AboutSection() {
           VIT VELLORE
         </div>
         <div className="flex-grow flex items-center justify-center">
-          <BuildingIcon className="text-[#00ff00] w-32 h-auto" />
+          <Image
+            src="/images/about-vit.webp"
+            alt="Vellore Institute of Technology"
+            width={700}
+            height={400}
+            className="w-[70%] h-auto"
+          />
         </div>
       </div>
       <div className="border-r border-b border-border"></div>
@@ -42,7 +48,14 @@ export default function AboutSection() {
           DSW
         </div>
         <div className="flex-grow flex items-center justify-center">
-          <BuildingIcon className="text-[#00ff00] w-32 h-auto" />
+          {/* <BuildingIcon className="text-[#00ff00] w-32 h-auto" /> */}
+          <Image
+            src="/images/about-dsw.webp"
+            alt="Student Welfare Office"
+            width={700}
+            height={400}
+            className="w-[70%] h-auto"
+          />
         </div>
       </div>
       <div className="border-b border-l border-border p-8">
@@ -76,23 +89,31 @@ export default function AboutSection() {
           YANTRA
         </div>
         <div className="flex-grow flex items-center justify-center">
-          <BuildingIcon className="text-[#00ff00] w-32 h-auto" />
+          {/* <BuildingIcon className="text-[#00ff00] w-32 h-auto" />
+           */}
+          <Image
+            src="/images/about-yantra.webp"
+            alt="Yantra'25"
+            width={700}
+            height={400}
+            className="w-[60%] h-auto"
+          />
         </div>
       </div>
     </div>
   );
 }
 
-function BuildingIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      className={className}
-      strokeWidth="1"
-    >
-      <path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4M9 9h1M9 13h1M9 17h1M15 13h1M15 17h1" />
-    </svg>
-  );
-}
+// function BuildingIcon({ className }: { className?: string }) {
+//   return (
+//     <svg
+//       viewBox="0 0 24 24"
+//       fill="none"
+//       stroke="currentColor"
+//       className={className}
+//       strokeWidth="1"
+//     >
+//       <path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4M9 9h1M9 13h1M9 17h1M15 13h1M15 17h1" />
+//     </svg>
+//   );
+// }

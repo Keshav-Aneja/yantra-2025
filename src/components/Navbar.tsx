@@ -8,16 +8,18 @@ export default function Navbar() {
   const [activeLink, setActiveLink] = useState<string>("/");
 
   const navItems = [
-    { label: "ABOUT US", href: "#about" },
-    { label: "TIMELINE", href: "#timeline" },
+    // { label: "ABOUT US", href: "#about" },
     { label: "MAIN HACK", href: "#main" },
+    { label: "TIMELINE", href: "#timeline" },
     { label: "EVENTS", href: "#events" },
     { label: "TEAM", href: "#team" },
-    { label: "CONTACT US", href: "#contact" },
+    { label: "FAQs", href: "#faq" },
+
+    // { label: "CONTACT US", href: "#contact" },
   ];
 
   return (
-    <nav className="w-full flex justify-center items-center font-roboto text-sm  border-b border-gray-500 bg-black h-16">
+    <nav className="w-full flex justify-center items-center font-roboto text-sm  border-b border-border bg-black h-16">
       <div className="flex items-center justify-center h-full w-[12.5%]">
         <Image
           src="/VIT.webp"
@@ -55,7 +57,7 @@ export default function Navbar() {
         {navItems.map((item) => (
           <div
             key={item.href}
-            className={`h-full flex items-center justify-center border-l border-r border-gray-500 transition-all ${
+            className={`h-full flex items-center justify-center border-l border-r border-gray-500 transition-all last:mr-12 ${
               activeLink === item.href
                 ? "border-t-4 gradient-border "
                 : "border-transparent hover:border-t-4"
@@ -72,8 +74,23 @@ export default function Navbar() {
         ))}
       </div>
       <div className="flex items-center justify-center w-[12.5%]">
-        <button className="gradient-bg text-black px-4 py-2 transition-colors">
-          Register Now
+        <button
+          className="gradient-bg text-black px-4 py-2 transition-colors flex items-center gap-2 justify-center"
+          style={{
+            clipPath:
+              "polygon(5% 0, 100% 0, 100% 85%, 95% 100%, 0% 100%, 0 15%)",
+            background:
+              "linear-gradient(23.96deg, #76C38F 0%, #60CF8C 48.44%, #A7C12C 100%)",
+          }}
+        >
+          <span className="uppercase">Register Now</span>
+          <Image
+            src="/icons/register-arrow.svg"
+            width={12}
+            height={12}
+            alt=""
+            className="w-2 h-auto"
+          />
         </button>
       </div>
     </nav>
