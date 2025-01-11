@@ -20,7 +20,7 @@ interface Event {
 
 const EventCardContainer = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className={"w-fit h-[24rem] max-w-80"}>
+    <div className={"w-fit h-fit"}>
       <div className={"event-card-border"}>
         <div className={"event-card"}>{children}</div>
       </div>
