@@ -18,9 +18,12 @@ interface Event {
   endDate: string;
 }
 
-const EventCardContainer = ({ children }: { children: React.ReactNode }) => {
+const EventCardContainer = ({ children, containerClass }: {
+  children: React.ReactNode,
+  containerClass?: string
+}) => {
   return (
-    <div className={"w-fit h-fit"}>
+    <div className={`w-fit h-fit ${containerClass}`}>
       <div className={"event-card-border"}>
         <div className={"event-card"}>{children}</div>
       </div>
@@ -32,6 +35,7 @@ export interface EventCardProps {
   id?: number;
   organisation: Organisation;
   event: Event;
+  containerClass?: string,
 }
 
 function truncateText(text: string, wordLimit: number): string {
@@ -42,10 +46,9 @@ function truncateText(text: string, wordLimit: number): string {
   return text;
 }
 
-const EventCard = ({ organisation, event }: EventCardProps) => {
+const EventCard = ({ organisation, event, containerClass }: EventCardProps) => {
   return (
-    //TODO: Fix the event card component, add big textual data in sample events, and fix the overflowing issue.
-    <EventCardContainer>
+    <EventCardContainer containerClass={containerClass}>
       <div className={"flex justify-between items-center py-3 px-4"}>
         <div className={"flex items-center gap-1"}>
           <Image
@@ -55,14 +58,14 @@ const EventCard = ({ organisation, event }: EventCardProps) => {
             className={"bg-black size-6"}
             alt={organisation.name}
           />
-          <p className={"text-[#B2B2B2] font-bold mt-0.5 text-sm uppercase"}>
+          <p className={"text-[#B2B2B2] font-bold mt-0.5 text-sm uppercase line-clamp-1"}>
             {organisation.name}
           </p>
         </div>
         <div>
           <p
             style={{ color: event.typeColor }}
-            className={"font-space_mono font-semibold text-sm uppercase"}
+            className={"font-space_mono font-semibold text-sm uppercase line-clamp-1"}
           >
             {event.type}
           </p>
@@ -82,7 +85,7 @@ const EventCard = ({ organisation, event }: EventCardProps) => {
       </div>
 
       <div className={"flex flex-col p-4 py-6 space-y-2 text-white"}>
-        <p className={"font-roboto text-lg font-medium uppercase"}>
+        <p className={"font-roboto text-lg font-medium uppercase line-clamp-1"}>
           {event.name}
         </p>
         <p className={"font-space_mono text-sm text-white/70"}>
