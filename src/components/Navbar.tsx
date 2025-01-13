@@ -9,11 +9,11 @@ export default function Navbar() {
 
   const navItems = [
     // { label: "ABOUT US", href: "#about" },
-    { label: "MAIN HACK", href: "#main" },
-    { label: "TIMELINE", href: "#timeline" },
-    { label: "EVENTS", href: "#events" },
-    { label: "TEAM", href: "#team" },
-    { label: "FAQs", href: "#faq" },
+    { label: "MAIN HACK", href: "https://www.vtop.vit.ac.in" },
+    { label: "TIMELINE", href: "/#timeline" },
+    { label: "EVENTS", href: "/events" },
+    { label: "TEAM", href: "/#team" },
+    { label: "FAQs", href: "/faq" },
 
     // { label: "CONTACT US", href: "#contact" },
   ];
@@ -57,7 +57,7 @@ export default function Navbar() {
         {navItems.map((item) => (
           <div
             key={item.href}
-            className={`h-full flex items-center justify-center border-l border-r border-gray-500 transition-all last:mr-12 ${
+            className={`h-full flex items-center justify-center  border-gray-500 transition-all last:mr-12 ${
               activeLink === item.href
                 ? "border-t-4 gradient-border "
                 : "border-transparent hover:border-t-4"

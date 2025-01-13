@@ -38,7 +38,7 @@
   }
 
   .bg-custom-gradient {
-    background: linear-gradient(180deg, #171717 7%, #0A090F 100%);
+    background: linear-gradient(180deg, #161616 7%, #0a090f 100%);
   }
 }
 
@@ -51,6 +51,9 @@
   src: url("/fonts/Armstrong-Extrabold.otf");
 }
 
+html {
+  scroll-behavior: smooth;
+}
 .--see-more-btn {
   clip-path: polygon(0 0, 80% 0, 100% 5%, 100% 100%, 20% 100%, 0 95%);
 }

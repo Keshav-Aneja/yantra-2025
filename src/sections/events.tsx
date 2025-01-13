@@ -13,6 +13,7 @@ import usePrevNextButtons, {
   PrevBtn,
   NextBtn,
 } from "@/components/carousel-helper";
+import Link from "next/link";
 
 interface EventsProps {
   events: EventCardProps[];
@@ -60,11 +61,13 @@ const Events = ({ events, related }: EventsProps) => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <button className="w-16 h-full --see-more-btn bg-gradient-to-r to-[#76C38F] from-[#A7C12C] absolute bottom-0 -right-20">
-          <h2 className=" -rotate-90 font-space_mono text-2xl font-semibold text-nowrap flex items-center justify-center">
-            SEE MORE
-          </h2>
-        </button>
+        <Link href="/events">
+          <button className="w-16 h-full --see-more-btn bg-gradient-to-r to-[#76C38F] from-[#A7C12C] absolute bottom-0 -right-20">
+            <h2 className=" -rotate-90 font-space_mono text-2xl font-semibold text-nowrap flex items-center justify-center">
+              SEE MORE
+            </h2>
+          </button>
+        </Link>
       </Carousel>{" "}
       <div className="w-full grid grid-cols-2 h-60 border-x border-border">
         <div className="w-full h-full border-r border-border flex flex-col justify-end">

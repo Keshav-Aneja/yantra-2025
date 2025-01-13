@@ -9,7 +9,7 @@ export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-black bg-custom-gradient">
       <Navbar />
       <div className="w-[75%] mx-auto font-roboto border border-[#313135] border-b-0">
         <div className="grid grid-cols-2 grid-rows-3">

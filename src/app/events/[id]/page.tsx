@@ -7,9 +7,9 @@ import { events } from "@/constants/events";
 import Image from "next/image";
 import Events from "@/sections/events";
 import EventImageContainer from "@/components/event-image";
-import EventCard, {EventCardProps} from "@/components/event-card";
+import EventCard, { EventCardProps } from "@/components/event-card";
 import Seemore from "@/components/seemore";
-import {VerticalLine} from "@/components/lines";
+import { VerticalLine } from "@/components/lines";
 
 export default function EventPage() {
   const { id } = useParams();
@@ -18,14 +18,14 @@ export default function EventPage() {
 
   if (!event) {
     return (
-      <div className="min-h-screen bg-black text-white flex items-center justify-center">
+      <div className="min-h-screen bg-black text-white flex items-center justify-center bg-custom-gradient">
         <h1 className="text-4xl">Event not found</h1>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-black bg-custom-gradient">
       <div className="w-[75%] mx-auto font-roboto border border-[#313135] border-b-0">
         <div className="grid grid-cols-2 grid-rows-1">
           <div className="border border-[#313135] p-4"></div>
@@ -80,7 +80,12 @@ export default function EventPage() {
           <div className="grid grid-cols-2 grid-rows-1">
             <div className="p-4 flex items-center justify-center">
               <EventImageContainer removeBg>
-                <Image src={event.event.image} width={600} height={600} alt="" />
+                <Image
+                  src={event.event.image}
+                  width={600}
+                  height={600}
+                  alt=""
+                />
               </EventImageContainer>
             </div>
             <div className="p-2 text-white">
@@ -117,28 +122,24 @@ export default function EventPage() {
   );
 }
 
-const RelatedEvents = ({
-    events
-}: {
-  events: EventCardProps[]
-}) => (
-    <div className={"w-full h-full"}>
-      <div className={"p-8 pb-16 flex gap-5"}>
-        <Image
-            src={"/icons/arrow-right-solid.svg"}
-            height={11}
-            width={8}
-            alt={"arrow-right"}
-        />
-        <div className={"font-roboto_mono text-white text-4xl font-medium"}>
-          {"RELATED EVENTS"}
-        </div>
-      </div>
-      <div className={"flex h-full w-full gap-2"}>
-        {events.slice(0, 3).map(event => (
-            <EventCard {...event} key={event.id} />
-        ))}
-        <Seemore href={"/events"} />
+const RelatedEvents = ({ events }: { events: EventCardProps[] }) => (
+  <div className={"w-full h-full"}>
+    <div className={"p-8 pb-16 flex gap-5"}>
+      <Image
+        src={"/icons/arrow-right-solid.svg"}
+        height={11}
+        width={8}
+        alt={"arrow-right"}
+      />
+      <div className={"font-roboto_mono text-white text-4xl font-medium"}>
+        {"RELATED EVENTS"}
       </div>
     </div>
-)
+    <div className={"flex h-full w-full gap-2"}>
+      {events.slice(0, 3).map((event) => (
+        <EventCard {...event} key={event.id} />
+      ))}
+      <Seemore href={"/events"} />
+    </div>
+  </div>
+);

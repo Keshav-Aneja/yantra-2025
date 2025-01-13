@@ -3,7 +3,7 @@ import Image from "next/image";
 import TeamCard from "@/components/TeamCard";
 const Team = () => {
   return (
-    <div className="w-wrapper mx-auto border-x border-border">
+    <div className="w-wrapper mx-auto border-x border-border" id="team">
       <div className="w-full grid grid-cols-2 h-60 ">
         <div className="w-full h-full border-r border-border flex flex-col justify-end">
           <div className={"p-8 flex gap-5"}>

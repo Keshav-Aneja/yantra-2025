@@ -36,7 +36,10 @@ export default function Timeline() {
   }, []);
 
   return (
-    <div className="w-[75%] border border-border mx-auto border-t-0 font-roboto">
+    <div
+      className="w-[75%] border border-border mx-auto border-t-0 font-roboto"
+      id="timeline"
+    >
       <div className="w-full h-60 grid grid-cols-2 border-b border-border">
         <div className="w-full h-full border-r border-border flex flex-col justify-end">
           <div className={"p-8 pb-8 flex gap-5"}>
