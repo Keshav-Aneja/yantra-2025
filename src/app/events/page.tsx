@@ -182,7 +182,7 @@ const EventTypeFilter = ({
         key={index}
         className={`border p-1 px-2 text-xs font-space_mono cursor-pointer ${
           eventType === selectedEventType
-            ? "border-white text-gradient font-semibold"
+            ? "border-white bg-gradient-to-tr from-[#76C38F] via-[#60CF8C] to-[#A7C12C] text-transparent bg-clip-text font-semibold"
             : "border-border text-[#4B4B4B] hover:border-neutral-600 text-neutral-500"
         }`}
         onClick={() => onSelectEventType(eventType)}
