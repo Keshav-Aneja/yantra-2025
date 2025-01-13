@@ -4,7 +4,7 @@ import { useParams } from "next/navigation";
 import { events } from "@/constants/events";
 import Image from "next/image";
 import EventImageContainer from "@/components/event-image";
-import EventCard, {EventCardProps} from "@/components/event-card";
+import EventCard, { EventCardProps } from "@/components/event-card";
 import Seemore from "@/components/seemore";
 import {VerticalLine} from "@/components/lines";
 import {useEffect, useRef, useState} from "react";
@@ -16,15 +16,15 @@ export default function EventPage() {
 
   if (!event) {
     return (
-      <div className="min-h-screen bg-black text-white flex items-center justify-center">
+      <div className="min-h-screen bg-black text-white flex items-center justify-center bg-custom-gradient">
         <h1 className="text-4xl">Event not found</h1>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-black">
-      <div className="w-[75%] max-md:w-wrapper-md mx-auto font-roboto border border-[#313135] border-b-0">
+    <div className="min-h-screen bg-black bg-custom-gradient">
+      <div className="w-[75%] mx-auto font-roboto border border-[#313135] border-b-0">
         <div className="grid grid-cols-2 grid-rows-1">
           <div className="border border-[#313135] p-4"></div>
           <div className="border border-[#313135] p-4"></div>
@@ -78,7 +78,12 @@ export default function EventPage() {
           <div className="grid grid-cols-2 grid-rows-1 max-lg:flex max-lg:flex-col">
             <div className="p-4 max-md:p-2 flex items-center justify-center">
               <EventImageContainer removeBg>
-                <Image src={event.event.image} width={600} height={600} alt="" />
+                <Image
+                  src={event.event.image}
+                  width={600}
+                  height={600}
+                  alt=""
+                />
               </EventImageContainer>
             </div>
             <div className="p-2 text-white">
@@ -120,7 +125,7 @@ const RelatedEvents = ({
 }: {
   events: EventCardProps[]
 }) => (
-    <div className={"w-full h-full max-md:border-t max-md:border-border max-md:mt-2"}>
+    <div className={"w-full h-full max-md:border-t max-md:border-border max-md:mt-2 mb-2"}>
       <div className={"p-8 pb-16 max-md:pb-10 flex gap-5"}>
         <Image
             src={"/icons/arrow-right-solid.svg"}
@@ -132,11 +137,11 @@ const RelatedEvents = ({
           {"RELATED EVENTS"}
         </div>
       </div>
-      <div className={"lg:flex h-full w-full md:grid md:grid-cols-2 gap-2 max-md:flex-col max-md:space-y-4"}>
+      <div className={"lg:grid-cols-4 h-full w-full grid md:grid-cols-2 gap-2 max-md:grid-cols-1 max-md:grid-rows-4 max-md:space-y-2"}>
         {events.slice(0, 3).map(event => (
             <EventCard {...event} key={event.id} />
         ))}
-        <div className={"w-full h-full border max-md:py-[5rem] py-[7.85vw] border-border flex justify-center items-center"}>
+        <div className={"w-full h-full border border-border flex justify-center items-center"}>
           <Seemore />
         </div>
       </div>
