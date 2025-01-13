@@ -7,16 +7,22 @@ const Hero = () => {
   return (
     <>
       <div className="bg-custom-gradient flex justify-center items-center relative">
-        <span className="absolute bottom-6 right-16 flex items-center gap-3 z-[50] font-roboto_mono text-white/60">
+        <span className="absolute bottom-6 left-12 flex items-center gap-3 z-[50] font-roboto_mono text-white/60 text-sm">
           <h2>SCROLL</h2>
-          <FaArrowDown />
+          <FaArrowDown className="text-xl text-white" />
         </span>
         <HeroCenter />
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-[40%] -translate-y-1/2">
-          <Image src="/robot.webp" width={600} height={600} alt="Robot" />
+        <div className="absolute top-1/2 left-1/2  -translate-x-[35%] -translate-y-1/2">
+          <Image
+            src="/robot.webp"
+            width={1200}
+            height={1200}
+            alt="Robot"
+            className="w-[85%] h-auto"
+          />
         </div>
       </div>
-      <div className="absolute bottom-4 left-8 p-4 space-y-1">
+      <div className="absolute bottom-16 left-8 p-4 space-y-1">
         <div className="text-white p-2 text-base w-2/3 font-roboto">
           <span className="text-nowrap text-lg">
             OFFICE OF STUDENTS&apos; WELFARE

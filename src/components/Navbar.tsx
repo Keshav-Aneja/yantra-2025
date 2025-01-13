@@ -19,7 +19,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="w-full flex justify-center items-center font-roboto text-sm  border-b border-border bg-black h-16">
+    <nav className="w-full flex justify-center items-center font-roboto text-sm  border-b border-border bg-[#161616] h-16">
       <div className="flex items-center justify-center h-full w-[12.5%]">
         <Image
           src="/VIT.webp"

@@ -37,16 +37,18 @@ export default function Timeline() {
 
   return (
     <div className="w-[75%] border border-border mx-auto border-t-0 font-roboto">
-      <div className="w-full h-full border-r border-border flex flex-col justify-end">
-        <div className={"p-8 pb-8 flex gap-5"}>
-          <Image
-            src={"/icons/arrow-right-solid.svg"}
-            height={11}
-            width={8}
-            alt={"arrow-right"}
-          />
-          <div className={"font-roboto_mono text-white text-4xl font-medium"}>
-            Timeline
+      <div className="w-full h-60 grid grid-cols-2 border-b border-border">
+        <div className="w-full h-full border-r border-border flex flex-col justify-end">
+          <div className={"p-8 pb-8 flex gap-5"}>
+            <Image
+              src={"/icons/arrow-right-solid.svg"}
+              height={11}
+              width={8}
+              alt={"arrow-right"}
+            />
+            <div className={"font-roboto_mono text-white text-4xl font-medium"}>
+              Timeline
+            </div>
           </div>
         </div>
       </div>
@@ -56,22 +58,35 @@ export default function Timeline() {
           {events.map((event, index) => (
             <div
               key={index}
-              className={`flex items-center mb-8 ${
+              className={`flex items-center mb-8 relative z-[50] ${
                 index % 2 === 1 ? "flex-row-reverse" : ""
               }`}
             >
               <div
-                className={`w-[calc(50%-6rem)] p-4 rounded-lg ${
-                  index === currentEventIndex
-                    ? "gradient-bg text-black"
-                    : "bg-gray-900/50 border border-gray-800 text-white"
-                }`}
+                className={`w-[calc(50%-5.9rem)] h-[calc(100%+0.1rem)] bg-border absolute  z-[-10] 
+                  ${
+                    index % 2 === 1
+                      ? "flex-row-reverse top-[-0.05rem] right-[-0.05rem]"
+                      : "top-[-0.05rem] left-[-0.05rem]"
+                  }`}
                 style={{
                   clipPath:
                     "polygon(3% 0, 100% 0, 100% 85%, 97% 100%, 0% 100%, 0 15%)",
                 }}
+              ></div>
+              <div
+                className={`w-[calc(50%-6rem)]  relative p-4 rounded-lg ${
+                  index === currentEventIndex
+                    ? "gradient-bg text-black"
+                    : "bg-black border border-gray-800 text-white"
+                } `}
+                style={{
+                  clipPath:
+                    "polygon(3% 0, 100% 0, 100% 85%, 97% 100%, 0% 100%, 0 15%)",
+                  zIndex: 50,
+                }}
               >
-                <div className="flex justify-between items-center">
+                <div className="flex justify-between items-center font-space_mono text-xl font-medium">
                   <div>
                     <div
                       className={`${
@@ -95,7 +110,7 @@ export default function Timeline() {
                   <div
                     className={`${
                       index === currentEventIndex ? "text-black" : "text-white"
-                    } mt-1`}
+                    } mt-1 text-[1.325rem] `}
                   >
                     {event.date}
                   </div>

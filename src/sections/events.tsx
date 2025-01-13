@@ -60,26 +60,32 @@ const Events = ({ events, related }: EventsProps) => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <div className="w-full grid grid-cols-2 h-60 border-x border-border">
-          <div className="w-full h-full border-r border-border flex flex-col justify-end">
-            {!related && (
-              <div className={"p-8 flex gap-5"}>
-                <Image
-                  src={"/icons/arrow-right-solid.svg"}
-                  height={11}
-                  width={8}
-                  alt={"arrow-right"}
-                />
-                <div
-                  className={"font-roboto_mono text-white text-4xl font-medium"}
-                >
-                  SPONSORS
-                </div>
+        <button className="w-16 h-full --see-more-btn bg-gradient-to-r to-[#76C38F] from-[#A7C12C] absolute bottom-0 -right-20">
+          <h2 className=" -rotate-90 font-space_mono text-2xl font-semibold text-nowrap flex items-center justify-center">
+            SEE MORE
+          </h2>
+        </button>
+      </Carousel>{" "}
+      <div className="w-full grid grid-cols-2 h-60 border-x border-border">
+        <div className="w-full h-full border-r border-border flex flex-col justify-end">
+          {!related && (
+            <div className={"p-8 flex gap-5"}>
+              <Image
+                src={"/icons/arrow-right-solid.svg"}
+                height={11}
+                width={8}
+                alt={"arrow-right"}
+              />
+              <div
+                className={"font-roboto_mono text-white text-4xl font-medium"}
+              >
+                SPONSORS
               </div>
-            )}
-          </div>
-          <div className="w-full h-full">
-            <div className={"flex justify-end gap-x-2.5 mr-5 my-5"}>
+            </div>
+          )}
+        </div>
+        <div className="w-full h-full">
+          {/* <div className={"flex justify-end gap-x-2.5 mr-5 my-5"}>
               <PrevBtn
                 className={
                   "text-white disabled:text-[#353539] transition-all duration-150 delay-100 size-7"
@@ -94,10 +100,9 @@ const Events = ({ events, related }: EventsProps) => {
                 onClick={onNextBtnClick}
                 disabled={nextBtnDisabled}
               />
-            </div>
-          </div>
+            </div> */}
         </div>
-      </Carousel>
+      </div>
     </section>
   );
 };
