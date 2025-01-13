@@ -24,11 +24,21 @@
       #a7c12c 100%
     );
   }
-}
 
-@layer utilities {
-  .text-gradient {
-    @apply bg-gradient-to-tr from-[#76C38F] via-[#60CF8C] to-[#A7C12C] text-transparent bg-clip-text;
+  .gradient-text {
+    background: linear-gradient(
+      23.96deg,
+      #76c38f 0%,
+      #60cf8c 48.44%,
+      #a7c12c 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .bg-custom-gradient {
+    background: linear-gradient(180deg, #171717 7%, #0A090F 100%);
   }
 }
 

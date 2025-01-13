@@ -6,8 +6,7 @@ import { FaArrowDown } from "react-icons/fa";
 const Hero = () => {
   return (
     <>
-      {/* TODO: Background gradient */}
-      <div className="bg-background flex justify-center items-center relative">
+      <div className="bg-custom-gradient flex justify-center items-center relative">
         <span className="absolute bottom-6 right-16 flex items-center gap-3 z-[50] font-roboto_mono text-white/60">
           <h2>SCROLL</h2>
           <FaArrowDown />
