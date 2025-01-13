@@ -88,7 +88,7 @@ const EventCard = ({ organisation, event, containerClass }: EventCardProps) => {
         <p className={"font-roboto text-lg font-medium uppercase line-clamp-1"}>
           {event.name}
         </p>
-        <p className={"font-space_mono text-sm text-white/70"}>
+        <p className={"font-space_mono text-sm text-white/70 line-clamp-5 "}>
           {truncateText(event.description, 23)}
         </p>
       </div>

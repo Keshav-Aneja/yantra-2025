@@ -1,4 +1,5 @@
 "use client";
+import "@/styles/events/events-page.css"
 
 import React, { useEffect, useState } from "react";
 import OurEvents from "@/app/events/_components/our-events";
@@ -41,49 +42,28 @@ const EventsPage = () => {
   };
 
   return (
-    <div className={"flex flex-col justify-center items-center"}>
-      <div className={"w-wrapper flex items-center border border-border p-8"}>
-        <OurEvents className={"w-80 h-24"} />
+    <div className={"w-full flex flex-col justify-center items-center"}>
+      <div className={"w-wrapper max-md:w-wrapper-md flex items-center max-md:justify-center border border-border p-8"}>
+        <OurEvents className={"w-80 h-24 max-md:w-60 max-md:h-20"} />
       </div>
-      <div className={"w-wrapper relative"}>
-        <div className="border border-white border-r-0 px-4 py-3 text-white absolute top-0 right-full">
+      <div className={"max-md:w-wrapper-md w-wrapper relative"}>
+        <div className="border border-white max-lg:border-b-0 lg:border-r-0 px-4 py-3 text-white max-md:text-sm lg:absolute lg:top-0 lg:right-full">
           CATEGORIES
         </div>
         <EventTypeFilter
           selectedEventType={selectedEventType}
           onSelectEventType={onSelectEventType}
         />
-        <div
-          className={
-            "flex items-center border text-white border-white p-4 gap-4"
-          }
-        >
-          <Search className={"size-5"} />
-          <input
-            className={
-              "bg-inherit placeholder:text-white w-full outline-none tracking-wide"
-            }
-            placeholder={"SEARCH"}
-            onChange={(e) => setSearch(e.target.value)}
-          />
-        </div>
+        <SearchEvents onInputChange={(e)=>setSearch(e.target.value)} />
       </div>
-      <div className={"w-wrapper border border-border relative"}>
+      <div className={"w-wrapper max-md:w-wrapper-md border border-border relative"}>
         <div className={"flex justify-between h-full w-full absolute"}>
           <VerticalLine className={"invisible"} />
-          <VerticalLine />
-          <VerticalLine />
+          <VerticalLine className={"max-md:hidden"} />
+          <VerticalLine className={"max-sm:hidden"} />
           <VerticalLine className={"invisible"} />
         </div>
-        <div
-          className={
-            "grid grid-cols-3 gap-x-0 gap-y-10 my-10 justify-items-center content-start place-content-start"
-          }
-        >
-          {pageData.map(({ organisation, event }, index) => (
-            <EventCard organisation={organisation} event={event} key={index} />
-          ))}
-        </div>
+        <Events events={pageData} />
         <div className={"flex justify-end mb-12"}>
           <div
             className={
@@ -176,13 +156,13 @@ const EventTypeFilter = ({
   selectedEventType,
   onSelectEventType,
 }: EventTypeFilter) => (
-  <div className={"flex gap-4 p-4 py-6 border border-white"}>
+  <div className={"flex gap-3 md:gap-4 flex-wrap px-3 md:px-4 py-3 md:py-6 border border-white"}>
     {eventTypes.map((eventType, index) => (
       <div
         key={index}
         className={`border p-1 px-2 text-xs font-space_mono cursor-pointer ${
           eventType === selectedEventType
-            ? "border-white bg-gradient-to-tr from-[#76C38F] via-[#60CF8C] to-[#A7C12C] text-transparent bg-clip-text font-semibold"
+            ? "border-white text-gradient font-semibold"
             : "border-border text-[#4B4B4B] hover:border-neutral-600 text-neutral-500"
         }`}
         onClick={() => onSelectEventType(eventType)}
@@ -192,5 +172,40 @@ const EventTypeFilter = ({
     ))}
   </div>
 );
+
+const Events = ({
+    events
+}: { events: EventCardProps[] })=> (
+    <div
+        className={
+          "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-0 gap-y-10 my-10 justify-items-center content-start place-content-start"
+        }
+    >
+      {events.map(({organisation, event}, index) => (
+          <EventCard organisation={organisation} event={event} key={index}/>
+      ))}
+    </div>
+)
+
+const SearchEvents = ({
+  onInputChange
+}: {
+  onInputChange: React.ChangeEventHandler<HTMLInputElement>
+})=> (
+    <div
+        className={
+          "flex items-center border text-white border-white p-3 md:p-4 gap-3 md:gap-4"
+        }
+    >
+      <Search className={"size-5 max-md:size-4"}/>
+      <input
+          className={
+            "bg-inherit placeholder:text-white w-full outline-none tracking-wide max-md:text-sm"
+          }
+          placeholder={"SEARCH"}
+          onChange={onInputChange}
+      />
+    </div>
+)
 
 export default EventsPage;
