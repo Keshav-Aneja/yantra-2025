@@ -7,6 +7,7 @@ import EventImageContainer from "@/components/event-image";
 import EventCard, {EventCardProps} from "@/components/event-card";
 import Seemore from "@/components/seemore";
 import {VerticalLine} from "@/components/lines";
+import {useEffect, useRef, useState} from "react";
 
 export default function EventPage() {
   const { id } = useParams();
@@ -131,11 +132,11 @@ const RelatedEvents = ({
           {"RELATED EVENTS"}
         </div>
       </div>
-      <div className={"lg:flex h-full w-full md:grid md:grid-cols-2 gap-2 max-md:flex-col max-md:gap-4"}>
+      <div className={"lg:flex h-full w-full md:grid md:grid-cols-2 gap-2 max-md:flex-col max-md:space-y-4"}>
         {events.slice(0, 3).map(event => (
             <EventCard {...event} key={event.id} />
         ))}
-        <div className={"w-full h-full border py-[7.5rem] max-md:py-[5rem] border-border flex justify-center items-center"}>
+        <div className={"w-full h-full border max-md:py-[5rem] py-[7.85vw] border-border flex justify-center items-center"}>
           <Seemore />
         </div>
       </div>
