@@ -1,15 +1,13 @@
 "use client";
 
-import Navbar from "@/components/Navbar";
-import Footer from "@/sections/footer";
 import { useParams } from "next/navigation";
 import { events } from "@/constants/events";
 import Image from "next/image";
-import Events from "@/sections/events";
 import EventImageContainer from "@/components/event-image";
 import EventCard, { EventCardProps } from "@/components/event-card";
 import Seemore from "@/components/seemore";
-import { VerticalLine } from "@/components/lines";
+import {VerticalLine} from "@/components/lines";
+import {useEffect, useRef, useState} from "react";
 
 export default function EventPage() {
   const { id } = useParams();
@@ -33,21 +31,21 @@ export default function EventPage() {
         </div>
 
         <div className="border border-[#313135] p-4">
-          <h2 className="text-6xl font-medium text-white font-armstrong px-6 py-3">
+          <h2 className="text-6xl max-md:text-4xl font-medium text-white font-armstrong px-6 py-3">
             {event.event.name}
           </h2>
           <h3
             style={{ color: event.event.typeColor }}
-            className={`text-base relative -top-3 font-bold font-space_mono px-6`}
+            className={`text-base max-md:text-sm relative -top-3 font-bold font-space_mono px-6`}
           >
             {event.event.type}
           </h3>
         </div>
 
         <div className="border border-[#313135] p-4 text-white font-space_mono">
-          <p className={`text-lg font-semibold px-6`}>
+          <p className={`text-lg max-md:text-base font-semibold px-6`}>
             EVENT DATE:{" "}
-            <span className="font-normal text-base">
+            <span className="font-normal text-base max-md:text-sm">
               {new Date(event.event.startDate).toLocaleDateString("en-GB", {
                 day: "numeric",
                 month: "long",
@@ -58,27 +56,27 @@ export default function EventPage() {
         </div>
 
         <div className="border border-[#313135] p-4 text-white">
-          <p className={`text-lg font-semibold px-6`}>
+          <p className={`text-lg max-md:text-base font-semibold px-6`}>
             EVENT TIME:{" "}
-            <span className="font-normal text-base">
+            <span className="font-normal text-base max-md:text-sm">
               {new Date(event.event.startDate).toLocaleTimeString()}
             </span>
           </p>
         </div>
 
         <div className="border border-[#313135] p-4 text-white">
-          <p className={`text-lg font-semibold px-6`}>
+          <p className={`text-lg max-md:text-base font-semibold px-6`}>
             BY:{" "}
-            <span className="font-normal text-base">
+            <span className="font-normal text-base max-md:text-sm">
               {event.organisation.name}
             </span>
           </p>
         </div>
 
         <div className={"relative flex flex-col items-center"}>
-          <VerticalLine className={"absolute h-full"} />
-          <div className="grid grid-cols-2 grid-rows-1">
-            <div className="p-4 flex items-center justify-center">
+          <VerticalLine className={"absolute h-full max-lg:hidden"} />
+          <div className="grid grid-cols-2 grid-rows-1 max-lg:flex max-lg:flex-col">
+            <div className="p-4 max-md:p-2 flex items-center justify-center">
               <EventImageContainer removeBg>
                 <Image
                   src={event.event.image}
@@ -89,7 +87,7 @@ export default function EventPage() {
               </EventImageContainer>
             </div>
             <div className="p-2 text-white">
-              <p className="text-base font-space_mono font-normal leading-7 p-4 m-4">
+              <p className="text-base font-space_mono font-normal leading-7 max-md:leading-5 p-4 max-md:p-2 m-4">
                 {event.event.description}
               </p>
             </div>
@@ -97,7 +95,7 @@ export default function EventPage() {
 
           <div className="w-full flex justify-center p-4 text-white text-center">
             <button
-              className="gradient-bg text-black px-8 py-4 transition-colors flex items-center gap-2 justify-center text-xl"
+              className="gradient-bg text-black px-8 max-md:px-5 py-4 max-md:py-3 transition-colors flex items-center gap-2 justify-center text-xl"
               style={{
                 clipPath:
                   "polygon(5% 0, 100% 0, 100% 85%, 95% 100%, 0% 100%, 0 15%)",
@@ -105,7 +103,7 @@ export default function EventPage() {
                   "linear-gradient(23.96deg, #76C38F 0%, #60CF8C 48.44%, #A7C12C 100%)",
               }}
             >
-              <span className="uppercase">Register Now</span>
+              <span className="uppercase max-md:text-sm">Register Now</span>
               <Image
                 src="/icons/register-arrow.svg"
                 width={12}
@@ -122,24 +120,30 @@ export default function EventPage() {
   );
 }
 
-const RelatedEvents = ({ events }: { events: EventCardProps[] }) => (
-  <div className={"w-full h-full"}>
-    <div className={"p-8 pb-16 flex gap-5"}>
-      <Image
-        src={"/icons/arrow-right-solid.svg"}
-        height={11}
-        width={8}
-        alt={"arrow-right"}
-      />
-      <div className={"font-roboto_mono text-white text-4xl font-medium"}>
-        {"RELATED EVENTS"}
+const RelatedEvents = ({
+    events
+}: {
+  events: EventCardProps[]
+}) => (
+    <div className={"w-full h-full max-md:border-t max-md:border-border max-md:mt-2 mb-2"}>
+      <div className={"p-8 pb-16 max-md:pb-10 flex gap-5"}>
+        <Image
+            src={"/icons/arrow-right-solid.svg"}
+            height={11}
+            width={8}
+            alt={"arrow-right"}
+        />
+        <div className={"font-roboto_mono text-white text-4xl max-md:text-2xl font-medium"}>
+          {"RELATED EVENTS"}
+        </div>
+      </div>
+      <div className={"lg:grid-cols-4 h-full w-full grid md:grid-cols-2 gap-2 max-md:grid-cols-1 max-md:grid-rows-4 max-md:space-y-2"}>
+        {events.slice(0, 3).map(event => (
+            <EventCard {...event} key={event.id} />
+        ))}
+        <div className={"w-full h-full border border-border flex justify-center items-center"}>
+          <Seemore />
+        </div>
       </div>
     </div>
-    <div className={"flex h-full w-full gap-2"}>
-      {events.slice(0, 3).map((event) => (
-        <EventCard {...event} key={event.id} />
-      ))}
-      <Seemore href={"/events"} />
-    </div>
-  </div>
-);
+)
