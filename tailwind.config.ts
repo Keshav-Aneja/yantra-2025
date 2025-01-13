@@ -17,7 +17,8 @@ export default {
         border: '#353539'
       },
       width: {
-        wrapper: '75%'
+        wrapper: '75%',
+        'wrapper-md': '80%'
       },
       fontFamily: {
         roboto: [
