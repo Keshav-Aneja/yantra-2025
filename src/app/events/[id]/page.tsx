@@ -125,7 +125,7 @@ const RelatedEvents = ({
 }: {
   events: EventCardProps[]
 }) => (
-    <div className={"w-full h-full max-md:border-t max-md:border-border max-md:mt-2 mb-2"}>
+    <div className={"w-full h-full max-md:border-t max-md:border-border max-md:mt-2"}>
       <div className={"p-8 pb-16 max-md:pb-10 flex gap-5"}>
         <Image
             src={"/icons/arrow-right-solid.svg"}
