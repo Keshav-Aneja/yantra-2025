@@ -90,7 +90,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className={"flex justify-between text-xs px-8 max-md:flex-col max-md:text-center max-md:gap-4 max-md:mt-2"}>
+      <div className={"flex justify-between items-center text-xs md:border-t md:border-border mx-8 md:pt-4 max-md:flex-col max-md:text-center max-md:gap-4 max-md:mt-2"}>
         <p>2025 © Vellore Institute of Technology, Vellore</p>
         <p>OFFICE OF STUDENTS’ WELFARE</p>
       </div>
