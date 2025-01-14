@@ -9,7 +9,7 @@ export default function Navbar() {
 
   const navItems = [
     // { label: "ABOUT US", href: "#about" },
-    { label: "MAIN HACK", href: "https://vtop.vit.ac.in" },
+    { label: "MAIN HACK", href: "https://yantrahack.swvit.in/" },
     { label: "TIMELINE", href: "/#timeline" },
     { label: "EVENTS", href: "/events" },
     { label: "TEAM", href: "/#team" },

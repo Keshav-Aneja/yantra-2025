@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import TimelineHover from "@/components/TimelineHover";
 
 interface Event {
   week: string;
@@ -61,12 +62,12 @@ export default function Timeline() {
           {events.map((event, index) => (
             <div
               key={index}
-              className={`flex items-center mb-8 relative z-[50] ${
+              className={`group flex items-center mb-8 relative ${
                 index % 2 === 1 ? "flex-row-reverse" : ""
               }`}
             >
               <div
-                className={`w-[calc(50%-5.9rem)] h-[calc(100%+0.1rem)] bg-border absolute  z-[-10] 
+                className={`w-[calc(50%-5.9rem)] h-[calc(100%+0.1rem)] bg-border absolute  z-[-10]  
                   ${
                     index % 2 === 1
                       ? "flex-row-reverse top-[-0.05rem] right-[-0.05rem]"
@@ -78,58 +79,37 @@ export default function Timeline() {
                 }}
               ></div>
               <div
-                className={`w-[calc(50%-6rem)]  relative p-4 rounded-lg ${
-                  index === currentEventIndex
-                    ? "gradient-bg text-black"
-                    : "bg-black border border-gray-800 text-white"
-                } `}
+                className={`w-[calc(50%-6rem)]  relative p-4 bg-black border border-gray-800 text-white group-hover:gradient-bg group-hover:text-black transition-all duration-200 ease-linear rounded-lg `}
                 style={{
                   clipPath:
                     "polygon(3% 0, 100% 0, 100% 85%, 97% 100%, 0% 100%, 0 15%)",
                   zIndex: 50,
                 }}
               >
-                <div className="flex justify-between items-center font-space_mono text-xl font-medium">
+                <div className="flex justify-between items-center font-space_mono text-xl font-medium   ">
                   <div>
-                    <div
-                      className={`${
-                        index === currentEventIndex
-                          ? "text-black"
-                          : "text-white"
-                      }`}
-                    >
-                      {event.week}
-                    </div>
-                    <div
-                      className={`${
-                        index === currentEventIndex
-                          ? "text-black"
-                          : "text-white"
-                      }`}
-                    >
-                      {event.title}
-                    </div>
+                    <div>{event.week}</div>
+                    <div>{event.title}</div>
                   </div>
-                  <div
-                    className={`${
-                      index === currentEventIndex ? "text-black" : "text-white"
-                    } mt-1 text-[1.325rem] `}
-                  >
-                    {event.date}
-                  </div>
+                  <div className={` mt-1 text-[1.325rem] `}>{event.date}</div>
                 </div>
               </div>
               <div className="w-8 h-8 absolute left-1/2 transform -translate-x-1/2">
                 <div
-                  className={`w-9 h-9 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rotate-45 ${
-                    index === currentEventIndex ? "gradient-bg" : "bg-white"
-                  }`}
+                  className={`w-9 h-9 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rotate-45 group-hover:gradient-bg bg-white`}
                 >
                   <div
                     className={`w-5 h-5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-full bg-black`}
                   />
                 </div>
               </div>
+              <TimelineHover
+                className={`group-hover:flex hidden  ${
+                  index % 2 === 1
+                    ? "flex-row-reverse top-28  right-[-0.05rem]"
+                    : "top-28 left-[-0.05rem]"
+                } `}
+              />
             </div>
           ))}
         </div>
