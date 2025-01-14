@@ -108,15 +108,26 @@ export default function AboutSection() {
       <div className="border-r border-b border-border"></div>
       <div className="border-r border-b border-border p-8">
         <p className="font-mono text-sm leading-relaxed opacity-80">
-          The 5th edition of Yantra, VIT's premier techno-management fest,
-          revolves around Artificial Intelligence (AI) with the objective of
-          advancing the United Nations Sustainable Development Goals. This event
-          serves as an incubator for young visionaries to engage with
-          avant-garde ideas, hone technical expertise, and craft solutions that
-          address global challenges across economic, social, and environmental
-          spheres. A prominent feature, Central Hack, in collaboration with IEEE
-          CS, amplifies the hackathon experience, nurturing ingenuity and
-          cross-disciplinary problem-solving.
+          Yantra, the annual flagship techno-management fest of VIT, is a
+          distinguished celebration of innovation and large-scale collaboration.
+          Spanning an entire week, the fest garners participation from over
+          35,000 students, establishing itself as a dynamic platform for
+          experiential learning and creative exploration. Yantra showcases a
+          meticulously curated lineup of workshops, technical talks, hackathons,
+          and competitions, all organized by the diverse clubs and chapters of
+          VIT.
+          <br />
+          <br />
+          At the core of this landmark event lies Central Hack—VIT's biggest and
+          most prestigious hackathon. This transformative platform unites
+          individuals from diverse domains with a shared vision to address
+          real-world challenges through ingenious and interdisciplinary
+          solutions. It fosters critical problem-solving, enhances technical and
+          managerial competencies, and facilitates meaningful networking
+          opportunities. Yantra stands as a testament to VIT's unwavering
+          commitment to technological innovation and managerial excellence,
+          offering participants a profoundly enriching and transformative
+          experience—all at no cost.
         </p>
       </div>
       <div className="border-b border-border flex flex-col justify-between">
