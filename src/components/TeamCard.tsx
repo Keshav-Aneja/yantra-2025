@@ -1,6 +1,12 @@
 import React from "react";
 import Image from "next/image";
-const TeamCard = () => {
+interface Props {
+  img: string;
+  name: string;
+  position: string;
+  title: string;
+}
+const TeamCard = ({ data }: { data: Props }) => {
   return (
     <div className="w-full bg-white flex flex-col justify-center items-center gap-4 p-3">
       <span className="flex items-center gap-3 w-full">
@@ -11,18 +17,18 @@ const TeamCard = () => {
           height={20}
           className=" w-[8px] invert h-auto"
         />{" "}
-        <h2 className="font-space_mono uppercase">G Vishwanathan</h2>
+        <h2 className="font-space_mono uppercase">{data.name}</h2>
       </span>
       <div className="w-[80%] aspect-[0.9] overflow-hidden">
         <Image
-          src="/images/dummy-img.png"
+          src={data.img}
           width={400}
           height={300}
           alt=""
           className="w-full object-cover h-full"
         />
       </div>
-      <span className="w-full font-space_mono text-sm">PATRON</span>
+      <span className="w-full font-space_mono text-sm">{data.title}</span>
     </div>
   );
 };

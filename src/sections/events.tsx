@@ -69,7 +69,7 @@ const Events = ({ events, related }: EventsProps) => {
           </button>
         </Link>
       </Carousel>{" "}
-      <div className="w-full grid grid-cols-2 h-60 border-x border-border">
+      {/* <div className="w-full grid grid-cols-2 h-60 border-x border-border">
         <div className="w-full h-full border-r border-border flex flex-col justify-end">
           {!related && (
             <div className={"p-8 flex gap-5"}>
@@ -88,24 +88,8 @@ const Events = ({ events, related }: EventsProps) => {
           )}
         </div>
         <div className="w-full h-full">
-          {/* <div className={"flex justify-end gap-x-2.5 mr-5 my-5"}>
-              <PrevBtn
-                className={
-                  "text-white disabled:text-[#353539] transition-all duration-150 delay-100 size-7"
-                }
-                onClick={onPrevBtnClick}
-                disabled={prevBtnDisabled}
-              />
-              <NextBtn
-                className={
-                  "text-white disabled:text-[#353539] transition-all duration-150 delay-100 size-7"
-                }
-                onClick={onNextBtnClick}
-                disabled={nextBtnDisabled}
-              />
-            </div> */}
         </div>
-      </div>
+      </div> */}
     </section>
   );
 };

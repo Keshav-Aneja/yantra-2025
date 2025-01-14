@@ -198,8 +198,13 @@ const Events = ({ events }: { events: EventCardProps[] }) => (
       "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-0 gap-y-10 my-10 justify-items-center content-start place-content-start"
     }
   >
-    {events.map(({ organisation, event }, index) => (
-      <EventCard organisation={organisation} event={event} key={index} />
+    {events.map(({ organisation, event, id }, index) => (
+      <EventCard
+        organisation={organisation}
+        event={event}
+        key={index}
+        id={id}
+      />
     ))}
   </div>
 );

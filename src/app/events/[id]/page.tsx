@@ -6,8 +6,9 @@ import Image from "next/image";
 import EventImageContainer from "@/components/event-image";
 import EventCard, { EventCardProps } from "@/components/event-card";
 import Seemore from "@/components/seemore";
-import {VerticalLine} from "@/components/lines";
-import {useEffect, useRef, useState} from "react";
+import { VerticalLine } from "@/components/lines";
+import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 
 export default function EventPage() {
   const { id } = useParams();
@@ -94,7 +95,8 @@ export default function EventPage() {
           </div>
 
           <div className="w-full flex justify-center p-4 text-white text-center">
-            <button
+            <Link
+              href="https://vtop.vit.ac.in"
               className="gradient-bg text-black px-8 max-md:px-5 py-4 max-md:py-3 transition-colors flex items-center gap-2 justify-center text-xl"
               style={{
                 clipPath:
@@ -111,7 +113,7 @@ export default function EventPage() {
                 alt=""
                 className="w-2 h-auto"
               />
-            </button>
+            </Link>
           </div>
           <RelatedEvents events={events} />
         </div>
@@ -120,30 +122,40 @@ export default function EventPage() {
   );
 }
 
-const RelatedEvents = ({
-    events
-}: {
-  events: EventCardProps[]
-}) => (
-    <div className={"w-full h-full max-md:border-t max-md:border-border max-md:mt-2"}>
-      <div className={"p-8 pb-16 max-md:pb-10 flex gap-5"}>
-        <Image
-            src={"/icons/arrow-right-solid.svg"}
-            height={11}
-            width={8}
-            alt={"arrow-right"}
-        />
-        <div className={"font-roboto_mono text-white text-4xl max-md:text-2xl font-medium"}>
-          {"RELATED EVENTS"}
-        </div>
-      </div>
-      <div className={"lg:grid-cols-4 h-full w-full grid md:grid-cols-2 gap-2 max-md:grid-cols-1 max-md:grid-rows-4 max-md:space-y-2"}>
-        {events.slice(0, 3).map(event => (
-            <EventCard {...event} key={event.id} />
-        ))}
-        <div className={"w-full h-full border border-border flex justify-center items-center"}>
-          <Seemore />
-        </div>
+const RelatedEvents = ({ events }: { events: EventCardProps[] }) => (
+  <div
+    className={"w-full h-full max-md:border-t max-md:border-border max-md:mt-2"}
+  >
+    <div className={"p-8 pb-16 max-md:pb-10 flex gap-5"}>
+      <Image
+        src={"/icons/arrow-right-solid.svg"}
+        height={11}
+        width={8}
+        alt={"arrow-right"}
+      />
+      <div
+        className={
+          "font-roboto_mono text-white text-4xl max-md:text-2xl font-medium"
+        }
+      >
+        {"RELATED EVENTS"}
       </div>
     </div>
-)
+    <div
+      className={
+        "lg:grid-cols-4 h-full w-full grid md:grid-cols-2 gap-2 max-md:grid-cols-1 max-md:grid-rows-4 max-md:space-y-2"
+      }
+    >
+      {events.slice(0, 3).map((event) => (
+        <EventCard {...event} key={event.id} />
+      ))}
+      <div
+        className={
+          "w-full h-full border border-border flex justify-center items-center"
+        }
+      >
+        <Seemore />
+      </div>
+    </div>
+  </div>
+);

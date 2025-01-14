@@ -9,7 +9,7 @@ export default function Navbar() {
 
   const navItems = [
     // { label: "ABOUT US", href: "#about" },
-    { label: "MAIN HACK", href: "https://www.vtop.vit.ac.in" },
+    { label: "MAIN HACK", href: "https://vtop.vit.ac.in" },
     { label: "TIMELINE", href: "/#timeline" },
     { label: "EVENTS", href: "/events" },
     { label: "TEAM", href: "/#team" },
@@ -74,7 +74,8 @@ export default function Navbar() {
         ))}
       </div>
       <div className="flex items-center justify-center w-[12.5%]">
-        <button
+        <Link
+          href="/events"
           className="gradient-bg text-black px-4 py-2 transition-colors flex items-center gap-2 justify-center"
           style={{
             clipPath:
@@ -91,7 +92,7 @@ export default function Navbar() {
             alt=""
             className="w-2 h-auto"
           />
-        </button>
+        </Link>
       </div>
     </nav>
   );

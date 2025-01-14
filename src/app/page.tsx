@@ -25,7 +25,7 @@ export default function Home() {
       <div className="flex flex-col justify-center items-center">
         <div className={"max-w-screen-xl w-wrapper flex flex-col items-center"}>
           <Events events={events} />
-          <Sponsors sponsors={sponsors} />
+          {/* <Sponsors sponsors={sponsors} /> */}
         </div>
       </div>
       <Team />

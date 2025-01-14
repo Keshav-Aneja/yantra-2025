@@ -2,7 +2,10 @@ import { BiSolidRightArrow } from "react-icons/bi";
 import Image from "next/image";
 export default function AboutSection() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2  bg-[#0a0a0a] text-white border border-border w-wrapper mx-auto">
+    <div
+      className="grid grid-cols-1 md:grid-cols-2  bg-[#0a0a0a] text-white border border-border w-wrapper mx-auto"
+      id="about"
+    >
       <div className="border-r border-b border-border flex flex-col p-4 justify-end items-srart h-[10rem] min-h-fit">
         <span className="font-mono text-2xl font-medium flex items-center gap-3">
           <BiSolidRightArrow size={10} />

@@ -2,6 +2,7 @@ import React from "react";
 import "@/styles/events/event-card.css";
 import Image from "next/image";
 import EventImageContainer from "@/components/event-image";
+import Link from "next/link";
 
 interface Organisation {
   logo: string;
@@ -18,16 +19,23 @@ interface Event {
   endDate: string;
 }
 
-const EventCardContainer = ({ children, containerClass }: {
-  children: React.ReactNode,
-  containerClass?: string
+const EventCardContainer = ({
+  children,
+  containerClass,
+  id,
+}: {
+  children: React.ReactNode;
+  containerClass?: string;
+  id?: number;
 }) => {
   return (
-    <div className={`w-fit h-fit ${containerClass}`}>
-      <div className={"event-card-border"}>
-        <div className={"event-card"}>{children}</div>
+    <Link href={`/events/${id}`}>
+      <div className={`w-fit h-fit ${containerClass}`}>
+        <div className={"event-card-border"}>
+          <div className={"event-card"}>{children}</div>
+        </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
@@ -35,7 +43,7 @@ export interface EventCardProps {
   id?: number;
   organisation: Organisation;
   event: Event;
-  containerClass?: string,
+  containerClass?: string;
 }
 
 function truncateText(text: string, wordLimit: number): string {
@@ -46,9 +54,14 @@ function truncateText(text: string, wordLimit: number): string {
   return text;
 }
 
-const EventCard = ({ organisation, event, containerClass }: EventCardProps) => {
+const EventCard = ({
+  organisation,
+  event,
+  containerClass,
+  id,
+}: EventCardProps) => {
   return (
-    <EventCardContainer containerClass={containerClass}>
+    <EventCardContainer containerClass={containerClass} id={id}>
       <div className={"flex justify-between items-center py-3 px-4"}>
         <div className={"flex items-center gap-1"}>
           <Image
@@ -58,14 +71,20 @@ const EventCard = ({ organisation, event, containerClass }: EventCardProps) => {
             className={"bg-black size-6"}
             alt={organisation.name}
           />
-          <p className={"text-[#B2B2B2] font-bold mt-0.5 text-sm uppercase line-clamp-1"}>
+          <p
+            className={
+              "text-[#B2B2B2] font-bold mt-0.5 text-sm uppercase line-clamp-1"
+            }
+          >
             {organisation.name}
           </p>
         </div>
         <div>
           <p
             style={{ color: event.typeColor }}
-            className={"font-space_mono font-semibold text-sm uppercase line-clamp-1"}
+            className={
+              "font-space_mono font-semibold text-sm uppercase line-clamp-1"
+            }
           >
             {event.type}
           </p>

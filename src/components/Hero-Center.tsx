@@ -79,7 +79,7 @@ export default function HeroCenter() {
           <div className="row-span-4 text-sm flex items-center justify-end text-gray-400 text-right pr-6"></div>
           <div className="row-span-2 justify-end p-4 text-xl items-center flex border border-1 border-gray-300  border-b-0 gap-6 font-bold">
             <TbClockHour4 />
-            <CountdownTimer targetDate="2025-02-03T18:29:59" />
+            <CountdownTimer targetDate="2025-02-03T08:00:00" />
           </div>
           <div className="row-span-2 text-sm grid grid-cols-[85%_15%]">
             <div className="flex items-center  justify-end text-right border border-gray-300 p-4  gap-12 text-[#76C38F]">
