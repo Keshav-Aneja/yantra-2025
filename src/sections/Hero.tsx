@@ -33,7 +33,7 @@ const Hero = () => {
           YANTRA &apos;25
         </div>
       </div>
-      <div className="absolute right-0 top-1/2 transform -translate-y-1/2 flex flex-col items-center space-y-12 mr-4 mt-8">
+      {/* <div className="absolute right-0 top-1/2 transform -translate-y-1/2 flex flex-col items-center space-y-12 mr-4 mt-8">
         <div className="flex flex-col items-center space-y-12">
           <div className="w-3 h-3 bg-gray-500 rounded-full"></div>
           <div className="w-3 h-3 bg-gray-500 rounded-full"></div>
@@ -63,7 +63,7 @@ const Hero = () => {
             </svg>
           </button>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };
