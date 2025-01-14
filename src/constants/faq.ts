@@ -1,46 +1,82 @@
 export const faqs = [
     {
-      question: "IS THERE A PROVISION FOR ON-SPOT REGISTRATIONS FOR EVENTS?",
+      question: "How do I register for events in Yantra'25?",
       answer:
-        "Registration for events is exclusively through the official Riviera website, and on-spot registrations will not be available.",
+        'You can register for the events in the \"Events\" section on VTOP..',
     },
     {
       question:
-        "ARE THERE ACCOMMODATION FACILITIES AVAILABLE FOR OUTSTATION PARTICIPANTS?",
+        "Is there any cost for participation?",
       answer:
-        "Yes, accommodation is provided for outstation participants in the VIT hostels on a paid first come first serve basis.",
+        "No, all the events are free of cost in Yantra'25.",
     },
     {
       question:
-        "IS TRANSPORTATION PROVIDED TO AND FROM THE VENUE, OR SHOULD ATTENDEES ARRANGE THEIR OWN TRANSPORTATION?",
+        "What kind of technical skills will I gain from attending Yantra'25 events?",
       answer:
-        "No, VIT does not provide transportation. Attendees are required to make their own transportation arrangements.",
+        "Yantra'25 will help you develop problem-solving, teamwork, and technical skills like coding and prototyping. It will enhance creativity, time management, and presentation abilities while providing exposure to new tools, mentorship, and networking opportunities.",
     },
     {
-      question: "WHAT IS REQUIRED FOR IDENTITY VERIFICATION AT THE EVENT?",
+      question: "How many events are there in Yantra'25?",
       answer:
-        "Physical identification cards from respective colleges are mandatory for entrance verification.",
+        "There are 67 events in Yantra'25.",
     },
     {
-      question: "IS THERE A PROVISION FOR ON-SPOT REGISTRATIONS FOR EVENTS?",
+      question: "What is Central Hackathon?",
       answer:
-        "Registration for events is exclusively through the official Riviera website, and on-spot registrations will not be available.",
-    },
-    {
-      question:
-        "ARE THERE ACCOMMODATION FACILITIES AVAILABLE FOR OUTSTATION PARTICIPANTS?",
-      answer:
-        "Yes, accommodation is provided for outstation participants in the VIT hostels on a paid first come first serve basis.",
+        "Central hack is the official hacakathon of the yantra organised by VIT.",
     },
     {
       question:
-        "IS TRANSPORTATION PROVIDED TO AND FROM THE VENUE, OR SHOULD ATTENDEES ARRANGE THEIR OWN TRANSPORTATION?",
+        "Do we have on spot OD?",
       answer:
-        "No, VIT does not provide transportation. Attendees are required to make their own transportation arrangements.",
+        "No, you don't have on spot OD in Yantra'25. You need to register on VTOP.",
     },
     {
-      question: "WHAT IS REQUIRED FOR IDENTITY VERIFICATION AT THE EVENT?",
+      question:
+        "What is the judging criteria in events?",
       answer:
-        "Physical identification cards from respective colleges are mandatory for entrance verification.",
+        "Each tech event have different judging criteria and based on it, the judging of the event will be handled under the supervision of the faculty coordinator.",
     },
-  ];
+    {
+      question: "What are the types of events in Yantra'25?",
+      answer:
+        "The types of events in Yantra'25 are hackathons, workshops, guest lectures, competitions and tech talks.",
+    },
+    {
+        question: "Whats the duration of Yantra'25?",
+        answer:
+            "The duration is from 3rd February till 9th February, a span of one week.",
+    },
+    {
+        question: "Are meals and accomodation provided in hackathons?",
+        answer:
+            "No meals and accomodation are provided in hackathons, only refreshments are provided for overnight events.",
+    },
+    {
+        question: "Will I get a participation certificate?",
+        answer:
+            "No, you will not be provided with a participation certificate.",
+    },
+    {
+        question: "How will the cash prizes deposited to the winner?",
+        answer:
+            "The cash prize will be directly sent to your bank account registered on the VTOP.",
+    },
+
+    {
+        question: "When can we expect the result of the event?",
+        answer:
+            "All the results will be declared after conclusion of Yantra'25 or the event.",
+    },
+    {
+        question: "Should I apply for nightslips for overnight events?",
+        answer:
+            "No, you should not apply for the night slip for overnight events.",
+    },
+    {
+        question: "Will classes be held during Yantra'25?",
+        answer:
+            "Yes, classes will be held during Yantra'25",
+    }
+];
