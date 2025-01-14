@@ -36,7 +36,7 @@ export default function FAQSection() {
                 className="w-full py-4 flex items-center justify-between text-left text-white hover:text-[#4CAF50] transition-colors duration-200"
                 aria-expanded={openIndex === index}
               >
-                <span className="text-sm md:text-base">{faq.question}</span>
+                <span className="text-sm md:text-base uppercase">{faq.question}</span>
                 <svg
                   className={`w-4 h-4 transition-transform duration-200 text-zinc-400 ${
                     openIndex === index ? "rotate-45" : ""
