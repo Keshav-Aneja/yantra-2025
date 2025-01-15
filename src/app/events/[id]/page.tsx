@@ -25,28 +25,28 @@ export default function EventPage() {
 
   return (
     <div className="min-h-screen bg-black bg-custom-gradient">
-      <div className="w-[75%] mx-auto font-roboto border border-[#313135] border-b-0">
+      <div className="w-wrapper-sm md:w-wrapper mx-auto font-roboto border border-[#313135] border-b-0">
         <div className="grid grid-cols-2 grid-rows-1">
           <div className="border border-[#313135] p-4"></div>
           <div className="border border-[#313135] p-4"></div>
         </div>
 
-        <div className="border border-[#313135] p-4">
-          <h2 className="text-6xl max-md:text-4xl font-medium text-white font-armstrong px-6 py-3">
+        <div className="border border-[#313135] p-1 py-4 md:p-4">
+          <h2 className="text-6xl max-md:text-2xl font-medium text-white font-armstrong px-6 py-3">
             {event.event.name}
           </h2>
           <h3
             style={{ color: event.event.typeColor }}
-            className={`text-base max-md:text-sm relative -top-3 font-bold font-space_mono px-6`}
+            className={`text-base max-md:text-xs relative -top-5 md:-top-3 font-bold font-space_mono px-6`}
           >
             {event.event.type}
           </h3>
         </div>
 
-        <div className="border border-[#313135] p-4 text-white font-space_mono">
-          <p className={`text-lg max-md:text-base font-semibold px-6`}>
+        <div className="border border-[#313135] p-2 py-3 md:p-4 text-white font-space_mono">
+          <p className={`text-lg max-md:text-sm font-semibold px-6`}>
             EVENT DATE:{" "}
-            <span className="font-normal text-base max-md:text-sm">
+            <span className="font-normal text-base max-md:text-xs">
               {new Date(event.event.startDate).toLocaleDateString("en-GB", {
                 day: "numeric",
                 month: "long",
@@ -56,19 +56,19 @@ export default function EventPage() {
           </p>
         </div>
 
-        <div className="border border-[#313135] p-4 text-white">
-          <p className={`text-lg max-md:text-base font-semibold px-6`}>
+        <div className="border border-[#313135] p-2 py-3 md:p-4 text-white">
+          <p className={`text-lg max-md:text-sm font-semibold px-6`}>
             EVENT TIME:{" "}
-            <span className="font-normal text-base max-md:text-sm">
+            <span className="font-normal text-base max-md:text-xs">
               {new Date(event.event.startDate).toLocaleTimeString()}
             </span>
           </p>
         </div>
 
-        <div className="border border-[#313135] p-4 text-white">
-          <p className={`text-lg max-md:text-base font-semibold px-6`}>
+        <div className="border border-[#313135] p-2 py-3 md:p-4 text-white">
+          <p className={`text-lg max-md:text-sm font-semibold px-6`}>
             BY:{" "}
-            <span className="font-normal text-base max-md:text-sm">
+            <span className="font-normal text-base max-md:text-xs">
               {event.organisation.name}
             </span>
           </p>
@@ -87,8 +87,8 @@ export default function EventPage() {
                 />
               </EventImageContainer>
             </div>
-            <div className="p-2 text-white">
-              <p className="text-base font-space_mono font-normal leading-7 max-md:leading-5 p-4 max-md:p-2 m-4">
+            <div className="p-0 md:p-2 text-white">
+              <p className="text-base max-md:text-xs font-space_mono font-normal leading-7 max-md:leading-4 p-4 max-md:p-2 m-4">
                 {event.event.description}
               </p>
             </div>
@@ -126,7 +126,7 @@ const RelatedEvents = ({ events }: { events: EventCardProps[] }) => (
   <div
     className={"w-full h-full max-md:border-t max-md:border-border max-md:mt-2"}
   >
-    <div className={"p-8 pb-16 max-md:pb-10 flex gap-5"}>
+    <div className={"p-4 md:p-8 pb-16  max-md:pb-8 flex gap-5"}>
       <Image
         src={"/icons/arrow-right-solid.svg"}
         height={11}
@@ -135,7 +135,7 @@ const RelatedEvents = ({ events }: { events: EventCardProps[] }) => (
       />
       <div
         className={
-          "font-roboto_mono text-white text-4xl max-md:text-2xl font-medium"
+          "font-roboto_mono text-white text-4xl max-md:text-xl font-medium"
         }
       >
         {"RELATED EVENTS"}
@@ -143,11 +143,11 @@ const RelatedEvents = ({ events }: { events: EventCardProps[] }) => (
     </div>
     <div
       className={
-        "lg:grid-cols-4 h-full w-full grid md:grid-cols-2 gap-2 max-md:grid-cols-1 max-md:grid-rows-4 max-md:space-y-2"
+        "lg:grid-cols-4 h-full w-full grid md:grid-cols-2 gap-2 max-md:grid-cols-2 max-md:grid-rows-4"
       }
     >
       {events.slice(0, 3).map((event) => (
-        <EventCard {...event} key={event.id} />
+        <EventCard {...event} key={event.id} related />
       ))}
       <div
         className={

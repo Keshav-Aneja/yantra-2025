@@ -3,6 +3,7 @@ import "@/styles/events/event-card.css";
 import Image from "next/image";
 import EventImageContainer from "@/components/event-image";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 interface Organisation {
   logo: string;
@@ -44,6 +45,7 @@ export interface EventCardProps {
   organisation: Organisation;
   event: Event;
   containerClass?: string;
+  related?: boolean;
 }
 
 function truncateText(text: string, wordLimit: number): string {
@@ -59,6 +61,7 @@ const EventCard = ({
   event,
   containerClass,
   id,
+  related,
 }: EventCardProps) => {
   return (
     <EventCardContainer containerClass={containerClass} id={id}>
@@ -73,7 +76,7 @@ const EventCard = ({
           />
           <p
             className={
-              "text-[#B2B2B2] font-bold mt-0.5 text-sm uppercase line-clamp-1"
+              "text-[#B2B2B2] font-bold mt-0.5 text-xs md:text-sm uppercase line-clamp-1"
             }
           >
             {organisation.name}
@@ -82,9 +85,10 @@ const EventCard = ({
         <div>
           <p
             style={{ color: event.typeColor }}
-            className={
-              "font-space_mono font-semibold text-sm uppercase line-clamp-1"
-            }
+            className={cn(
+              "font-space_mono font-semibold text-xs md:text-sm uppercase line-clamp-1",
+              related && "hidden md:block"
+            )}
           >
             {event.type}
           </p>
@@ -103,11 +107,26 @@ const EventCard = ({
         </EventImageContainer>
       </div>
 
-      <div className={"flex flex-col p-4 py-6 space-y-2 text-white"}>
-        <p className={"font-roboto text-lg font-medium uppercase line-clamp-1"}>
+      <div
+        className={cn(
+          "flex flex-col p-4 py-6 space-y-2 text-white",
+          related && "p-2 md:p-4 py-4 md:py-6"
+        )}
+      >
+        <p
+          className={cn(
+            "font-roboto text-base md:text-lg font-medium uppercase line-clamp-1",
+            related && "text-sm md:text-lg"
+          )}
+        >
           {event.name}
         </p>
-        <p className={"font-space_mono text-sm text-white/70 line-clamp-5 "}>
+        <p
+          className={cn(
+            "font-space_mono text-xs md:text-sm text-white/70 line-clamp-5 ",
+            related && "text-[0.6rem] md:text-sm"
+          )}
+        >
           {truncateText(event.description, 23)}
         </p>
       </div>

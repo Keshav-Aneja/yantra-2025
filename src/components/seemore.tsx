@@ -55,7 +55,7 @@ const Seemore = () => {
         />
         <p
           className={
-            "font-space_mono uppercase lg:text-base text-lg max-md:text-sm text-center text-white font-light"
+            "font-space_mono uppercase lg:text-base text-lg max-md:text-xs text-center text-white font-light"
           }
         >
           {"EXPLORE YANTRA'25"}
