@@ -27,16 +27,20 @@ const Events = ({ events, related }: EventsProps) => {
 
   return (
     <section className={"h-full w-full"}>
-      <div className="w-full grid grid-cols-2 h-60 border-x border-border">
-        <div className="w-full h-full border-r border-border flex flex-col justify-end">
-          <div className={"p-8 pb-16 flex gap-5"}>
+      <div className="w-full grid grid-cols-2 h-32 md:h-60 border-x border-border">
+        <div className="w-full h-full border-r border-border flex flex-col justify-end col-span-2 md:col-span-1">
+          <div className={"p-4 md:p-8 pt-16 md:pb-16 flex gap-5"}>
             <Image
               src={"/icons/arrow-right-solid.svg"}
               height={11}
               width={8}
               alt={"arrow-right"}
             />
-            <div className={"font-roboto_mono text-white text-4xl max-md:text-3xl font-medium"}>
+            <div
+              className={
+                "font-roboto_mono text-white text-4xl max-md:text-xl font-medium"
+              }
+            >
               {related ? "RELATED EVENTS" : "OUR EVENTS"}
             </div>
           </div>
@@ -44,13 +48,17 @@ const Events = ({ events, related }: EventsProps) => {
         <div className="w-full h-full"></div>
       </div>
       <div className={"w-full border border-border p-0"}>
-        <div className={"sm:grid grid-cols-2 lg:grid-cols-4 max-sm:flex max-sm:flex-col max-sm:gap-2 relative"}>
+        <div
+          className={
+            "sm:grid grid-cols-2 lg:grid-cols-4 max-sm:flex max-sm:flex-col max-sm:gap-2 relative p-4 md:p-0"
+          }
+        >
           {events.slice(0, 4).map((eventCardProps, index) => (
-              <EventCard key={index} {...eventCardProps} />
+            <EventCard key={index} {...eventCardProps} />
           ))}
           <Link href="/events">
-            <button className="w-16 h-full --see-more-btn bg-gradient-to-r to-[#76C38F] from-[#A7C12C] absolute bottom-0 -right-20 max-sm:relative max-sm:right-0 max-sm:w-full max-sm:h-16">
-              <h2 className=" -rotate-90 font-space_mono text-2xl font-semibold text-nowrap flex items-center justify-center max-sm:rotate-0">
+            <button className="w-16 h-full --see-more-btn bg-gradient-to-r to-[#76C38F] from-[#A7C12C] absolute bottom-0 -right-20 max-sm:relative max-sm:right-0 max-sm:w-full max-sm:h-12">
+              <h2 className=" -rotate-90 font-space_mono text-xl md:text-2xl font-semibold text-nowrap flex items-center justify-center max-sm:rotate-0">
                 SEE MORE
               </h2>
             </button>

@@ -143,7 +143,7 @@ const RelatedEvents = ({ events }: { events: EventCardProps[] }) => (
     </div>
     <div
       className={
-        "lg:grid-cols-4 h-full w-full grid md:grid-cols-2 gap-2 max-md:grid-cols-2 max-md:grid-rows-4"
+        "lg:grid-cols-4 h-full w-full grid md:grid-cols-2 gap-2 max-md:grid-cols-2 max-md:grid-rows-2"
       }
     >
       {events.slice(0, 3).map((event) => (

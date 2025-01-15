@@ -4,23 +4,32 @@ import CountdownTimer from "./CountdownTimer";
 
 export default function HeroCenter() {
   return (
-    <div className="relative flex flex-col lg:flex-row justify-center items-center w-full lg:w-wrapper text-white font-roboto overflow-hidden md:h-[92.9vh] border-border border-x ">
-      <div className="flex justify-center items-center w-full lg:w-1/2 p-8">
+    <div className="relative flex flex-col lg:flex-row md:ustify-center items-center w-full lg:w-wrapper text-white font-roboto overflow-hidden h-[92.9vh] border-border border-x ">
+      <div className="flex justify-center items-center w-wrapper-sm md:w-full lg:w-1/2 p-0 md:p-8 mt-4 md:mt-0">
         <div className="grid grid-cols-1 lg:grid-rows-12 w-full">
-          <div className="row-span-2 p-2 justify-center items-center flex border border-b-0 border-1 border-gray-300 w-[15%]">
+          <div className="row-span-2 p-2 justify-center items-center hidden md:flex border border-b-0 border-1 border-gray-300 w-[15%]">
             <Image src="/1.png" width={40} height={40} alt="" />
           </div>
-          <div className="row-span-2 justify-left p-6 text-sm items-center flex border border-1 border-gray-300">
+          <div className="row-span-2 justify-left p-4 pl-16 md:pl-6 md:p-6 text-xs md:text-sm items-center flex border border-1 border-gray-300 relative">
+            <div className="h-full absolute top-0 left-0 aspect-square flex md:hidden items-center justify-center border-r border-gray-300">
+              <Image
+                src="/1.png"
+                width={40}
+                height={40}
+                alt=""
+                className="w-7 h-auto"
+              />
+            </div>
             A WEEK OF TECHNICAL INNOVATION
           </div>
-          <div className="row-span-2 justify-left p-6 text-sm items-center flex text-gray-400 border-r-0">
+          <div className="row-span-2 justify-left p-3 pl-16 md:pl-6 md:p-6 text-xs md:text-sm items-center flex text-gray-400 border-r-0">
             WITH 30+ HACKATHONS
           </div>
         </div>
       </div>
-      <div className="flex justify-center items-center w-full lg:w-1/2 mt-28 lg:mt-0 p-8">
+      <div className="hidden md:flex justify-center items-center w-[70%] lg:w-1/2 mt-60 md:mt-28 lg:mt-0 p-0 md:p-8 relative z-[100] md:z-0">
         <div className="grid grid-cols-1 lg:grid-rows-16 w-full">
-          <div className="row-span-2 justify-end p-4 text-xl items-center flex border border-1 border-gray-300 border-b-0 gap-6 font-bold">
+          <div className="row-span-2 justify-end p-4 text-xl items-center flex  border border-1 border-gray-300 border-b-0 gap-6 font-bold ">
             <TbClockHour4 />
             <CountdownTimer targetDate="2025-02-03T08:00:00" />
           </div>
@@ -80,6 +89,7 @@ export default function HeroCenter() {
             AND MUCH MORE
           </div>
           <div className="row-span-4 text-sm flex items-center justify-end text-gray-400 text-right pr-6 lg:order-7 order-9"></div>
+
           <div className="row-span-2 text-sm grid grid-cols-[85%_15%] lg:order-8 order-2">
             <div className="flex items-center justify-end text-right border border-gray-300 p-4 gap-12 text-[#76C38F]">
               <Image

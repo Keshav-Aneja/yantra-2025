@@ -7,17 +7,17 @@ interface Props {
 const TimelineHover = ({ className }: Props) => {
   return (
     <div
-      className={cn("w-[25%] absolute z-[1000]  bg-white ", className)}
+      className={cn("w-1/2 md:w-[25%] absolute z-[1000]  bg-white ", className)}
       style={{
         clipPath: "polygon(8% 0, 100% 0, 100% 100%, 0% 100%, 0 10%)",
       }}
     >
-      <span className="absolute bottom-4 left-4  z-50">
+      <span className="absolute bottom-2 md:bottom-4 left-2 md:left-4  z-50">
         {" "}
-        <h1 className="text-black text-xl font-semibold font-roboto">
+        <h1 className="text-black text-xs md:text-xl font-semibold font-roboto">
           WEEK INAUGURATION
         </h1>
-        <p className="text-xs ">
+        <p className="text-[0.6rem] md:text-xs ">
           Dolor esse do fugiat culpa laborum occaecat excepteur ipsum.{" "}
         </p>
       </span>

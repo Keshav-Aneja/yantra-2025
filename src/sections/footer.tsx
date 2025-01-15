@@ -78,7 +78,7 @@ const Footer = () => {
                   />
                   <p
                     className={
-                      "max-md:text-sm w-full break-all overflow-visible whitespace-normal"
+                      "max-md:text-xs w-full break-all overflow-visible whitespace-normal"
                     }
                   >
                     {contact.text}
@@ -126,7 +126,7 @@ const Footer = () => {
       </div>
       <div
         className={
-          "flex justify-between items-center text-xs md:border-t md:border-border mx-8 md:pt-4 max-md:flex-col max-md:text-center max-md:gap-4 max-md:mt-2"
+          "flex justify-between items-center text-[0.6rem] md:text-xs md:border-t md:border-border mx-8 md:pt-4 max-md:flex-col max-md:text-center max-md:gap-4 max-md:mt-2"
         }
       >
         <p>2025 © Vellore Institute of Technology, Vellore</p>
