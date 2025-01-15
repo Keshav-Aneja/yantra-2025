@@ -68,21 +68,21 @@ export default function AboutSection() {
       <div className="border-r border-b border-border flex flex-col p-4 justify-end items-srart h-[7rem] md:h-[10rem] min-h-fit">
         <span className="font-mono text-xl md:text-2xl font-medium flex items-center gap-3">
           <BiSolidRightArrow size={10} />
-          <h2>ABOUT OFFICE OF STUDENT WELFARE</h2>
+          <h2>ABOUT OFFICE OF STUDENTS' WELFARE</h2>
         </span>
       </div>
       <div className="border-b border-border flex flex-col justify-between">
         <div className="text-left font-mono border border-border border-t-0 border-l-0 p-2 px-4 md:px-6 self-start text-[0.6rem] md:text-sm">
-          DSW
+          SW
         </div>
         <div className="flex-grow flex items-center justify-center">
           {/* <BuildingIcon className="text-[#00ff00] w-32 h-auto" /> */}
           <Image
-            src="/images/about-dsw.webp"
+            src="/images/sw-outline.svg"
             alt="Student Welfare Office"
             width={700}
             height={400}
-            className="w-[70%] h-auto"
+            className="w-[70%] h-auto "
           />
         </div>
       </div>
