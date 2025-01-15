@@ -9,7 +9,6 @@ import AboutSection from "@/sections/About";
 import Hero from "@/sections/Hero";
 import Timeline from "@/sections/Timeline";
 import SponsorCard from "@/components/sponsor-card";
-import Chatbot from "@/components/Chatbot";
 import Sponsors from "@/sections/sponsors";
 import { sponsors } from "@/constants/sponsors";
 import PrizePool from "@/sections/PrizePool";
@@ -19,7 +18,6 @@ export default function Home() {
   return (
     <div className="min-h-screen w-full bg-black">
       <Navbar />
-      <Chatbot />
       <Hero />
       <PrizePool />
       <AboutSection />
