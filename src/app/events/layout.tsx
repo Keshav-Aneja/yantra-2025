@@ -9,7 +9,9 @@ export default function EventsPageLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className={"w-full h-full min-h-screen bg-background"}>
+    <div
+      className={"w-full h-full min-h-screen bg-background overflow-x-hidden"}
+    >
       <Navbar />
       {children}
       <Footer />

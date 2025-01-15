@@ -30,7 +30,7 @@ const EventCardContainer = ({
 }) => {
   return (
     <Link href={`/events/${id}`}>
-      <div className={`w-fit h-fit ${containerClass}`}>
+      <div className={`w-fit h-fit  ${containerClass}`}>
         <div className={"event-card-border"}>
           <div className={"event-card"}>{children}</div>
         </div>

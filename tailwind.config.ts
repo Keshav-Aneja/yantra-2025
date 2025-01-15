@@ -13,44 +13,29 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: 'black',
-        border: '#353539'
+        background: "black",
+        border: "#353539",
       },
       width: {
-        wrapper: '75%',
-        'wrapper-md': '80%'
+        wrapper: "75%",
+        "wrapper-sm": "92%",
       },
       fontFamily: {
-        roboto: [
-          'Roboto Mono',
-          'Plus Jakarta Sans'
-        ],
-        space_mono: [
-          'Space Mono',
-          'serif'
-        ],
-        roboto_mono: [
-          'Roboto Mono',
-          'serif'
-        ],
-        armstrong: [
-          'Armstrong',
-          'Plus Jakarta Sans'
-        ],
-        armstrongBold: [
-          'ArmstrongBold',
-          'Plus Jakarta Sans'
-        ]
+        roboto: ["Roboto Mono", "Plus Jakarta Sans"],
+        space_mono: ["Space Mono", "serif"],
+        roboto_mono: ["Roboto Mono", "serif"],
+        armstrong: ["Armstrong", "Plus Jakarta Sans"],
+        armstrongBold: ["ArmstrongBold", "Plus Jakarta Sans"],
       },
       gridTemplateRows: {
-        '16': 'repeat(16, minmax(0, 1fr))'
+        "16": "repeat(16, minmax(0, 1fr))",
       },
       borderRadius: {
-        lg: 'var(--radius)',
-        md: 'calc(var(--radius) - 2px)',
-        sm: 'calc(var(--radius) - 4px)'
-      }
-    }
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
+      },
+    },
   },
   plugins: [tailwindcssAnimate],
 } satisfies Config;

@@ -50,12 +50,12 @@ const EventsPage = () => {
     >
       <div
         className={
-          "w-wrapper max-md:w-wrapper-md flex items-center max-md:justify-center border border-border p-8"
+          "w-wrapper-sm md:w-wrapper  flex items-center max-md:justify-center border border-border p-8"
         }
       >
         <OurEvents className={"w-80 h-24 max-md:w-60 max-md:h-20"} />
       </div>
-      <div className={"max-md:w-wrapper-md w-wrapper relative"}>
+      <div className={"w-wrapper-sm md:w-wrapper relative"}>
         <div className="border border-white max-lg:border-b-0 lg:border-r-0 px-4 pr-8 py-3 text-white max-md:text-sm lg:absolute lg:top-0 lg:right-full font-space_mono text-xs">
           CATEGORIES
         </div>
@@ -67,7 +67,7 @@ const EventsPage = () => {
       </div>
       <div
         className={
-          "w-wrapper max-md:w-wrapper-md border border-border relative"
+          "w-wrapper-sm md:w-wrapper p-4  border border-border relative"
         }
       >
         <div className={"flex justify-between h-full w-full absolute"}>

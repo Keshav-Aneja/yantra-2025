@@ -3,7 +3,7 @@ import Image from "next/image";
 interface Props {
   img: string;
   name: string;
-  position: string;
+  position?: string;
   title: string;
 }
 const TeamCard = ({ data }: { data: Props }) => {
@@ -17,9 +17,11 @@ const TeamCard = ({ data }: { data: Props }) => {
           height={20}
           className=" w-[8px] invert h-auto"
         />{" "}
-        <h2 className="font-space_mono uppercase">{data.name}</h2>
+        <h2 className="font-space_mono uppercase text-xs md:text-base">
+          {data.name}
+        </h2>
       </span>
-      <div className="w-[80%] aspect-[0.9] overflow-hidden">
+      <div className="w-[90%] md:w-[80%] aspect-[0.9] overflow-hidden">
         <Image
           src={data.img}
           width={400}
@@ -28,7 +30,9 @@ const TeamCard = ({ data }: { data: Props }) => {
           className="w-full object-cover h-full"
         />
       </div>
-      <span className="w-full font-space_mono text-sm">{data.title}</span>
+      <span className="w-full font-space_mono text-xs md:text-sm">
+        {data.title}
+      </span>
     </div>
   );
 };

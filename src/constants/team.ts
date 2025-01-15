@@ -24,3 +24,136 @@ export const team = [
     title: "Patron",
   },
 ];
+
+export const teamPageData = [
+  {
+    title: "Chief Patron",
+    people: [
+      {
+        name: "Dr. G. Vishwanathan",
+        title: "Founder & Chancellor",
+        img: "https://imgur.com/zwGBgWz.png",
+      },
+    ],
+  },
+  {
+    title: "Patron",
+    people: [
+      {
+        name: "Dr. G. Vishwanathan",
+        title: "Founder & Chancellor",
+        img: "https://imgur.com/zwGBgWz.png",
+      },
+      {
+        name: "Dr. G. Vishwanathan",
+        title: "Founder & Chancellor",
+        img: "https://imgur.com/zwGBgWz.png",
+      },
+      {
+        name: "Dr. G. Vishwanathan",
+        title: "Founder & Chancellor",
+        img: "https://imgur.com/zwGBgWz.png",
+      },
+    ],
+  },
+  {
+    title: "Co-Patron",
+    people: [
+      {
+        name: "Dr. G. Vishwanathan",
+        title: "Founder & Chancellor",
+        img: "https://imgur.com/zwGBgWz.png",
+      },
+      {
+        name: "Dr. G. Vishwanathan",
+        title: "Founder & Chancellor",
+        img: "https://imgur.com/zwGBgWz.png",
+      },
+      {
+        name: "Dr. G. Vishwanathan",
+        title: "Founder & Chancellor",
+        img: "https://imgur.com/zwGBgWz.png",
+      },
+    ],
+  },
+  {
+    title: "Director of Student's Welfare",
+    people: [
+      {
+        name: "Dr. G. Vishwanathan",
+        title: "Founder & Chancellor",
+        img: "https://imgur.com/zwGBgWz.png",
+      },
+    ],
+  },
+  {
+    title: "Assistant Director of Student's Welfare",
+    people: [
+      {
+        name: "Dr. G. Vishwanathan",
+        title: "Founder & Chancellor",
+        img: "https://imgur.com/zwGBgWz.png",
+      },
+      {
+        name: "Dr. G. Vishwanathan",
+        title: "Founder & Chancellor",
+        img: "https://imgur.com/zwGBgWz.png",
+      },
+      {
+        name: "Dr. G. Vishwanathan",
+        title: "Founder & Chancellor",
+        img: "https://imgur.com/zwGBgWz.png",
+      },
+    ],
+  },
+  {
+    title: "Student Organizers",
+    people: [
+      {
+        name: "Dr. G. Vishwanathan",
+        title: "Founder & Chancellor",
+        img: "https://imgur.com/zwGBgWz.png",
+      },
+      {
+        name: "Dr. G. Vishwanathan",
+        title: "Founder & Chancellor",
+        img: "https://imgur.com/zwGBgWz.png",
+      },
+      {
+        name: "Dr. G. Vishwanathan",
+        title: "Founder & Chancellor",
+        img: "https://imgur.com/zwGBgWz.png",
+      },
+      {
+        name: "Dr. G. Vishwanathan",
+        title: "Founder & Chancellor",
+        img: "https://imgur.com/zwGBgWz.png",
+      },
+      {
+        name: "Dr. G. Vishwanathan",
+        title: "Founder & Chancellor",
+        img: "https://imgur.com/zwGBgWz.png",
+      },
+      {
+        name: "Dr. G. Vishwanathan",
+        title: "Founder & Chancellor",
+        img: "https://imgur.com/zwGBgWz.png",
+      },
+      {
+        name: "Dr. G. Vishwanathan",
+        title: "Founder & Chancellor",
+        img: "https://imgur.com/zwGBgWz.png",
+      },
+      {
+        name: "Dr. G. Vishwanathan",
+        title: "Founder & Chancellor",
+        img: "https://imgur.com/zwGBgWz.png",
+      },
+      {
+        name: "Dr. G. Vishwanathan",
+        title: "Founder & Chancellor",
+        img: "https://imgur.com/zwGBgWz.png",
+      },
+    ],
+  },
+];
