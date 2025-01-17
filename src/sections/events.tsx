@@ -22,8 +22,8 @@ interface EventsProps {
 
 const Events = ({ events, related }: EventsProps) => {
   const [api, setApi] = useState<CarouselApi>();
-  const { prevBtnDisabled, nextBtnDisabled, onNextBtnClick, onPrevBtnClick } =
-    usePrevNextButtons(api);
+  // const { prevBtnDisabled, nextBtnDisabled, onNextBtnClick, onPrevBtnClick } =
+  //   usePrevNextButtons(api);
 
   return (
     <section className={"h-full w-full"}>
