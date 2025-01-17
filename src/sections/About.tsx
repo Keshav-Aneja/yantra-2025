@@ -78,11 +78,11 @@ export default function AboutSection() {
         <div className="flex-grow flex items-center justify-center">
           {/* <BuildingIcon className="text-[#00ff00] w-32 h-auto" /> */}
           <Image
-            src="/images/sw-outline.svg"
+            src="/images/main-building.svg"
             alt="Student Welfare Office"
             width={700}
             height={400}
-            className="w-[70%] h-auto "
+            className="w-[80%] h-auto"
           />
         </div>
       </div>

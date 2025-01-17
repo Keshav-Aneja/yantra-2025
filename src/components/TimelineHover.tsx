@@ -3,8 +3,11 @@ import React from "react";
 import Image from "next/image";
 interface Props {
   className: string;
+  image: string,
+  title: string,
+  description: string,
 }
-const TimelineHover = ({ className }: Props) => {
+const TimelineHover = ({ className, image, title, description }: Props) => {
   return (
     <div
       className={cn("w-1/2 md:w-[25%] absolute z-[1000]  bg-white ", className)}
@@ -14,15 +17,15 @@ const TimelineHover = ({ className }: Props) => {
     >
       <span className="absolute bottom-2 md:bottom-4 left-2 md:left-4  z-50">
         {" "}
-        <h1 className="text-black text-xs md:text-xl font-semibold font-roboto">
-          WEEK INAUGURATION
+        <h1 className="text-black text-xs md:text-xl font-semibold font-roboto uppercase">
+          {title}
         </h1>
         <p className="text-[0.6rem] md:text-xs ">
-          Dolor esse do fugiat culpa laborum occaecat excepteur ipsum.{" "}
+          {description}
         </p>
       </span>
       <Image
-        src={"/images/sample.png"}
+        src={image}
         alt=""
         width={600}
         height={500}

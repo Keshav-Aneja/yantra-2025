@@ -8,15 +8,53 @@ interface Event {
   week: string;
   title: string;
   date: string;
+  image: string;
+  description: string,
 }
 
 const events: Event[] = [
-  { week: "Week", title: "Inauguration", date: "06 JUN" },
-  { week: "Week", title: "Event 2", date: "13 JUN" },
-  { week: "Week", title: "Event 3", date: "20 JUN" },
-  { week: "Week", title: "Event 4", date: "27 JUN" },
-  { week: "Week", title: "Event 5", date: "04 JUL" },
-  { week: "Week", title: "Event 6", date: "11 JUL" },
+  {
+    week: "Week",
+    title: "Inauguration",
+    description: "Dolor esse do fugiat culpa laborum occaecat excepteur ipsum.",
+    date: "06 JUN",
+    image: "/images/timeline/inaugration.png"
+  },
+  {
+    week: "Week",
+    title: "Tech Competition",
+    description: "Dolor esse do fugiat culpa laborum occaecat excepteur ipsum.",
+    date: "13 JUN",
+    image: "/images/timeline/tech-competition.png"
+  },
+  {
+    week: "Week",
+    title: "Hackathon",
+    description: "Dolor esse do fugiat culpa laborum occaecat excepteur ipsum.",
+    date: "20 JUN",
+    image: "/images/timeline/hackathon-1.png"
+  },
+  {
+    week: "Week",
+    title: "Workshop",
+    description: "Dolor esse do fugiat culpa laborum occaecat excepteur ipsum.",
+    date: "27 JUN",
+    image: "/images/timeline/workshop.png"
+  },
+  {
+    week: "Week",
+    title: "Tech Talk",
+    description: "Dolor esse do fugiat culpa laborum occaecat excepteur ipsum.",
+    date: "04 JUL",
+    image: "/images/timeline/tech-talk.png"
+  },
+  {
+    week: "Week",
+    title: "Hackathon",
+    description: "Dolor esse do fugiat culpa laborum occaecat excepteur ipsum.",
+    date: "11 JUL",
+    image: "/images/timeline/hackathon-2.png"
+  },
 ];
 
 export default function Timeline() {
@@ -110,6 +148,9 @@ export default function Timeline() {
                 </div>
               </div>
               <TimelineHover
+                title={event.title}
+                description={event.description}
+                image={event.image}
                 className={`group-hover:flex hidden top-20 md:top-28  ${
                   index % 2 === 1
                     ? "flex-row-reverse   right-[-0.05rem]"
