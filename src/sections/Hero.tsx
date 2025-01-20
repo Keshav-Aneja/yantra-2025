@@ -2,6 +2,8 @@ import React from "react";
 import Image from "next/image";
 import HeroCenter from "@/components/Hero-Center";
 import { FaArrowDown } from "react-icons/fa";
+import { TbClockHour4 } from "react-icons/tb";
+import CountdownTimer from "@/components/CountdownTimer";
 
 const Hero = () => {
   return (
@@ -23,7 +25,7 @@ const Hero = () => {
           />
         </div>
       </div>
-      <div className="absolute bottom-28 md:bottom-16 left-4 md:left-8 p-4 space-y-1">
+      <div className="absolute bottom-72 md:bottom-16 left-4 md:left-8 p-4 space-y-1">
         <div className="text-white p-2 text-xs w-2/3 font-roboto">
           <span className="whitespace-nowrap text-sm  md:text-2xl">
             OFFICE OF STUDENTS&apos; WELFARE
@@ -33,38 +35,88 @@ const Hero = () => {
         <div className="text-white p-2 text-4xl sm:text-5xl md:text-7xl font-armstrong">
           YANTRA &apos;25
         </div>
-      </div>
-      {/* <div className="absolute right-0 top-1/2 transform -translate-y-1/2 flex flex-col items-center space-y-12 mr-4 mt-8">
-        <div className="flex flex-col items-center space-y-12">
-          <div className="w-3 h-3 bg-gray-500 rounded-full"></div>
-          <div className="w-3 h-3 bg-gray-500 rounded-full"></div>
-          <div className="w-3 h-3 bg-gray-500 rounded-full"></div>
-          <div className="w-3 h-3 bg-gray-500 rounded-full"></div>
-          <div className="w-3 h-3 bg-gray-500 rounded-full"></div>
-          <div className="w-3 h-3 bg-gray-500 rounded-full"></div>
-          <div className="w-3 h-3 bg-gray-500 rounded-full"></div>
-          <div className="w-3 h-3 bg-gray-500 rounded-full"></div>
-          <div className="w-3 h-3 bg-gray-500 rounded-full"></div>
         </div>
-        <div className="mt-4">
-          <button className="w-8 h-8 bg-gray-500 rounded-full flex items-center justify-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              className="w-4 h-4 text-white"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M19 9l-7 7-7-7"
+      <div className="absolute -bottom-12 xl:hidden justify-center items-center w-full text-white">
+        <div className="grid grid-cols-1 lg:grid-rows-16 w-full p-5">
+          <div className="row-span-2 text-sm grid grid-cols-[80%_20%] lg:order-1 order-3">
+            <div className="flex items-center justify-end text-right border border-gray-300 p-6 gap-14">
+              <Image
+                src="/icons/arrow-right-solid.svg"
+                alt=""
+                width={20}
+                height={20}
+                className="scale-x-[-1] w-[6px] h-auto"
               />
-            </svg>
-          </button>
+              <span>PARTICIPANTS</span>
+            </div>
+            <div className="flex items-center justify-center border border-gray-300 p-6 border-l-0 text-xl">
+              10L+
+            </div>
+          </div>
+          <div className="row-span-1 text-sm flex items-center justify-end text-gray-400 text-right lg:order-2 order-4"></div>
+          <div className="row-span-1 text-sm border border-[#353539] border-b-0 pr-6 uppercase h-full flex items-center justify-end lg:order-3 order-5">
+            <div className="flex items-center justify-between text-gray-300 text-right h-full w-1/3">
+              <Image
+                src="/icons/arrow-right-solid.svg"
+                alt=""
+                width={20}
+                height={20}
+                className="scale-x-[-1] w-[6px] h-auto"
+              />
+              <span>HACKATHONS</span>
+            </div>
+          </div>
+          <div className="row-span-1 text-sm border border-[#353539] border-b-0 pr-6 uppercase h-full flex items-center justify-end lg:order-4 order-6">
+            <div className="flex items-center justify-between text-gray-300 text-right h-full w-1/3">
+              <Image
+                src="/icons/arrow-right-solid.svg"
+                alt=""
+                width={20}
+                height={20}
+                className="scale-x-[-1] w-[6px] h-auto"
+              />
+              <span>WORKSHOPS</span>
+            </div>
+          </div>
+          <div className="row-span-1 text-sm border border-[#353539] border-b-0 pr-6 uppercase h-full flex items-center justify-end lg:order-5 order-7">
+            <div className="flex items-center justify-between text-gray-300 text-right h-full w-1/3">
+              <Image
+                src="/icons/arrow-right-solid.svg"
+                alt=""
+                width={20}
+                height={20}
+                className="scale-x-[-1] w-[6px] h-auto"
+              />
+              <span>GUEST SESSIONS</span>
+            </div>
+          </div>
+          <div className="row-span-1 text-sm flex items-center justify-end text-gray-400 text-right border border-[#353539] pr-6 uppercase lg:order-6 order-8">
+            AND MUCH MORE
+          </div>
+          <div className="row-span-4 text-sm flex items-center justify-end text-gray-400 text-right pr-6 lg:order-7 order-9"></div>
+          <div className="row-span-4 text-sm grid  lg:order-8 order-2">
+            <div className="row-span-2 justify-end p-4 text-xl items-center flex  border border-1 border-gray-300 border-b-0 gap-6 font-bold ">
+              <TbClockHour4 />
+              <CountdownTimer targetDate="2025-02-03T08:00:00" />
+            </div>
+            <div className="row-span-2 text-sm grid  lg:order-8 order-2 grid-cols-[80%_20%]">
+              <div className="flex items-center justify-end text-right border border-gray-300 p-4 gap-12 text-[#76C38F]">
+                <Image
+                  src="/icons/arrow-right-solid.svg"
+                  alt=""
+                  width={20}
+                  height={20}
+                  className="scale-x-[-1] w-[6px] h-auto"
+                />
+                <span className="text-base text-gradient">FEBRUARY, 2025</span>
+              </div>
+              <div className="flex text-lg text-gradient font-bold items-center justify-center border border-gray-300 p-4 border-l-0 text-[#76C38F]">
+                3-9
+              </div>
+            </div>
+          </div>
         </div>
-      </div> */}
+      </div>
     </>
   );
 };

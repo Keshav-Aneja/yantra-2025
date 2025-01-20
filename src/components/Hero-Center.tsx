@@ -27,7 +27,7 @@ export default function HeroCenter() {
           </div>
         </div>
       </div>
-      <div className="hidden md:flex justify-center items-center w-[70%] lg:w-1/2 mt-60 md:mt-28 lg:mt-0 p-0 md:p-8 relative z-[100] md:z-0">
+      <div className="hidden xl:flex justify-center items-center w-[70%] lg:w-1/2 mt-60 md:mt-28 lg:mt-0 p-0 md:p-8 relative z-[100] md:z-0">
         <div className="grid grid-cols-1 lg:grid-rows-16 w-full">
           <div className="row-span-2 text-sm grid grid-cols-[85%_15%] lg:order-1 order-3">
             <div className="flex items-center justify-end text-right border border-gray-300 p-6 gap-14">
