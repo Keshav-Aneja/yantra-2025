@@ -50,7 +50,7 @@ export default function FAQSection() {
               </div>
               <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-[2px]">
                 {group.people.map((person, _i) => (
-                  <TeamCard data={person} />
+                  <TeamCard key={person.name} data={person} />
                 ))}
               </div>
             </div>

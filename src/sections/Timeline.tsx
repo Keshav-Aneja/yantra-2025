@@ -15,46 +15,39 @@ interface Event {
 const events: Event[] = [
   {
     week: "Week",
-    title: "Inauguration",
-    description: "Dolor esse do fugiat culpa laborum occaecat excepteur ipsum.",
-    date: "06 JUN",
+    title: "Proctor-Proctee Form",
+    description: "Students coordinate with their proctors to register for the Proctor-Proctee Hackathon via the official form.",
+    date: "14th - 22nd JAN",
     image: "/images/timeline/inaugration.png"
   },
   {
     week: "Week",
-    title: "Tech Competition",
-    description: "Dolor esse do fugiat culpa laborum occaecat excepteur ipsum.",
-    date: "13 JUN",
+    title: "Interact Account Creation",
+    description: "All participants create their accounts on Interact, the hackathon management platform.",
+    date: "21st JAN",
     image: "/images/timeline/tech-competition.png"
   },
   {
     week: "Week",
-    title: "Hackathon",
-    description: "Dolor esse do fugiat culpa laborum occaecat excepteur ipsum.",
-    date: "20 JUN",
+    title: "Proctor-Proctee Ideas Form",
+    description: "Teams submit their innovative project ideas in collaboration with their proctors.",
+    date: "22nd - 28th JAN",
     image: "/images/timeline/hackathon-1.png"
   },
   {
     week: "Week",
-    title: "Workshop",
-    description: "Dolor esse do fugiat culpa laborum occaecat excepteur ipsum.",
-    date: "27 JUN",
+    title: "Central Hack Selection",
+    description: "Final project ideas are reviewed and selected for the Central Hackathon.",
+    date: "28th/29th JAN",
     image: "/images/timeline/workshop.png"
   },
   {
     week: "Week",
-    title: "Tech Talk",
-    description: "Dolor esse do fugiat culpa laborum occaecat excepteur ipsum.",
-    date: "04 JUL",
+    title: "Proctor-Proctee Screen",
+    description: "Teams are screened and finalized for participation in the Proctor-Proctee Hackathon.",
+    date: "29th JAN",
     image: "/images/timeline/tech-talk.png"
-  },
-  {
-    week: "Week",
-    title: "Hackathon",
-    description: "Dolor esse do fugiat culpa laborum occaecat excepteur ipsum.",
-    date: "11 JUL",
-    image: "/images/timeline/hackathon-2.png"
-  },
+  }
 ];
 
 export default function Timeline() {
@@ -128,12 +121,12 @@ export default function Timeline() {
                   zIndex: 50,
                 }}
               >
-                <div className="flex justify-between items-center font-space_mono text-xs md:text-xl font-medium   ">
+                <div className="flex justify-between items-center font-space_mono text-xs md:text-base font-medium   ">
                   <div>
                     <div>{event.week}</div>
                     <div>{event.title}</div>
                   </div>
-                  <div className={` mt-1 text-sm md:text-[1.325rem] `}>
+                  <div className={` mt-1 text-sm md:text-base `}>
                     {event.date}
                   </div>
                 </div>
