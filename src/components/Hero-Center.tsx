@@ -29,10 +29,6 @@ export default function HeroCenter() {
       </div>
       <div className="hidden md:flex justify-center items-center w-[70%] lg:w-1/2 mt-60 md:mt-28 lg:mt-0 p-0 md:p-8 relative z-[100] md:z-0">
         <div className="grid grid-cols-1 lg:grid-rows-16 w-full">
-          <div className="row-span-2 justify-end p-4 text-xl items-center flex  border border-1 border-gray-300 border-b-0 gap-6 font-bold ">
-            <TbClockHour4 />
-            <CountdownTimer targetDate="2025-02-03T08:00:00" />
-          </div>
           <div className="row-span-2 text-sm grid grid-cols-[85%_15%] lg:order-1 order-3">
             <div className="flex items-center justify-end text-right border border-gray-300 p-6 gap-14">
               <Image
@@ -89,20 +85,25 @@ export default function HeroCenter() {
             AND MUCH MORE
           </div>
           <div className="row-span-4 text-sm flex items-center justify-end text-gray-400 text-right pr-6 lg:order-7 order-9"></div>
-
-          <div className="row-span-2 text-sm grid grid-cols-[85%_15%] lg:order-8 order-2">
-            <div className="flex items-center justify-end text-right border border-gray-300 p-4 gap-12 text-[#76C38F]">
-              <Image
-                src="/icons/arrow-right-solid.svg"
-                alt=""
-                width={20}
-                height={20}
-                className="scale-x-[-1] w-[6px] h-auto"
-              />
-              <span className="text-base text-gradient">FEBRUARY, 2025</span>
+          <div className="row-span-4 text-sm grid  lg:order-8 order-2">
+            <div className="row-span-2 justify-end p-4 text-xl items-center flex  border border-1 border-gray-300 border-b-0 gap-6 font-bold ">
+              <TbClockHour4 />
+              <CountdownTimer targetDate="2025-02-03T08:00:00" />
             </div>
-            <div className="flex text-lg text-gradient font-bold items-center justify-center border border-gray-300 p-4 border-l-0 text-[#76C38F]">
-              3-9
+            <div className="row-span-2 text-sm grid  lg:order-8 order-2 grid-cols-[85%_15%]">
+              <div className="flex items-center justify-end text-right border border-gray-300 p-4 gap-12 text-[#76C38F]">
+                <Image
+                  src="/icons/arrow-right-solid.svg"
+                  alt=""
+                  width={20}
+                  height={20}
+                  className="scale-x-[-1] w-[6px] h-auto"
+                />
+                <span className="text-base text-gradient">FEBRUARY, 2025</span>
+              </div>
+              <div className="flex text-lg text-gradient font-bold items-center justify-center border border-gray-300 p-4 border-l-0 text-[#76C38F]">
+                3-9
+              </div>
             </div>
           </div>
         </div>
