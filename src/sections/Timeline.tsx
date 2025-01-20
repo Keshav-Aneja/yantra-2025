@@ -9,45 +9,50 @@ interface Event {
   title: string;
   date: string;
   image: string;
-  description: string,
+  description: string;
 }
 
 const events: Event[] = [
   {
     week: "Week",
     title: "Proctor-Proctee Form",
-    description: "Students coordinate with their proctors to register for the Proctor-Proctee Hackathon via the official form.",
+    description:
+      "Students coordinate with their proctors to register for the Proctor-Proctee Hackathon via the official form.",
     date: "14th - 22nd JAN",
-    image: "/images/timeline/inaugration.png"
+    image: "/images/timeline/inaugration.png",
   },
   {
     week: "Week",
     title: "Interact Account Creation",
-    description: "All participants create their accounts on Interact, the hackathon management platform.",
+    description:
+      "All participants create their accounts on Interact, the hackathon management platform.",
     date: "21st JAN",
-    image: "/images/timeline/tech-competition.png"
+    image: "/images/timeline/tech-competition.png",
   },
   {
     week: "Week",
     title: "Proctor-Proctee Ideas Form",
-    description: "Teams submit their innovative project ideas in collaboration with their proctors.",
+    description:
+      "Teams submit their innovative project ideas in collaboration with their proctors.",
     date: "22nd - 28th JAN",
-    image: "/images/timeline/hackathon-1.png"
+    image: "/images/timeline/hackathon-1.png",
   },
   {
     week: "Week",
     title: "Central Hack Selection",
-    description: "Final project ideas are reviewed and selected for the Central Hackathon.",
+    description:
+      "Final project ideas are reviewed and selected for the Central Hackathon.",
     date: "28th/29th JAN",
-    image: "/images/timeline/workshop.png"
+    image: "/images/timeline/workshop.png",
   },
   {
     week: "Week",
     title: "Proctor-Proctee Screen",
-    description: "Teams are screened and finalized for participation in the Proctor-Proctee Hackathon.",
+    description:
+      "Teams are screened and finalized for participation in the Proctor-Proctee Hackathon.",
     date: "29th JAN",
-    image: "/images/timeline/tech-talk.png"
-  }
+    image: "/images/timeline/tech-talk.png",
+  },
 ];
 
 export default function Timeline() {
@@ -91,44 +96,43 @@ export default function Timeline() {
           </div>
         </div>
       </div>
-      <div className="relative mx-auto px-4 py-8  px-24">
-        <div className="absolute left-8 md:left-1/2 transform md:-translate-x-1/2 w-px top-0 h-full bg-border " />
-        <div className="relative">
+      <div className="relative mx-auto px-4 py-8 md:px-6 xl:px-24">
+        <div className="absolute left-8 md:left-1/2 transform md:-translate-x-1/2 w-px top-0 h-full bg-border" />
+        <div className="relative grid gap-8">
           {events.map((event, index) => (
             <div
               key={index}
-              className={`group flex items-center mb-3 md:mb-8 relative ${
+              className={`group flex flex-col md:flex-row items-center mb-3 md:mb-8 relative ${
                 index % 2 === 1 ? "md:flex-row-reverse" : ""
               }`}
             >
               <div
-                className={`w-full md:w-[calc(50%-5.9rem)] h-[calc(100%+0.1rem)] bg-border absolute  z-[-10]  
-                  ${
-                    index % 2 === 1
-                      ? "md:flex-row-reverse top-[-0.05rem] right-[-0.05rem]"
-                      : "top-[-0.05rem] left-[-0.05rem]"
-                  }`}
+                className={`w-full md:w-[calc(50%-3rem)] h-[calc(100%+0.1rem)] bg-border absolute z-[-10] ${
+                  index % 2 === 1
+                    ? "md:flex-row-reverse top-[-0.05rem] right-[-0.05rem]"
+                    : "top-[-0.05rem] left-[-0.05rem]"
+                }`}
                 style={{
                   clipPath:
                     "polygon(3% 0, 100% 0, 100% 85%, 97% 100%, 0% 100%, 0 15%)",
                 }}
               ></div>
               <div
-                className={`w-[80%] md:w-[calc(50%-6rem)]  relative left-12 p-4 bg-black border border-gray-800 text-white group-hover:gradient-bg group-hover:text-black transition-all duration-200 ease-linear rounded-lg `}
+                className={`w-[80%] md:w-[calc(50%-3rem)] relative p-4 bg-black border border-gray-800 text-white group-hover:gradient-bg group-hover:text-black transition-all duration-200 ease-linear rounded-lg ${
+                  index % 2 === 1 ? "md:ml-auto" : "md:mr-auto"
+                }`}
                 style={{
                   clipPath:
                     "polygon(3% 0, 100% 0, 100% 85%, 97% 100%, 0% 100%, 0 15%)",
                   zIndex: 50,
                 }}
               >
-                <div className="flex justify-between items-center font-space_mono text-xs md:text-base font-medium   ">
+                <div className="flex flex-col xl:flex-row md:flex-col justify-start items-start xl:justify-between xl:items-center font-space_mono text-xs md:text-base font-medium">
                   <div>
                     <div>{event.week}</div>
                     <div>{event.title}</div>
                   </div>
-                  <div className={` mt-1 text-sm md:text-base `}>
-                    {event.date}
-                  </div>
+                  <div className="mt-1 text-sm md:text-base">{event.date}</div>
                 </div>
               </div>
               <div className="w-4 h-4 md:w-8 md:h-8 absolute left-4 md:left-1/2 transform -translate-x-1/2">
@@ -144,11 +148,11 @@ export default function Timeline() {
                 title={event.title}
                 description={event.description}
                 image={event.image}
-                className={`group-hover:flex hidden top-20 md:top-28  ${
+                className={`group-hover:flex hidden top-20 md:top-28 ${
                   index % 2 === 1
-                    ? "flex-row-reverse   right-[-0.05rem]"
-                    : " left-[-1rem] md:left-[-0.05rem]"
-                } `}
+                    ? "flex-row-reverse right-[-0.05rem]"
+                    : "left-[-1rem] md:left-[-0.05rem]"
+                }`}
               />
             </div>
           ))}
