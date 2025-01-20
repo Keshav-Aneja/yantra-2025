@@ -37,11 +37,13 @@ const Team = () => {
         {team.map((member, _i) => (
           <TeamCard key={_i} data={member} />
         ))}
-        <button className="w-16 h-full --see-more-btn bg-gradient-to-r to-[#76C38F] from-[#A7C12C] absolute bottom-0 -right-20 max-sm:relative max-sm:right-0 max-sm:w-full max-sm:h-12 col-span-2 md:col-span-1">
-          <h2 className=" -rotate-90 font-space_mono text-xl md:text-2xl font-semibold text-nowrap flex items-center justify-center max-sm:rotate-0">
-            SEE MORE
-          </h2>
-        </button>
+          <Link href="/team">
+            <button className="w-16 h-full --see-more-btn bg-gradient-to-r to-[#76C38F] from-[#A7C12C] absolute bottom-0 -right-20 max-sm:relative max-sm:right-0 max-sm:w-full max-sm:h-12">
+              <h2 className=" -rotate-90 font-space_mono text-xl md:text-2xl font-semibold text-nowrap flex items-center justify-center max-sm:rotate-0">
+                SEE MORE
+              </h2>
+            </button>
+          </Link>
       </div>
       <div className="w-full h-20 md:h-44 ">
         <div className="w-1/2 h-full border-r border-border"></div>

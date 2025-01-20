@@ -25,7 +25,7 @@ const Hero = () => {
           />
         </div>
       </div>
-      <div className="absolute bottom-72 md:bottom-16 left-4 md:left-8 p-4 space-y-1">
+      <div className="absolute bottom-72 md:bottom-60 xl:bottom-16 left-4 md:left-8 p-4 space-y-1">
         <div className="text-white p-2 text-xs w-2/3 font-roboto">
           <span className="whitespace-nowrap text-sm  md:text-2xl">
             OFFICE OF STUDENTS&apos; WELFARE
