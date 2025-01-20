@@ -13,7 +13,7 @@ export default function Chatbot() {
   return (
     <div>
       <div
-        className="fixed bottom-5 right-5 bg-red-500 z-50 p-1 rounded-full "
+        className="fixed bottom-5 right-5 bg-red-500 z-50 p-1 rounded-full"
         style={{
           background:
             "linear-gradient(23.96deg, #76C38F 0%, #60CF8C 48.44%, #A7C12C 100%)",
@@ -32,7 +32,7 @@ export default function Chatbot() {
       </div>
       {isChatboxVisible && (
         <div
-          className="fixed bottom-28 right-5 bg-white z-50 p-4 rounded-lg shadow-lg w-[20vw]"
+          className="fixed bottom-28 right-5 bg-white z-50 p-4 rounded-lg shadow-lg w-[90vw] md:w-[60vw] lg:w-[30vw] xl:w-[20vw]"
           style={{
             backgroundColor: "#161616",
             color: "white",
@@ -46,10 +46,10 @@ export default function Chatbot() {
               X
             </button>
           </div>
-          <div className="max-h-[50vh] overflow-y-scroll py-5 ">
+          <div className="max-h-[50vh] overflow-y-scroll py-5">
             {/* Question */}
             <div className="flex justify-end mb-2">
-              <div className="bg-white p-4 rounded-2xl text-black max-w-[90%] ">
+              <div className="bg-white p-4 rounded-2xl text-black max-w-[90%]">
                 <p className="text-sm tracking-wider">
                   Hey, can you tell me about the Yantra event? I heard it’s
                   happening from 3rd to 9th January in VIT.
@@ -68,7 +68,7 @@ export default function Chatbot() {
             </div>
             {/* Question */}
             <div className="flex justify-end mb-2">
-              <div className="bg-white p-4 rounded-2xl text-black max-w-[90%] ">
+              <div className="bg-white p-4 rounded-2xl text-black max-w-[90%]">
                 <p className="text-sm tracking-wider">
                   Can you give me an overview first?
                 </p>
