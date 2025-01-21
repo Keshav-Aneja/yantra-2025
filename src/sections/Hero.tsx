@@ -4,6 +4,7 @@ import HeroCenter from "@/components/Hero-Center";
 import { FaArrowDown } from "react-icons/fa";
 import { TbClockHour4 } from "react-icons/tb";
 import CountdownTimer from "@/components/CountdownTimer";
+import {TextAnimate} from "@/components/ui/text-animate";
 
 const Hero = () => {
   return (
@@ -26,15 +27,28 @@ const Hero = () => {
         </div>
       </div>
       <div className="absolute bottom-72 md:bottom-68 xl:bottom-16 left-4 md:left-8 p-4 space-y-1">
-        <div className="text-white p-2 text-xs w-2/3 font-roboto">
-          <span className="whitespace-nowrap text-sm  md:text-2xl">
-            OFFICE OF STUDENTS&apos; WELFARE
-          </span>{" "}
-          PRESENTS
-        </div>
-        <div className="text-white p-2 text-4xl sm:text-5xl md:text-7xl font-armstrong">
-          YANTRA &apos;25
-        </div>
+          <div className="inline-block text-white p-2 text-xs w-2/3 font-roboto">
+              <TextAnimate
+                animation={"slideRight"}
+                by={"character"}
+                className={"whitespace-nowrap text-sm  md:text-2xl"}
+              >
+                OFFICE OF STUDENTS&apos; WELFARE
+              </TextAnimate>{" "}
+            <TextAnimate
+                animation={"slideRight"}
+                by={"character"}
+            >
+              PRESENTS
+            </TextAnimate>
+          </div>
+          <TextAnimate
+              className={"text-white p-2 text-4xl sm:text-5xl md:text-7xl font-armstrong"}
+              animation={"slideRight"}
+              by={"character"}
+          >
+              YANTRA &apos;25
+          </TextAnimate>
         </div>
       <div className="absolute -bottom-4 right-0 xl:hidden justify-center items-center text-white pb-12">
         <div className="grid grid-cols-1 lg:grid-rows-16 w-[90%] self-end">

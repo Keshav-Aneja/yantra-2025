@@ -1,5 +1,6 @@
-import React from "react";
+import React, {useEffect, useRef} from "react";
 import Image from "next/image";
+import {useAnimation, useInView, motion} from "motion/react";
 interface Props {
   img: string;
   name: string;
@@ -7,8 +8,30 @@ interface Props {
   title: string;
 }
 const TeamCard = ({ data }: { data: Props }) => {
+    const motionRef = useRef<HTMLDivElement>(null);
+    const controls = useAnimation();
+    const inView = useInView(motionRef, {
+        once: true
+    });
+
+    useEffect(()=>{
+        (async ()=>{
+            if (inView){
+                await controls.start("visible")
+            }
+        })()
+    }, [inView, controls])
+
   return (
-    <div className="w-full bg-white flex flex-col justify-center items-center gap-4 p-3">
+    <motion.div
+        className="w-full bg-white flex flex-col justify-center items-center gap-4 p-3"
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={controls}
+        variants={{
+            visible: { scale: 1, opacity: 1, transition: { duration: 0.5, ease: "easeOut" } },
+        }}
+        ref={motionRef}
+    >
       <span className="flex items-center gap-3 w-full">
         <Image
           src="/icons/arrow-right-solid.svg"
@@ -33,7 +56,7 @@ const TeamCard = ({ data }: { data: Props }) => {
       <span className="w-full font-space_mono text-xs md:text-sm">
         {data.title}
       </span>
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,6 +1,8 @@
 import { BiSolidRightArrow } from "react-icons/bi";
 import Image from "next/image";
+
 export default function AboutSection() {
+
   return (
     <div
       className="grid grid-cols-1 md:grid-cols-2  bg-[#0a0a0a] text-white border border-border w-wrapper-sm md:w-wrapper mx-auto"

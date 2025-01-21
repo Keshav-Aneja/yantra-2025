@@ -1,9 +1,10 @@
-import React from "react";
+import React, {useEffect, useRef} from "react";
 import "@/styles/events/event-card.css";
 import Image from "next/image";
 import EventImageContainer from "@/components/event-image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import {useInView, useAnimation, motion} from "motion/react";
 
 interface Organisation {
   logo: string;
@@ -29,13 +30,36 @@ const EventCardContainer = ({
   containerClass?: string;
   id?: number;
 }) => {
+
+  const motionRef = useRef<HTMLDivElement>(null);
+  const controls = useAnimation();
+  const inView = useInView(motionRef, {
+    once: true
+  });
+
+  useEffect(()=>{
+    (async ()=>{
+      if (inView){
+        await controls.start("visible")
+      }
+    })()
+  }, [inView, controls])
+
   return (
     <Link href={`/events/${id}`}>
-      <div className={`w-fit h-fit  ${containerClass}`}>
+      <motion.div
+          className={`w-fit h-fit  ${containerClass}`}
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={controls}
+          variants={{
+            visible: { scale: 1, opacity: 1, transition: { duration: 0.5, ease: "easeOut" } },
+          }}
+          ref={motionRef}
+      >
         <div className={"event-card-border"}>
           <div className={"event-card"}>{children}</div>
         </div>
-      </div>
+      </motion.div>
     </Link>
   );
 };
