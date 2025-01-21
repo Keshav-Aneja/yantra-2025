@@ -67,7 +67,7 @@ const EventsPage = () => {
       </div>
       <div
         className={
-          "w-wrapper-sm md:w-wrapper p-4  border border-border relative"
+          "w-wrapper-sm md:w-wrapper border border-border relative"
         }
       >
         <div className={"flex justify-between h-full w-full absolute"}>
