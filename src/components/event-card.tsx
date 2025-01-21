@@ -34,7 +34,7 @@ const EventCardContainer = ({
   const motionRef = useRef<HTMLDivElement>(null);
   const controls = useAnimation();
   const inView = useInView(motionRef, {
-    once: true
+    once: false
   });
 
   useEffect(()=>{
