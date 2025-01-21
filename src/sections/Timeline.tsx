@@ -62,7 +62,7 @@ export default function Timeline() {
             />
             <div
               className={
-                "font-roboto_mono text-white text-xl md:text-4xl font-medium"
+                "font-roboto_mono uppercase text-white text-xl md:text-4xl font-medium"
               }
             >
               Event Types
@@ -81,10 +81,10 @@ export default function Timeline() {
               }`}
             >
               <div
-                className={`w-full md:w-[calc(50%-3rem)] h-[calc(100%+0.1rem)] bg-border absolute z-[-10] ${
+                className={`w-[calc(80%+0.1rem)] md:w-[calc(50%-2.9rem)] h-[calc(100%+0.1rem)] bg-white absolute z-[10] translate-x-4 md:translate-x-0 ${
                   index % 2 === 1
-                    ? "md:flex-row-reverse top-[-0.05rem] right-[-0.05rem]"
-                    : "top-[-0.05rem] left-[-0.05rem]"
+                    ? "md:flex-row-reverse  md:top-[-0.05rem] md:right-[-0.05rem]"
+                    : "md:top-[-0.05rem] md:left-[-0.05rem]"
                 }`}
                 style={{
                   clipPath:
@@ -92,7 +92,7 @@ export default function Timeline() {
                 }}
               ></div>
               <div
-                className={`w-[80%] md:w-[calc(50%-3rem)] relative p-4 bg-black border border-gray-800 text-white group-hover:gradient-bg group-hover:text-black transition-all duration-200 ease-linear rounded-lg ${
+                className={`w-[80%] md:w-[calc(50%-3rem)] relative p-4 bg-black border border-gray-800 text-white group-hover:gradient-bg group-hover:text-black transition-all duration-200 ease-linear rounded-lg translate-x-4 md:translate-x-0 ${
                   index % 2 === 1 ? "md:ml-auto" : "md:mr-auto"
                 }`}
                 style={{
