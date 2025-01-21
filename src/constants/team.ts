@@ -169,6 +169,11 @@ export const teamPageData = [
         title: "Registration",
         img: "/images/team/sneha_shree.png",
       },
+      {
+        name: "Nikita Rajpurohit",
+        title: "Registration",
+        img: "/images/team/nikita.png",
+      },
     ],
   },
 ];

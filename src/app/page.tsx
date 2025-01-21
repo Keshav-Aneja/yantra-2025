@@ -25,7 +25,7 @@ export default function Home() {
       <div className="flex flex-col justify-center items-center">
         <div
           className={
-            "max-w-screen-xl w-wrapper-sm md:w-wrapper flex flex-col items-center"
+            " w-wrapper-sm md:w-wrapper flex flex-col items-center"
           }
         >
           <Events events={events} />

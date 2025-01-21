@@ -1,76 +1,50 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import TimelineHover from "@/components/TimelineHover";
 
 interface Event {
-  week: string;
   title: string;
-  date: string;
   image: string;
   description: string;
 }
 
 const events: Event[] = [
   {
-    week: "Week",
-    title: "Proctor-Proctee Form",
+    title: "Tech-talks",
     description:
-      "Students coordinate with their proctors to register for the Proctor-Proctee Hackathon via the official form.",
-    date: "14th - 22nd JAN",
-    image: "/images/timeline/inaugration.png",
+      "Gain insights from industry experts. Attend captivating tech-talks by renowned professionals, from various renowned institutions and industries, exploring AI-driven solutions for the world's most pressing challenges, as defined by the SDGs.",
+    image: "/images/timeline/tech-talk.png",
   },
   {
-    week: "Week",
-    title: "Interact Account Creation",
+    title: "Tech-competitions",
     description:
-      "All participants create their accounts on Interact, the hackathon management platform.",
-    date: "21st JAN",
+      "Collaborate and create. Join dynamic tech competitions, working alongside fellow innovators to develop novel solutions, and gain invaluable experience in a competitive environment.",
     image: "/images/timeline/tech-competition.png",
   },
   {
-    week: "Week",
-    title: "Proctor-Proctee Ideas Form",
+    title: "Hackathons",
     description:
-      "Teams submit their innovative project ideas in collaboration with their proctors.",
-    date: "22nd - 28th JAN",
+      "Collaborate and create. Participate in an intensive, collaborative event where teams brainstorm, design, and build innovative projects in a limited timeframe.",
     image: "/images/timeline/hackathon-1.png",
   },
   {
-    week: "Week",
-    title: "Central Hack Selection",
+    title: "Workshops",
     description:
-      "Final project ideas are reviewed and selected for the Central Hackathon.",
-    date: "28th/29th JAN",
+      "Learn by doing. Engage in interactive workshops facilitated by expert instructors, offering practical exercises and real-world applications.",
     image: "/images/timeline/workshop.png",
   },
   {
-    week: "Week",
-    title: "Proctor-Proctee Screen",
+    title: "Central Hack",
     description:
-      "Teams are screened and finalized for participation in the Proctor-Proctee Hackathon.",
-    date: "29th JAN",
-    image: "/images/timeline/tech-talk.png",
+      "Join Central Hack is VIT's premier hackathon which is a diverse community of developers, designers, and problem-solvers in an intense, collaborative environment. Over a set period, teams will conceptualize, design, and build working prototypes, culminating in presentations to a panel of expert judges.",
+    image: "/images/timeline/hackathon-1.png",
   },
 ];
 
 export default function Timeline() {
   const [currentEventIndex, setCurrentEventIndex] = useState<number>(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const now = new Date();
-      const currentIndex = events.findIndex(
-        (event) => new Date(event.date).getTime() > now.getTime()
-      );
-      setCurrentEventIndex(
-        currentIndex === -1 ? events.length - 1 : currentIndex
-      );
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <div
@@ -91,7 +65,7 @@ export default function Timeline() {
                 "font-roboto_mono text-white text-xl md:text-4xl font-medium"
               }
             >
-              Timeline
+              Event Types
             </div>
           </div>
         </div>
@@ -102,7 +76,7 @@ export default function Timeline() {
           {events.map((event, index) => (
             <div
               key={index}
-              className={`group flex flex-col md:flex-row items-center mb-3 md:mb-8 relative ${
+              className={`group flex flex-col md:flex-row justify-center items-center mb-3 md:mb-8 relative ${
                 index % 2 === 1 ? "md:flex-row-reverse" : ""
               }`}
             >
@@ -129,10 +103,8 @@ export default function Timeline() {
               >
                 <div className="flex flex-col xl:flex-row md:flex-col justify-start items-start xl:justify-between xl:items-center font-space_mono text-xs md:text-base font-medium">
                   <div>
-                    <div>{event.week}</div>
                     <div>{event.title}</div>
                   </div>
-                  <div className="mt-1 text-sm md:text-base">{event.date}</div>
                 </div>
               </div>
               <div className="w-4 h-4 md:w-8 md:h-8 absolute left-4 md:left-1/2 transform -translate-x-1/2">

@@ -10,7 +10,7 @@ const Hero = () => {
     <>
       <div className="bg-custom-gradient flex justify-center items-center relative">
         <div className="w-wrapper-sm h-full border-x border-border absolute left-1/2 -translate-x-1/2 top-0 md:hidden"></div>
-        <span className="absolute bottom-6 left-12 flex items-center gap-3 font-roboto_mono text-white/60 text-sm">
+        <span className="absolute bottom-6 left-6 md:bottom-6 md:left-12 flex items-center gap-3 font-roboto_mono text-white/60 text-sm">
           <h2>SCROLL</h2>
           <FaArrowDown className="text-xl text-white" />
         </span>
@@ -25,7 +25,7 @@ const Hero = () => {
           />
         </div>
       </div>
-      <div className="absolute bottom-72 md:bottom-60 xl:bottom-16 left-4 md:left-8 p-4 space-y-1">
+      <div className="absolute bottom-72 md:bottom-68 xl:bottom-16 left-4 md:left-8 p-4 space-y-1">
         <div className="text-white p-2 text-xs w-2/3 font-roboto">
           <span className="whitespace-nowrap text-sm  md:text-2xl">
             OFFICE OF STUDENTS&apos; WELFARE
@@ -36,9 +36,9 @@ const Hero = () => {
           YANTRA &apos;25
         </div>
         </div>
-      <div className="absolute -bottom-12 xl:hidden justify-center items-center w-full text-white">
-        <div className="grid grid-cols-1 lg:grid-rows-16 w-full p-5">
-          <div className="row-span-2 text-sm grid grid-cols-[80%_20%] lg:order-1 order-3">
+      <div className="absolute -bottom-4 right-0 xl:hidden justify-center items-center text-white pb-12">
+        <div className="grid grid-cols-1 lg:grid-rows-16 w-[90%] self-end">
+          <div className="row-span-2 text-sm grid grid-cols-[75%_25%] lg:order-1 order-3">
             <div className="flex items-center justify-end text-right border border-gray-300 p-6 gap-14">
               <Image
                 src="/icons/arrow-right-solid.svg"
@@ -55,7 +55,7 @@ const Hero = () => {
           </div>
           <div className="row-span-1 text-sm flex items-center justify-end text-gray-400 text-right lg:order-2 order-4"></div>
           <div className="row-span-1 text-sm border border-[#353539] border-b-0 pr-6 uppercase h-full flex items-center justify-end lg:order-3 order-5">
-            <div className="flex items-center justify-between text-gray-300 text-right h-full w-1/3">
+            <div className="flex items-center justify-between text-gray-300 text-right h-full w-1/2">
               <Image
                 src="/icons/arrow-right-solid.svg"
                 alt=""
@@ -67,7 +67,7 @@ const Hero = () => {
             </div>
           </div>
           <div className="row-span-1 text-sm border border-[#353539] border-b-0 pr-6 uppercase h-full flex items-center justify-end lg:order-4 order-6">
-            <div className="flex items-center justify-between text-gray-300 text-right h-full w-1/3">
+            <div className="flex items-center justify-between text-gray-300 text-right h-full w-1/2">
               <Image
                 src="/icons/arrow-right-solid.svg"
                 alt=""
@@ -78,29 +78,14 @@ const Hero = () => {
               <span>WORKSHOPS</span>
             </div>
           </div>
-          <div className="row-span-1 text-sm border border-[#353539] border-b-0 pr-6 uppercase h-full flex items-center justify-end lg:order-5 order-7">
-            <div className="flex items-center justify-between text-gray-300 text-right h-full w-1/3">
-              <Image
-                src="/icons/arrow-right-solid.svg"
-                alt=""
-                width={20}
-                height={20}
-                className="scale-x-[-1] w-[6px] h-auto"
-              />
-              <span>GUEST SESSIONS</span>
-            </div>
-          </div>
-          <div className="row-span-1 text-sm flex items-center justify-end text-gray-400 text-right border border-[#353539] pr-6 uppercase lg:order-6 order-8">
-            AND MUCH MORE
-          </div>
           <div className="row-span-4 text-sm flex items-center justify-end text-gray-400 text-right pr-6 lg:order-7 order-9"></div>
           <div className="row-span-4 text-sm grid  lg:order-8 order-2">
             <div className="row-span-2 justify-end p-4 text-xl items-center flex  border border-1 border-gray-300 border-b-0 gap-6 font-bold ">
               <TbClockHour4 />
               <CountdownTimer targetDate="2025-02-03T08:00:00" />
             </div>
-            <div className="row-span-2 text-sm grid  lg:order-8 order-2 grid-cols-[80%_20%]">
-              <div className="flex items-center justify-end text-right border border-gray-300 p-4 gap-12 text-[#76C38F]">
+            <div className="row-span-2 text-sm grid  lg:order-8 order-2 grid-cols-[75%_25%]">
+              <div className="flex items-center justify-end text-right border border-gray-300 p-2 md:p-4 gap-12 text-[#76C38F]">
                 <Image
                   src="/icons/arrow-right-solid.svg"
                   alt=""
@@ -110,7 +95,7 @@ const Hero = () => {
                 />
                 <span className="text-base text-gradient">FEBRUARY, 2025</span>
               </div>
-              <div className="flex text-lg text-gradient font-bold items-center justify-center border border-gray-300 p-4 border-l-0 text-[#76C38F]">
+              <div className="flex text-lg text-gradient font-bold items-center justify-center border border-gray-300 p-2 md:p-4 border-l-0 text-[#76C38F]">
                 3-9
               </div>
             </div>
