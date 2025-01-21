@@ -1,7 +1,9 @@
+"use client"
 import Navbar from "@/components/Navbar";
 import Footer from "@/sections/footer";
 import { Metadata } from "next";
 import React from "react";
+import ScrollProgress from "@/components/ui/scroll-progress";
 
 export default function EventsPageLayout({
   children,
@@ -13,7 +15,9 @@ export default function EventsPageLayout({
       className={"w-full h-full min-h-screen bg-background overflow-x-hidden"}
     >
       <Navbar />
-      {children}
+      <ScrollProgress>
+        {children}
+      </ScrollProgress>
       <Footer />
     </div>
   );
