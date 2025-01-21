@@ -11,8 +11,8 @@ export default function AboutSection() {
     <div
       className="grid grid-cols-1 md:grid-cols-2  bg-[#0a0a0a] text-white border border-border w-wrapper-sm md:w-wrapper mx-auto"
       id="about"
-    >git
-      <div className="border-r border-b border-border flex flex-col p-4 justify-end items-srart h-[7rem] md:h-[10rem] min-h-fit">
+    >
+      <div className="border-r border-b border-border flex flex-col p-4 justify-end items-srart h-[7rem] git amd:h-[10rem] min-h-fit">
         <span className="font-mono text-xl md:text-2xl font-medium flex items-center gap-3">
           <BiSolidRightArrow size={10} />
           <h2>ABOUT VIT</h2>
