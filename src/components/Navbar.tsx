@@ -17,7 +17,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="w-full flex justify-between items-center font-roboto text-sm border-b border-border bg-[#161616] h-16">
+    <nav className="w-full flex justify-between items-center font-roboto text-sm border-b border-border bg-[#161616] h-16 relative z-[9999]">
       <div className="flex items-center justify-between h-full lg:w-[12.5%] px-2 md:px-4 lg:px-0">
         <button
           className="lg:hidden flex flex-col justify-center items-center h-8 w-12 "
