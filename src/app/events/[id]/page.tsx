@@ -1,24 +1,44 @@
 "use client";
 
 import { useParams } from "next/navigation";
-import { events } from "@/constants/events";
+import {getEventColor} from "@/constants/events";
 import Image from "next/image";
 import EventImageContainer from "@/components/event-image";
-import EventCard, { EventCardProps } from "@/components/event-card";
+import EventCard from "@/components/event-card";
 import Seemore from "@/components/seemore";
 import { VerticalLine } from "@/components/lines";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import {EventData, fetchEvent} from "@/lib/api";
+import {toast} from "sonner";
+import {LoaderCircleIcon} from "lucide-react";
 
 export default function EventPage() {
-  const { id } = useParams();
+  const { id } = useParams<{ id: string }>();
 
-  const event = events.find((event) => event.id === parseInt(id as string));
+  const [event, setEvent] = useState<EventData>();
+  const [similarEvents, setSimilarEvents] = useState<EventData[]>([]);
+
+  useEffect(() => {
+    if (id) {
+      (async ()=>{
+        const res = await fetchEvent({id});
+        if (!res) return;
+        if (res.status === "error") {
+          //TOAST
+          toast.error("Something went wrong.");
+          return;
+        }
+        setEvent(res.event);
+        if (res.similarEvents) setSimilarEvents(res.similarEvents);
+      })()
+    }
+  }, []);
 
   if (!event) {
     return (
       <div className="min-h-screen bg-black text-white flex items-center justify-center bg-custom-gradient">
-        <h1 className="text-4xl">Event not found</h1>
+        <LoaderCircleIcon className={"size-10 animate-spin"} />
       </div>
     );
   }
@@ -33,13 +53,13 @@ export default function EventPage() {
 
         <div className="border border-[#313135] p-1 py-4 md:p-4">
           <h2 className="text-6xl max-md:text-2xl font-medium text-white font-armstrong px-6 py-3">
-            {event.event.name}
+            {event.eventName}
           </h2>
           <h3
-            style={{ color: event.event.typeColor }}
+            style={{ color: getEventColor(event.eventType) }}
             className={`text-base max-md:text-xs relative -top-5 md:-top-3 font-bold font-space_mono px-6`}
           >
-            {event.event.type}
+            {event.eventType}
           </h3>
         </div>
 
@@ -47,7 +67,7 @@ export default function EventPage() {
           <p className={`text-lg max-md:text-sm font-semibold px-6`}>
             EVENT DATE:{" "}
             <span className="font-normal text-base max-md:text-xs">
-              {new Date(event.event.startDate).toLocaleDateString("en-GB", {
+              {new Date(event.eventStart).toLocaleDateString("en-GB", {
                 day: "numeric",
                 month: "long",
                 year: "numeric",
@@ -60,17 +80,24 @@ export default function EventPage() {
           <p className={`text-lg max-md:text-sm font-semibold px-6`}>
             EVENT TIME:{" "}
             <span className="font-normal text-base max-md:text-xs">
-              {new Date(event.event.startDate).toLocaleTimeString()}
+              {new Date(event.eventEnd).toLocaleTimeString()}
             </span>
           </p>
         </div>
 
         <div className="border border-[#313135] p-2 py-3 md:p-4 text-white">
-          <p className={`text-lg max-md:text-sm font-semibold px-6`}>
+          <p className={`text-lg max-md:text-sm font-semibold px-6 flex flex-wrap gap-2`}>
             BY:{" "}
-            <span className="font-normal text-base max-md:text-xs">
-              {event.organisation.name}
-            </span>
+            {event.collaborativeWith.length > 0 && event.collaborativeWith.map(name => (
+              <span className="font-normal text-base max-md:text-xs">
+                {name}
+              </span>
+            ))}
+            {event.collaborativeWith.length <= 0 && (
+              <span className="font-normal text-base max-md:text-xs">
+                  {event.clubName}
+              </span>
+            )}
           </p>
         </div>
 
@@ -80,7 +107,7 @@ export default function EventPage() {
             <div className="p-4 max-md:p-2 flex items-center justify-center">
               <EventImageContainer removeBg>
                 <Image
-                  src={event.event.image}
+                  src={event.eventPoster}
                   width={600}
                   height={600}
                   alt=""
@@ -89,7 +116,7 @@ export default function EventPage() {
             </div>
             <div className="p-0 md:p-2 text-white">
               <p className="text-base max-md:text-xs font-space_mono font-normal leading-7 max-md:leading-4 p-4 max-md:p-2 m-4">
-                {event.event.description}
+                {event.eventDescription}
               </p>
             </div>
           </div>
@@ -115,14 +142,14 @@ export default function EventPage() {
               />
             </Link>
           </div>
-          <RelatedEvents events={events} />
+          <RelatedEvents events={similarEvents} />
         </div>
       </div>
     </div>
   );
 }
 
-const RelatedEvents = ({ events }: { events: EventCardProps[] }) => (
+const RelatedEvents = ({ events }: { events: EventData[] }) => (
   <div
     className={"w-full h-full max-md:border-t max-md:border-border max-md:mt-2"}
   >
@@ -147,7 +174,7 @@ const RelatedEvents = ({ events }: { events: EventCardProps[] }) => (
       }
     >
       {events.slice(0, 3).map((event) => (
-        <EventCard {...event} key={event.id} related />
+        <EventCard {...event} key={event._id} related />
       ))}
       <div
         className={

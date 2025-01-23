@@ -1,44 +1,100 @@
 "use client";
 import "@/styles/events/events-page.css";
 
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useRef, useState} from "react";
 import OurEvents from "@/app/events/_components/our-events";
-import { events, eventTypes } from "@/constants/events";
-import EventCard, { EventCardProps } from "@/components/event-card";
+import { eventTypes } from "@/constants/events";
+import EventCard from "@/components/event-card";
 import { Search } from "lucide-react";
 import useDebounce from "@/hooks/use-debounce";
 import usePagination from "@/hooks/use-pagination";
 import { NextBtn, PrevBtn } from "@/components/carousel-helper";
 import { VerticalLine } from "@/components/lines";
 import Link from "next/link";
+import {EventData, fetchEvents, FetchEventsParams, Pagination} from "@/lib/api";
+import {toast} from "sonner";
 
 const EventsPage = () => {
-  const [data, setData] = useState<EventCardProps[]>(events);
+  const [data, setData] = useState<EventData[]>([]);
   const [search, setSearch] = useState<string>("");
   const debouncedSearchQuery = useDebounce(search);
   const [selectedEventType, setSelectedEventType] = useState("ALL");
-  const {
-    goToPrevPage,
-    goToNextPage,
-    jumpToPage,
-    pageData,
-    currentPage,
-    maxPages,
-  } = usePagination(data, 9);
+  const abortController = useRef<AbortController | null>(null);
+  const [pagination, setPagination] = useState<Pagination>({
+    page: 1,
+    totalPages: 1,
+    limit: 9,
+    total: 9,
+  })
+
   const [pageRange, setPageRange] = useState(
-    getPageRange(currentPage, maxPages)
+    getPageRange(1, 1)
   );
 
-  useEffect(() => {
-    setData(filterEvents(debouncedSearchQuery, events, selectedEventType));
-  }, [selectedEventType, debouncedSearchQuery]);
+  const goToNextPage = () => {
+    setPagination(prev => ({
+      ...prev,
+      page: Math.min(prev.page + 1, prev.totalPages),
+    }))
+  }
+
+  const goToPrevPage = () => {
+    setPagination(prev => ({
+      ...prev,
+      page: Math.max(prev.page - 1, 1),
+    }))
+  }
+
+  const jumpToPage = (page: number) => {
+    setPagination(prev => ({
+      ...prev,
+      page: Math.max(1, Math.min(page, prev.totalPages)),
+    }))
+  }
+
+  const fetchEventsData = async ({
+      params, signal
+  }: {
+    params?: FetchEventsParams,
+    signal?: AbortSignal,
+  })=>{
+    const res = await fetchEvents({params, signal});
+    if (!res) return;
+    if (res.status === "error") {
+      //TOAST
+      toast.error("Something went wrong.");
+      return;
+    }
+    // console.log(res);
+    setData(res.data || []);
+    if (res.pagination) setPagination(res.pagination);
+  }
 
   useEffect(() => {
-    setPageRange(getPageRange(currentPage, maxPages));
-  }, [currentPage, maxPages]);
+    if (abortController.current) {
+      abortController.current.abort();
+    }
+
+    abortController.current = new AbortController();
+
+    (async ()=>{
+      await fetchEventsData({
+        signal: abortController.current?.signal,
+        params: {
+          page: pagination.page,
+          limit: pagination.limit,
+          search: debouncedSearchQuery,
+          eventType: selectedEventType === "ALL" ? "" : selectedEventType,
+        }
+      });
+    })()
+  }, [pagination, selectedEventType, debouncedSearchQuery]);
+
+  useEffect(() => {
+    setPageRange(getPageRange(pagination.page, pagination.totalPages));
+  }, [pagination]);
 
   const onSelectEventType = (eventType: string) => {
-    jumpToPage(1);
     setSelectedEventType(eventType);
   };
 
@@ -76,7 +132,7 @@ const EventsPage = () => {
           <VerticalLine className={"max-sm:hidden"} />
           <VerticalLine className={"invisible"} />
         </div>
-        <Events events={pageData} />
+        <Events events={data} />
         <div className={"flex justify-end mb-12"}>
           <div
             className={
@@ -85,7 +141,7 @@ const EventsPage = () => {
           >
             <div
               className={`flex justify-center items-center cursor-pointer ${
-                currentPage == 1 && "invisible"
+                pagination.page == 1 && "invisible"
               }`}
             >
               <PrevBtn className={"size-3"} onClick={goToPrevPage} />
@@ -97,7 +153,7 @@ const EventsPage = () => {
                 className={`
                                border  border-border size-6 text-sm cursor-pointer flex justify-center items-center font-space_mono
                                ${
-                                 currentPage === page &&
+                                 pagination.page === page &&
                                  "bg-white text-background border-white"
                                }
                             `}
@@ -108,8 +164,8 @@ const EventsPage = () => {
             ))}
             <div
               className={`flex justify-center items-center cursor-pointer ${
-                currentPage == maxPages &&
-                pageRange[pageRange.length - 1] == maxPages &&
+                pagination.page == pagination.totalPages &&
+                pageRange[pageRange.length - 1] == pagination.totalPages &&
                 "invisible"
               }`}
             >
@@ -130,35 +186,6 @@ const getPageRange = (currentPage: number, totalPages: number) => {
     range.push(i);
   }
   return range;
-};
-
-const lowerContains = (data: string, query: string) => {
-  return data.toLowerCase().includes(query.toLowerCase());
-};
-
-const lowerStartsWith = (data: string, query: string) => {
-  return data.toLowerCase().startsWith(query.toLowerCase());
-};
-
-const filterEvents = (
-  query: string | null,
-  data: EventCardProps[],
-  eventType: string = "All"
-) => {
-  let filteredData;
-  if (eventType === "ALL") filteredData = data;
-  else
-    filteredData = events.filter(
-      (eventCard) => eventCard.event.type === eventType
-    );
-  if (query === null || "") return filteredData;
-  return filteredData.filter(
-    (entry) =>
-      lowerStartsWith(entry.event.name, query) ||
-      lowerStartsWith(entry.event.type, query) ||
-      lowerContains(entry.event.description, query) ||
-      lowerStartsWith(entry.organisation.name, query)
-  );
 };
 
 interface EventTypeFilter {
@@ -192,18 +219,16 @@ const EventTypeFilter = ({
   </div>
 );
 
-const Events = ({ events }: { events: EventCardProps[] }) => (
+const Events = ({ events }: { events: EventData[] }) => (
   <div
     className={
       "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-0 gap-y-10 my-10 justify-items-center content-start place-content-start"
     }
   >
-    {events.map(({ organisation, event, id }, index) => (
+    {events.map((event, index) => (
       <EventCard
-        organisation={organisation}
-        event={event}
-        key={index}
-        id={id}
+        {...event}
+        key={event._id}
       />
     ))}
   </div>
