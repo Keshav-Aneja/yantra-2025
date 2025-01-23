@@ -88,9 +88,9 @@ export default function EventPage() {
         <div className="border border-[#313135] p-2 py-3 md:p-4 text-white">
           <p className={`text-lg max-md:text-sm font-semibold px-6 flex flex-wrap gap-2`}>
             BY:{" "}
-            {event.collaborativeWith.length > 0 && event.collaborativeWith.map(name => (
+            {event.collaborativeWith.length > 0 && event.collaborativeWith.map((name, index) => (
               <span className="font-normal text-base max-md:text-xs">
-                {name}
+                {name}{index !== event.collaborativeWith.length - 1 && ", "}
               </span>
             ))}
             {event.collaborativeWith.length <= 0 && (
@@ -110,6 +110,7 @@ export default function EventPage() {
                   src={event.eventPoster}
                   width={600}
                   height={600}
+                  priority
                   alt=""
                 />
               </EventImageContainer>
