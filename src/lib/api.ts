@@ -4,7 +4,7 @@ import { setupCache } from "axios-cache-interceptor";
 const axiosInstance =setupCache(axios.create({
     baseURL: process.env.NEXT_PUBLIC_BACKEND_URL + 'api/',
 }), {
-    ttl: 5 * 60 * 1000, // 5 minute
+    ttl: 2 * 60 * 1000, // 2 minute
 })
 
 export interface Pagination {
