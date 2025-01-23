@@ -75,7 +75,13 @@ export const EventImageContainer = ({
         width={4.6}
         height={4.6}
       />
-      <div className={"relative pt-8 px-8 pb-8 z-50"}>{children}</div>
+      <div
+        className={
+          "relative pt-8 px-8 pb-8 z-50 w-full aspect-[16/10] overflow-hidden"
+        }
+      >
+        {children}
+      </div>
     </div>
   );
 };

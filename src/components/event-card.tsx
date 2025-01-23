@@ -1,12 +1,12 @@
-import React, {useEffect, useRef} from "react";
+import React, { useEffect, useRef } from "react";
 import "@/styles/events/event-card.css";
 import Image from "next/image";
 import EventImageContainer from "@/components/event-image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import {useInView, useAnimation, motion} from "motion/react";
-import {EventData} from "@/lib/api";
-import {getEventColor} from "@/constants/events";
+import { useInView, useAnimation, motion } from "motion/react";
+import { EventData } from "@/lib/api";
+import { getEventColor } from "@/constants/events";
 
 interface Organisation {
   logo: string;
@@ -32,31 +32,34 @@ const EventCardContainer = ({
   containerClass?: string;
   id?: string;
 }) => {
-
   const motionRef = useRef<HTMLDivElement>(null);
   const controls = useAnimation();
   const inView = useInView(motionRef, {
-    once: false
+    once: false,
   });
 
-  useEffect(()=>{
-    (async ()=>{
-      if (inView){
-        await controls.start("visible")
+  useEffect(() => {
+    (async () => {
+      if (inView) {
+        await controls.start("visible");
       }
-    })()
-  }, [inView, controls])
+    })();
+  }, [inView, controls]);
 
   return (
     <Link href={`/events/${id}`}>
       <motion.div
-          className={`w-fit h-full  ${containerClass}`}
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={controls}
-          variants={{
-            visible: { scale: 1, opacity: 1, transition: { duration: 0.5, ease: "easeOut" } },
-          }}
-          ref={motionRef}
+        className={`w-fit h-full  ${containerClass}`}
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={controls}
+        variants={{
+          visible: {
+            scale: 1,
+            opacity: 1,
+            transition: { duration: 0.5, ease: "easeOut" },
+          },
+        }}
+        ref={motionRef}
       >
         <div className={"event-card-border"}>
           <div className={"event-card"}>{children}</div>
@@ -66,8 +69,8 @@ const EventCardContainer = ({
   );
 };
 
-export interface EventCardProps extends EventData{
-  containerClass?: string
+export interface EventCardProps extends EventData {
+  containerClass?: string;
   related?: boolean;
 }
 
@@ -112,18 +115,16 @@ const EventCard = (props: EventCardProps) => {
         </div>
       </div>
 
-      <div>
-        <EventImageContainer>
-          <Image
-            src={props.eventPoster.trim()}
-            alt={props.eventName}
-            width={286}
-            height={172}
-            // bg-black (for event posters with no bg)
-            className={"h-44 w-80 shadow-2xl backdrop-blur-2xl"}
-          />
-        </EventImageContainer>
-      </div>
+      <EventImageContainer>
+        <Image
+          src={props.eventPoster.trim()}
+          alt={props.eventName}
+          width={800}
+          height={400}
+          // bg-black (for event posters with no bg)
+          className={"shadow-2xl backdrop-blur-2xl w-full h-full object-cover"}
+        />
+      </EventImageContainer>
 
       <div
         className={cn(
