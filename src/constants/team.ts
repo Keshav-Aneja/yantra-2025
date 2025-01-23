@@ -25,14 +25,14 @@ export const team = [
   },
 ];
 
-export const teamPageData = [
+export const teamPageTopData = [
   {
     title: "Chief Patron",
     people: [
       {
         name: "Dr. G. Vishwanathan",
         title: "Founder & Chancellor",
-        img: "/images/team/chancellor.png",
+        img: "/images/team/chancellor_1.png",
       },
     ],
   },
@@ -72,7 +72,7 @@ export const teamPageData = [
     ],
   },
   {
-    title: "Other Patron",
+    title: "Chief Advisory",
     people: [
       {
         name: "Dr. V. S. Kanchana Bhaaskaran",
@@ -91,47 +91,45 @@ export const teamPageData = [
       },
     ],
   },
+]
+
+export const teamPageData = [
   {
-    title: "Director of Student's Welfare",
+    title: "Office of Student's Welfare",
     people: [
       {
         name: "Dr. Cd naiju",
-        title: "DSW",
+        title: "Director",
         img: "/images/team/dsw.png",
       },
-    ],
-  },
-  {
-    title: "Assistant Director of Student's Welfare",
-    people: [
       {
         name: "Dr. Varalakshmi M",
-        title: "ADSW",
+        title: "Assistant Director",
         img: "/images/team/varalakshmi.png",
       },
       {
         name: "Dr. Dinesh raghavan",
-        title: "ADSW",
+        title: "Assistant Director",
         img: "/images/team/dinesh.png",
       },
       {
         name: "dr.Rajashekar reddy Mutra",
-        title: "ADSW",
+        title: "Assistant Director",
         img: "/images/team/rajashekhar.png",
       },
       {
         name: "Dr. Mohana priya",
-        title: "ADSW",
+        title: "Assistant Director",
         img: "/images/team/mohona.png",
       },
       {
         name: "Dr. RAJU J",
-        title: "ADSW",
+        title: "Assistant Director",
         img: "/images/team/raju.png",
       },
       {
         name: "Dr. PRADHEEP T",
-        title: "ADSW",
+        title: "Assistant Director",
         img: "/images/team/pradheep.png",
       },
     ],

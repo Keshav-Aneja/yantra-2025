@@ -1,14 +1,72 @@
 "use client";
 
-import { useState } from "react";
+import {useEffect, useRef, useState} from "react";
 import Image from "next/image";
+import {askBot} from "@/lib/api";
+
+interface ChatMessage {
+    type: "question" | "answer";
+    value: string,
+}
 
 export default function Chatbot() {
   const [isChatboxVisible, setChatboxVisible] = useState(false);
+  const [question, setQuestion] = useState("");
+  const [loading, setLoading] = useState(false);
+  const chatContainerRef = useRef<HTMLDivElement>(null)
+
+  const [chat, setChat] = useState<ChatMessage[]>([
+      {
+          type: "answer",
+          value: "Hey, This is Yantra bot. How can I help you?"
+      }
+  ]);
+
+    useEffect(() => {
+        if (chatContainerRef.current) {
+            chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+        }
+    }, [chat, loading]);
 
   const toggleChatbox = () => {
     setChatboxVisible(!isChatboxVisible);
   };
+
+  const onInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      setQuestion(e.target.value);
+  }
+
+  const onSubmit = async (e: React.MouseEvent<HTMLButtonElement>) => {
+      e.preventDefault();
+      if (loading || question.trim() == "") return;
+      else setLoading(true);
+
+        const chats: ChatMessage[] = [...chat, {
+            type: "question",
+            value: question
+        }]
+
+      const response = await askBot(question);
+
+      if (response.status == "error" || !response.message || response.message === "") {
+            chats.push({
+                type: "answer",
+                value: "Sorry, The bot is not available right now. Please try again later."
+            })
+      } else {
+          chats.push({
+              type: "answer",
+              value: response.message
+          })
+      }
+
+      setLoading(() => {
+          setChat(chats);
+          setQuestion("");
+          return false;
+      })
+  }
+
 
   return (
     <div>
@@ -32,7 +90,7 @@ export default function Chatbot() {
       </div>
       {isChatboxVisible && (
         <div
-          className="fixed bottom-28 right-5 bg-white z-50 p-4 rounded-lg shadow-lg w-[90vw] md:w-[60vw] lg:w-[30vw] xl:w-[20vw]"
+          className="fixed bottom-28 right-5 bg-white z-50 p-4 rounded-lg shadow-lg pb-8 min-h-96 w-[90vw] md:w-[60vw] lg:w-[30vw] xl:w-[20vw]"
           style={{
             backgroundColor: "#161616",
             color: "white",
@@ -46,80 +104,70 @@ export default function Chatbot() {
               X
             </button>
           </div>
-          <div className="max-h-[50vh] overflow-y-scroll py-5">
+          <div
+           className="max-h-[50vh] overflow-y-scroll py-5 scrollbar"
+           ref={chatContainerRef}
+          >
             {/* Question */}
             <div className="flex justify-end mb-2">
               <div className="bg-white p-4 rounded-2xl text-black max-w-[90%]">
                 <p className="text-sm tracking-wider">
-                  Hey, can you tell me about the Yantra event? I heard it’s
-                  happening from 3rd to 9th January in VIT.
+                  Hey, This is Yantra bot. How can I help you?
                 </p>
               </div>
             </div>
-
-            {/* Response */}
-            <div className="flex justify-start mb-2">
-              <div className="bg-gray-800 p-4 rounded-2xl text-white max-w-[90%] w-auto">
-                <p className="text-sm tracking-wider">
-                  Absolutely! Yantra is an exciting event organized at VIT,
-                  running from January 3rd to January 9th.
-                </p>
-              </div>
-            </div>
-            {/* Question */}
-            <div className="flex justify-end mb-2">
-              <div className="bg-white p-4 rounded-2xl text-black max-w-[90%]">
-                <p className="text-sm tracking-wider">
-                  Can you give me an overview first?
-                </p>
-              </div>
-            </div>
-
-            {/* Response */}
-            <div className="flex justify-start mb-2">
-              <div className="bg-gray-800 p-4 rounded-2xl text-white max-w-[90%] w-auto">
-                <p className="text-sm tracking-wider">
-                  Sure! Yantra is one of VIT’s flagship events, known for its
-                  focus on technology, innovation, and hands-on learning. It
-                  usually includes workshops, competitions, exhibitions, and
-                  speaker sessions. It’s a great platform for tech enthusiasts
-                  to showcase their skills, learn something new, and network
-                  with like-minded individuals.
-                </p>
-              </div>
-            </div>
-
-            {/* Question */}
-            <div className="flex justify-end mb-2">
-              <div className="bg-white p-4 rounded-2xl text-black max-w-[90%]">
-                <p className="text-sm tracking-wider">How can I participate?</p>
-              </div>
-            </div>
-
-            {/* Response */}
-            <div className="flex justify-start mb-2">
-              <div className="bg-gray-800 p-4 rounded-2xl text-white max-w-[90%] w-auto">
-                <p className="text-sm tracking-wider">
-                  To participate, you’d usually need to register through VTOP,
-                  VIT’s internal portal. The good news is, there’s no
-                  registration fee for the events or workshops
-                </p>
-              </div>
-            </div>
+              {chat.length > 0 && chat.map(chatMessage => {
+                  if (chatMessage.type === "question"){
+                      return (
+                          <div className="flex justify-end mb-2">
+                              <div className="bg-white p-4 rounded-2xl text-black max-w-[90%]">
+                                  <p className="text-sm tracking-wider">
+                                      {chatMessage.value}
+                                  </p>
+                              </div>
+                          </div>
+                      )
+                  } else {
+                      return (
+                          <div className="flex justify-start mb-2">
+                              <div className="bg-gray-800 p-4 rounded-2xl text-white max-w-[90%] w-auto">
+                                  <p className="text-sm tracking-wider">
+                                      {chatMessage.value}
+                                  </p>
+                              </div>
+                          </div>
+                      )
+                  }
+              })}
+              {loading ?? (
+                  <div className="flex justify-start mb-2">
+                      <div className="bg-gray-800 p-4 rounded-2xl text-white max-w-[90%] w-auto">
+                          <p className="text-sm tracking-wider animate-pulse">
+                              {"..."}
+                          </p>
+                      </div>
+                  </div>
+              )}
           </div>
-          {/* Footer */}
-          <div className="flex items-center mt-4">
-            <input
-              type="text"
-              placeholder="Type a message..."
-              className="bg-gray-800 flex-1 p-2 text-white rounded-xl text-sm"
-            />
+
+
+            {/* Footer */}
+        <form>
+            <div className="flex items-center mt-4 absolute bottom-0 w-full">
+                <input
+                    type="text"
+                    placeholder="Type a message..."
+                    value={question}
+                    onChange={onInputChange}
+                    className="bg-gray-800 flex-1 p-2 text-white rounded-xl text-sm"
+                />
             <button
               className="ml-2 p-2 rounded-full text-white"
               style={{
                 background:
                   "linear-gradient(23.96deg, #76C38F 0%, #60CF8C 48.44%, #A7C12C 100%)",
               }}
+              onClick={onSubmit}
             >
               <Image
                 src="/icons/send-button.svg"
@@ -129,6 +177,7 @@ export default function Chatbot() {
               />
             </button>
           </div>
+        </form>
         </div>
       )}
     </div>
