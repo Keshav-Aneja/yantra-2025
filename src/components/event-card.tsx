@@ -88,14 +88,14 @@ const EventCard = (props: EventCardProps) => {
       <div className={"flex justify-between items-center py-3 px-4 gap-2"}>
         <div className={"flex items-center gap-1.5"}>
           <>
-            <Image
+            {props.eventLogo.length > 0 && <Image
               src={props.eventLogo[0].trim()}
               height={24}
               width={24}
               className={"bg-black size-6"}
               alt={props.clubName}
-            />
-            {props.isCollaborative && (
+            />}
+            {props.isCollaborative && props.eventLogo.length > 1 && (
               <Image
                 src={props.eventLogo[1].trim()}
                 height={24}
@@ -129,14 +129,14 @@ const EventCard = (props: EventCardProps) => {
       </div>
 
       <EventImageContainer>
-        <Image
+        {props.eventPoster && <Image
           src={props.eventPoster.trim()}
           alt={props.eventName}
           width={800}
           height={400}
           // bg-black (for event posters with no bg)
           className={"shadow-2xl backdrop-blur-2xl w-full h-full object-cover"}
-        />
+        />}
       </EventImageContainer>
 
       <div
