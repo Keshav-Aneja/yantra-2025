@@ -87,13 +87,13 @@ const EventCard = (props: EventCardProps) => {
     <EventCardContainer containerClass={props.containerClass} id={props._id}>
       <div className={"flex justify-between items-center py-3 px-4 gap-2"}>
         <div className={"flex items-center gap-1.5"}>
-          <Image
+          {props.eventLogo[0] !== "" && <Image
             src={props.eventLogo[0].trim()}
             height={24}
             width={24}
             className={"bg-black size-6"}
             alt={props.clubName}
-          />
+          />}
           <p
             className={
               "text-[#B2B2B2] font-bold mt-0.5 text-xs md:text-sm uppercase line-clamp-1"
@@ -116,14 +116,14 @@ const EventCard = (props: EventCardProps) => {
       </div>
 
       <EventImageContainer>
-        <Image
+        {props.eventPoster !== "" && <Image
           src={props.eventPoster.trim()}
           alt={props.eventName}
           width={800}
           height={400}
           // bg-black (for event posters with no bg)
           className={"shadow-2xl backdrop-blur-2xl w-full h-full object-cover"}
-        />
+        />}
       </EventImageContainer>
 
       <div

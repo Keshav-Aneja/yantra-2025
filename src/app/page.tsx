@@ -28,6 +28,7 @@ export default function Home() {
                     page: 1
                 }
             });
+            if (!res) return;
             if (res.status === "error") {
                 //TOAST
                 toast.error("Something went wrong. Could not fetch events.");
