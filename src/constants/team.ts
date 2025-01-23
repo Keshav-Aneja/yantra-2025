@@ -51,13 +51,28 @@ export const teamPageData = [
       },
       {
         name: "Dr. G V Selvam",
-        title: "PATRON",
+        title: "Vice President",
         img: "/images/team/gv_selvam.png",
       },
     ],
   },
   {
     title: "Co-Patron",
+    people: [
+      {
+        name: "Dr. Sandhya Pentareddy",
+        title: "Executive Director",
+        img: "/images/team/Sandhya.webp",
+      },
+      {
+        name: "Ms. Kadhambari S. Viswanathan",
+        title: "Assistant Vice - President",
+        img: "/images/team/avp.jpg",
+      },
+    ],
+  },
+  {
+    title: "Other Patron",
     people: [
       {
         name: "Dr. V. S. Kanchana Bhaaskaran",
