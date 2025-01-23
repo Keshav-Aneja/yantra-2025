@@ -5,6 +5,8 @@ import EventImageContainer from "@/components/event-image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import {useInView, useAnimation, motion} from "motion/react";
+import {EventData} from "@/lib/api";
+import {getEventColor} from "@/constants/events";
 
 interface Organisation {
   logo: string;
@@ -28,7 +30,7 @@ const EventCardContainer = ({
 }: {
   children: React.ReactNode;
   containerClass?: string;
-  id?: number;
+  id?: string;
 }) => {
 
   const motionRef = useRef<HTMLDivElement>(null);
@@ -48,7 +50,7 @@ const EventCardContainer = ({
   return (
     <Link href={`/events/${id}`}>
       <motion.div
-          className={`w-fit h-fit  ${containerClass}`}
+          className={`w-fit h-full  ${containerClass}`}
           initial={{ opacity: 0, scale: 0.9 }}
           animate={controls}
           variants={{
@@ -64,11 +66,8 @@ const EventCardContainer = ({
   );
 };
 
-export interface EventCardProps {
-  id?: number;
-  organisation: Organisation;
-  event: Event;
-  containerClass?: string;
+export interface EventCardProps extends EventData{
+  containerClass?: string
   related?: boolean;
 }
 
@@ -80,41 +79,35 @@ function truncateText(text: string, wordLimit: number): string {
   return text;
 }
 
-const EventCard = ({
-  organisation,
-  event,
-  containerClass,
-  id,
-  related,
-}: EventCardProps) => {
+const EventCard = (props: EventCardProps) => {
   return (
-    <EventCardContainer containerClass={containerClass} id={id}>
-      <div className={"flex justify-between items-center py-3 px-4"}>
-        <div className={"flex items-center gap-1"}>
+    <EventCardContainer containerClass={props.containerClass} id={props._id}>
+      <div className={"flex justify-between items-center py-3 px-4 gap-2"}>
+        <div className={"flex items-center gap-1.5"}>
           <Image
-            src={organisation.logo}
+            src={props.eventLogo[0].trim()}
             height={24}
             width={24}
             className={"bg-black size-6"}
-            alt={organisation.name}
+            alt={props.clubName}
           />
           <p
             className={
               "text-[#B2B2B2] font-bold mt-0.5 text-xs md:text-sm uppercase line-clamp-1"
             }
           >
-            {organisation.name}
+            {props.clubName}
           </p>
         </div>
         <div>
           <p
-            style={{ color: event.typeColor }}
+            style={{ color: getEventColor(props.eventType) }}
             className={cn(
               "font-space_mono font-semibold text-xs md:text-sm uppercase line-clamp-1",
-              related && "hidden md:block"
+              props.related && "hidden md:block"
             )}
           >
-            {event.type}
+            {props.eventType}
           </p>
         </div>
       </div>
@@ -122,11 +115,12 @@ const EventCard = ({
       <div>
         <EventImageContainer>
           <Image
-            src={event.image}
-            alt={event.name}
+            src={props.eventPoster.trim()}
+            alt={props.eventName}
             width={286}
             height={172}
-            className={"size-full shadow-2xl"}
+            // bg-black (for event posters with no bg)
+            className={"h-44 w-80 shadow-2xl backdrop-blur-2xl"}
           />
         </EventImageContainer>
       </div>
@@ -134,24 +128,24 @@ const EventCard = ({
       <div
         className={cn(
           "flex flex-col p-4 py-6 space-y-2 text-white",
-          related && "p-2 md:p-4 py-4 md:py-6"
+          props.related && "p-2 md:p-4 py-4 md:py-6"
         )}
       >
         <p
           className={cn(
             "font-roboto text-base md:text-lg font-medium uppercase line-clamp-1",
-            related && "text-sm md:text-lg"
+            props.related && "text-sm md:text-lg"
           )}
         >
-          {event.name}
+          {props.eventName}
         </p>
         <p
           className={cn(
             "font-space_mono text-xs md:text-sm text-white/70 line-clamp-5 ",
-            related && "text-[0.6rem] md:text-sm"
+            props.related && "text-[0.6rem] md:text-sm"
           )}
         >
-          {truncateText(event.description, 23)}
+          {truncateText(props.eventDescription, 23)}
         </p>
       </div>
     </EventCardContainer>

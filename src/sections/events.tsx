@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import EventCard, { EventCardProps } from "@/components/event-card";
+import EventCard from "@/components/event-card";
 import Image from "next/image";
 import {
   Carousel,
@@ -9,14 +9,12 @@ import {
   CarouselItem,
   type CarouselApi,
 } from "@/components/ui/carousel";
-import usePrevNextButtons, {
-  PrevBtn,
-  NextBtn,
-} from "@/components/carousel-helper";
+
 import Link from "next/link";
+import {EventData} from "@/lib/api";
 
 interface EventsProps {
-  events: EventCardProps[];
+  events: EventData[];
   related?: boolean;
 }
 
