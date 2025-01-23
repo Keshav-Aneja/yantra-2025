@@ -10,9 +10,9 @@ export default function Navbar() {
 
   const navItems = [
     { label: "MAIN HACK", href: "https://yantrahack.swvit.in/" },
-    { label: "TIMELINE", href: "/#timeline" },
+    // { label: "TIMELINE", href: "/#timeline" },
     { label: "EVENTS", href: "/events" },
-    { label: "TEAM", href: "/#team" },
+    { label: "TEAM", href: "/team" },
     { label: "FAQs", href: "/faq" },
   ];
 
