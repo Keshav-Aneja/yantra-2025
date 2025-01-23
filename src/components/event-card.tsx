@@ -87,19 +87,32 @@ const EventCard = (props: EventCardProps) => {
     <EventCardContainer containerClass={props.containerClass} id={props._id}>
       <div className={"flex justify-between items-center py-3 px-4 gap-2"}>
         <div className={"flex items-center gap-1.5"}>
-          <Image
-            src={props.eventLogo[0].trim()}
-            height={24}
-            width={24}
-            className={"bg-black size-6"}
-            alt={props.clubName}
-          />
+          <>
+            <Image
+              src={props.eventLogo[0].trim()}
+              height={24}
+              width={24}
+              className={"bg-black size-6"}
+              alt={props.clubName}
+            />
+            {props.isCollaborative && (
+              <Image
+                src={props.eventLogo[1].trim()}
+                height={24}
+                width={24}
+                className={"bg-black size-6"}
+                alt={props.clubName}
+              />
+            )}
+          </>
+
           <p
             className={
               "text-[#B2B2B2] font-bold mt-0.5 text-xs md:text-sm uppercase line-clamp-1"
             }
           >
             {props.clubName}
+            {props.isCollaborative && props.collaborativeWith[1]}
           </p>
         </div>
         <div>
