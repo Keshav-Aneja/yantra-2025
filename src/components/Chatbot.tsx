@@ -41,31 +41,40 @@ export default function Chatbot() {
       if (loading || question.trim() == "") return;
       else setLoading(true);
 
-        const chats: ChatMessage[] = [...chat, {
-            type: "question",
-            value: question
-        }]
+      setChat([...chat, {
+        type: "question",
+        value: question
+      }]);
 
-      const response = await askBot(question);
-
-      if (response.status == "error" || !response.message || response.message === "") {
-            chats.push({
-                type: "answer",
-                value: "Sorry, The bot is not available right now. Please try again later."
-            })
-      } else {
-          chats.push({
-              type: "answer",
-              value: response.message
-          })
-      }
-
-      setLoading(() => {
-          setChat(chats);
-          setQuestion("");
-          return false;
-      })
+      setQuestion("");
   }
+
+    useEffect(() => {
+        (async ()=>{
+            if (loading){
+                const response = await askBot(question);
+
+                const chats = chat;
+
+                if (response.status == "error" || !response.message || response.message === "") {
+                    chats.push({
+                        type: "answer",
+                        value: "Sorry, The bot is not available right now. Please try again later."
+                    })
+                } else {
+                    chats.push({
+                        type: "answer",
+                        value: response.message
+                    })
+                }
+
+                setLoading(() => {
+                    setChat(chats);
+                    return false;
+                })
+            }
+        })()
+    }, [loading]);
 
 
   return (
