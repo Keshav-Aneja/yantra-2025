@@ -104,14 +104,14 @@ export default function AboutSection() {
         <FadeIn>
           <p className="font-mono text-xs md:text-sm leading-relaxed opacity-80">
             Home is where the heart is, but the college journey can often feel
-            unmoored. This is where Student Welfare takes center stage—a dedicated
+            unmoored. This is where Student's Welfare takes center stage—a dedicated
             team comprising the Director of Students' Welfare, Assistant
             Directors, Student Council Members, and Programme Representatives, all
             steadfastly committed to the holistic well-being of every VIT-ian.
             <br />
             <br />
             From the anticipation of induction to the heartfelt goodbyes of
-            graduation, Student Welfare accompanies you through every milestone of
+            graduation, Student's Welfare accompanies you through every milestone of
             your journey. We are the quiet counsel during midnight study sessions,
             the reassuring presence after rigorous exams, and the shared elation
             of cultural festivities. Beyond fostering academic success, we
@@ -122,7 +122,7 @@ export default function AboutSection() {
             Through vibrant clubs, chapters, OD’s, facilitation of external
             participation, and budgetary provisions, we empower you to excel and
             explore boundless opportunities. As the voice of the student body, the
-            Student Council ensures your aspirations are championed. At Student
+            Student Council ensures your aspirations are championed. At Student's
             Welfare, we are your unwavering pillar of support, dedicated to making
             your VIT journey an extraordinary and transformative chapter of your
             life.

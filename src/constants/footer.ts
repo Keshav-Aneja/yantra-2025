@@ -1,9 +1,8 @@
 export const sections = [
   { label: "About Us", link: "/#about" },
-  { label: "Timeline", link: "/#timeline" },
-  { label: "Main Hack", link: "https://vtop.vit.ac.in" },
+  { label: "Main Hack", link: "https://yantrahack.swvit.in/" },
   { label: "Events", link: "/events" },
-  { label: "Team", link: "/#team" },
+  { label: "Team", link: "/team" },
 ];
 
 export const contactDetails = [

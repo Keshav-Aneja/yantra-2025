@@ -146,7 +146,7 @@ export const teamPageData = [
       },
       {
         name: "Vedant Patil",
-        title: "Tech",
+        title: "Technical",
         img: "/images/team/vedant_patil.png",
       },
       {
