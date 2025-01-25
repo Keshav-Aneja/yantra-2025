@@ -4,7 +4,7 @@ import HeroCenter from "@/components/Hero-Center";
 import { FaArrowDown } from "react-icons/fa";
 import { TbClockHour4 } from "react-icons/tb";
 import CountdownTimer from "@/components/CountdownTimer";
-import {TextAnimate} from "@/components/ui/text-animate";
+import { TextAnimate } from "@/components/ui/text-animate";
 
 const Hero = () => {
   return (
@@ -27,33 +27,32 @@ const Hero = () => {
         </div>
       </div>
       <div className="absolute bottom-72 md:bottom-68 xl:bottom-16 left-4 md:left-8 p-4 space-y-1">
-          <div className="inline-block text-white p-2 text-xs w-2/3 font-roboto">
-              <TextAnimate
-                animation={"slideRight"}
-                by={"character"}
-                className={"whitespace-nowrap text-sm  md:text-2xl"}
-              >
-                OFFICE OF STUDENTS&apos; WELFARE
-              </TextAnimate>{" "}
-            <TextAnimate
-                animation={"slideRight"}
-                by={"character"}
-            >
-              PRESENTS
-            </TextAnimate>
-          </div>
+        <div className="inline-block text-white p-2 text-xs w-2/3 font-roboto">
           <TextAnimate
-              className={"text-white p-2 text-4xl sm:text-5xl md:text-7xl font-armstrong"}
-              animation={"slideRight"}
-              by={"character"}
+            animation={"slideRight"}
+            by={"character"}
+            className={"whitespace-nowrap text-sm  md:text-2xl"}
           >
-              YANTRA &apos;25
+            OFFICE OF STUDENTS&apos; WELFARE
+          </TextAnimate>{" "}
+          <TextAnimate animation={"slideRight"} by={"character"}>
+            PRESENTS
           </TextAnimate>
         </div>
+        <TextAnimate
+          className={
+            "text-white p-2 text-4xl sm:text-5xl md:text-7xl font-armstrong"
+          }
+          animation={"slideRight"}
+          by={"character"}
+        >
+          YANTRA &apos;25
+        </TextAnimate>
+      </div>
       <div className="absolute -bottom-4 right-0 xl:hidden justify-center items-center text-white pb-12">
         <div className="grid grid-cols-1 lg:grid-rows-16 w-[90%] self-end">
-          <div className="row-span-2 text-sm grid grid-cols-[75%_25%] lg:order-1 order-3">
-            <div className="flex items-center justify-end text-right border border-gray-300 p-6 gap-14">
+          <div className="row-span-2 text-xs grid grid-cols-[75%_25%] lg:order-1 order-3">
+            <div className="flex items-center justify-end text-right border border-gray-300 p-6 gap-11">
               <Image
                 src="/icons/arrow-right-solid.svg"
                 alt=""
@@ -63,12 +62,12 @@ const Hero = () => {
               />
               <span>PARTICIPANTS</span>
             </div>
-            <div className="flex items-center justify-center border border-gray-300 p-6 border-l-0 text-xl">
+            <div className="flex items-center justify-center border text-base border-gray-300 p-6 border-l-0 ">
               10L+
             </div>
           </div>
-          <div className="row-span-1 text-sm flex items-center justify-end text-gray-400 text-right lg:order-2 order-4"></div>
-          <div className="row-span-1 text-sm border border-[#353539] border-b-0 pr-6 uppercase h-full flex items-center justify-end lg:order-3 order-5">
+          <div className="row-span-1 text-xs flex items-center justify-end text-gray-400 text-right lg:order-2 order-4"></div>
+          <div className="row-span-1 text-xs border border-[#353539] border-b-0 pr-6 uppercase h-full flex items-center justify-end lg:order-3 order-5 py-1">
             <div className="flex items-center justify-between text-gray-300 text-right h-full w-1/2">
               <Image
                 src="/icons/arrow-right-solid.svg"
@@ -80,7 +79,7 @@ const Hero = () => {
               <span>HACKATHONS</span>
             </div>
           </div>
-          <div className="row-span-1 text-sm border border-[#353539] border-b-0 pr-6 uppercase h-full flex items-center justify-end lg:order-4 order-6">
+          <div className="row-span-1 text-xs border border-[#353539] border-b-0 pr-6 py-1 uppercase h-full flex items-center justify-end lg:order-4 order-6">
             <div className="flex items-center justify-between text-gray-300 text-right h-full w-1/2">
               <Image
                 src="/icons/arrow-right-solid.svg"
@@ -94,7 +93,7 @@ const Hero = () => {
           </div>
           <div className="row-span-4 text-sm flex items-center justify-end text-gray-400 text-right pr-6 lg:order-7 order-9"></div>
           <div className="row-span-4 text-sm grid  lg:order-8 order-2">
-            <div className="row-span-2 justify-end p-4 text-xl items-center flex  border border-1 border-gray-300 border-b-0 gap-6 font-bold ">
+            <div className="row-span-2 justify-end p-4 text-base items-center flex  border border-1 border-gray-300 border-b-0 gap-6 font-bold ">
               <TbClockHour4 />
               <CountdownTimer targetDate="2025-02-03T08:00:00" />
             </div>
@@ -107,9 +106,9 @@ const Hero = () => {
                   height={20}
                   className="scale-x-[-1] w-[6px] h-auto"
                 />
-                <span className="text-base text-gradient">FEBRUARY, 2025</span>
+                <span className="text-xs text-gradient">FEBRUARY, 2025</span>
               </div>
-              <div className="flex text-lg text-gradient font-bold items-center justify-center border border-gray-300 p-2 md:p-4 border-l-0 text-[#76C38F]">
+              <div className="flex text-sm text-gradient font-bold items-center justify-center border border-gray-300 p-2 md:p-4 border-l-0 text-[#76C38F]">
                 3-9
               </div>
             </div>
