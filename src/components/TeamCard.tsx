@@ -24,7 +24,7 @@ const TeamCard = ({ data }: { data: Props }) => {
 
   return (
     <motion.div
-        className="w-full bg-white flex flex-col justify-center items-center gap-4 p-3"
+        className="w-full bg-white flex flex-col items-center gap-4 p-2"
         initial={{ opacity: 0, scale: 0.9 }}
         animate={controls}
         variants={{
@@ -32,13 +32,13 @@ const TeamCard = ({ data }: { data: Props }) => {
         }}
         ref={motionRef}
     >
-      <span className="flex items-center gap-3 w-full">
+      <span className="flex items-start gap-3 w-full h-12 pt-2">
         <Image
           src="/icons/arrow-right-solid.svg"
           alt=""
           width={20}
           height={20}
-          className=" w-[8px] invert h-auto"
+          className=" w-[8px] invert h-auto mt-1"
         />{" "}
         <h2 className="font-space_mono uppercase text-xs md:text-base">
           {data.name}

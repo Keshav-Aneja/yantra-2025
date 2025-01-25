@@ -5,7 +5,7 @@ import Footer from "@/sections/footer";
 import { useState } from "react";
 import Image from "next/image";
 import { faqs } from "@/constants/faq";
-import { teamPageData } from "@/constants/team";
+import {teamPageData, teamPageTopData} from "@/constants/team";
 import TeamCard from "@/components/TeamCard";
 import ScrollProgress from "@/components/ui/scroll-progress";
 export default function FAQSection() {
@@ -33,6 +33,30 @@ export default function FAQSection() {
             </div>
 
             <div className="w-full border-x border-border">
+                {teamPageTopData.map((group, index) => (
+                    <div className="flex flex-col gap-6 mt-10" key={index}>
+                        <div className={"p-4 md:p-8 pb-1 md:pb-3 flex gap-5"}>
+                            <Image
+                                src={"/icons/arrow-right-solid.svg"}
+                                height={11}
+                                width={8}
+                                alt={"arrow-right"}
+                            />
+                            <div
+                                className={
+                                    "font-roboto_mono text-white text-xl md:text-3xl font-medium"
+                                }
+                            >
+                                {group.title}
+                            </div>
+                        </div>
+                        <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-[2px]">
+                            {group.people.map((person, _i) => (
+                                <TeamCard key={person.name} data={person} />
+                            ))}
+                        </div>
+                    </div>
+                ))}
               {teamPageData.map((group, index) => (
                 <div className="flex flex-col gap-6 mt-10" key={index}>
                   <div className={"p-4 md:p-8 pb-1 md:pb-3 flex gap-5"}>
@@ -50,7 +74,7 @@ export default function FAQSection() {
                       {group.title}
                     </div>
                   </div>
-                  <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-[2px]">
+                  <div className="w-full grid grid-cols-3 md:grid-cols-6 gap-[2px]">
                     {group.people.map((person, _i) => (
                       <TeamCard key={person.name} data={person} />
                     ))}
