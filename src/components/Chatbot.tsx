@@ -107,7 +107,7 @@ export default function Chatbot() {
             borderRadius: "20px",
           }}
         >
-            <div className={"relative w-full h-full min-h-96 "}>
+            <div className={"relative w-full h-full min-h-96 pb-6"}>
               {/* Header */}
               <div className="flex items-center">
                 <h2 className="text-lg font-bold">Chatbox</h2>
