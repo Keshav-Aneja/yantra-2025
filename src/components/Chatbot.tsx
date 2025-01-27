@@ -3,6 +3,7 @@
 import {useEffect, useRef, useState} from "react";
 import Image from "next/image";
 import {askBot} from "@/lib/api";
+import {IoMdClose} from "react-icons/io";
 
 interface ChatMessage {
     type: "question" | "answer";
@@ -99,94 +100,86 @@ export default function Chatbot() {
       </div>
       {isChatboxVisible && (
         <div
-          className="fixed bottom-28 right-5 bg-white z-50 p-4 rounded-lg shadow-lg pb-8 min-h-96 w-[90vw] md:w-[60vw] lg:w-[30vw] xl:w-[20vw]"
+          className="fixed bottom-28 right-5 bg-white z-50 p-4 rounded-lg shadow-lg w-[90vw] md:w-[60vw] lg:w-[30vw] xl:w-[20vw]"
           style={{
             backgroundColor: "#161616",
             color: "white",
             borderRadius: "20px",
           }}
         >
-          {/* Header */}
-          <div className="flex">
-            <h2 className="text-lg font-bold mb-2">Chatbox</h2>
-            <button className="ml-auto" onClick={toggleChatbox}>
-              X
-            </button>
-          </div>
-          <div
-           className="max-h-[50vh] overflow-y-scroll py-5 scrollbar"
-           ref={chatContainerRef}
-          >
-            {/* Question */}
-            <div className="flex justify-end mb-2">
-              <div className="bg-white p-4 rounded-2xl text-black max-w-[90%]">
-                <p className="text-sm tracking-wider">
-                  Hey, This is Yantra bot. How can I help you?
-                </p>
+            <div className={"relative w-full h-full min-h-96 "}>
+              {/* Header */}
+              <div className="flex items-center">
+                <h2 className="text-lg font-bold">Chatbox</h2>
+                <button className="ml-auto" onClick={toggleChatbox}>
+                  <IoMdClose className={"size-5"} />
+                </button>
               </div>
+                <div
+                    className="max-h-[50vh] overflow-y-scroll py-5 scrollbar"
+                    ref={chatContainerRef}
+                >
+                    {chat.length > 0 && chat.map(chatMessage => {
+                        if (chatMessage.type === "question") {
+                            return (
+                                <div className="flex justify-end mb-2">
+                                    <div className="bg-white p-4 rounded-2xl text-black max-w-[90%]">
+                                        <p className="text-sm tracking-wider">
+                                            {chatMessage.value}
+                                        </p>
+                                    </div>
+                                </div>
+                            )
+                        } else {
+                            return (
+                                <div className="flex justify-start mb-2">
+                                    <div className="bg-gray-800 p-4 rounded-2xl text-white max-w-[90%] w-auto">
+                                        <p className="text-sm tracking-wider">
+                                            {chatMessage.value}
+                                        </p>
+                                    </div>
+                                </div>
+                            )
+                        }
+                    })}
+                    {loading ?? (
+                        <div className="flex justify-start mb-2">
+                            <div className="bg-gray-800 p-4 rounded-2xl text-white max-w-[90%] w-auto">
+                                <p className="text-sm tracking-wider animate-pulse">
+                                    {"..."}
+                                </p>
+                            </div>
+                        </div>
+                    )}
+                </div>
+
+
+                {/* Footer */}
+                <form className="flex items-center mt-4 absolute bottom-0 w-full">
+                    <input
+                        type="text"
+                        placeholder="Type a message..."
+                        value={question}
+                        onChange={onInputChange}
+                        className="bg-gray-800 flex-1 p-2 text-white rounded-xl text-sm"
+                    />
+                    <button
+                      className="ml-2 p-2 rounded-full text-white"
+                      style={{
+                        background:
+                          "linear-gradient(23.96deg, #76C38F 0%, #60CF8C 48.44%, #A7C12C 100%)",
+                      }}
+                      onClick={onSubmit}
+                    >
+                      <Image
+                        src="/icons/send-button.svg"
+                        width={15}
+                        height={15}
+                        alt=""
+                      />
+                    </button>
+                </form>
             </div>
-              {chat.length > 0 && chat.map(chatMessage => {
-                  if (chatMessage.type === "question"){
-                      return (
-                          <div className="flex justify-end mb-2">
-                              <div className="bg-white p-4 rounded-2xl text-black max-w-[90%]">
-                                  <p className="text-sm tracking-wider">
-                                      {chatMessage.value}
-                                  </p>
-                              </div>
-                          </div>
-                      )
-                  } else {
-                      return (
-                          <div className="flex justify-start mb-2">
-                              <div className="bg-gray-800 p-4 rounded-2xl text-white max-w-[90%] w-auto">
-                                  <p className="text-sm tracking-wider">
-                                      {chatMessage.value}
-                                  </p>
-                              </div>
-                          </div>
-                      )
-                  }
-              })}
-              {loading ?? (
-                  <div className="flex justify-start mb-2">
-                      <div className="bg-gray-800 p-4 rounded-2xl text-white max-w-[90%] w-auto">
-                          <p className="text-sm tracking-wider animate-pulse">
-                              {"..."}
-                          </p>
-                      </div>
-                  </div>
-              )}
-          </div>
-
-
-            {/* Footer */}
-        <form>
-            <div className="flex items-center mt-4 absolute bottom-0 w-full">
-                <input
-                    type="text"
-                    placeholder="Type a message..."
-                    value={question}
-                    onChange={onInputChange}
-                    className="bg-gray-800 flex-1 p-2 text-white rounded-xl text-sm"
-                />
-            <button
-              className="ml-2 p-2 rounded-full text-white"
-              style={{
-                background:
-                  "linear-gradient(23.96deg, #76C38F 0%, #60CF8C 48.44%, #A7C12C 100%)",
-              }}
-              onClick={onSubmit}
-            >
-              <Image
-                src="/icons/send-button.svg"
-                width={15}
-                height={15}
-                alt=""
-              />
-            </button>
-          </div>
-        </form>
         </div>
       )}
     </div>
