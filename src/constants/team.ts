@@ -91,11 +91,11 @@ export const teamPageTopData = [
       },
     ],
   },
-]
+];
 
 export const teamPageData = [
   {
-    title: "Office of Student's Welfare",
+    title: "Office of Students' Welfare",
     people: [
       {
         name: "Dr. Cd naiju",
@@ -103,34 +103,34 @@ export const teamPageData = [
         img: "/images/team/dsw.png",
       },
       {
-        name: "Dr. Varalakshmi M",
-        title: "Assistant Director",
-        img: "/images/team/varalakshmi.png",
-      },
-      {
-        name: "Dr. Dinesh raghavan",
+        name: "Dr. Dinesh Raghavan",
         title: "Assistant Director",
         img: "/images/team/dinesh.png",
       },
       {
-        name: "dr.Rajashekar reddy Mutra",
-        title: "Assistant Director",
-        img: "/images/team/rajashekhar.png",
-      },
-      {
-        name: "Dr. Mohana priya",
+        name: "Dr. Mohana Priya",
         title: "Assistant Director",
         img: "/images/team/mohona.png",
       },
       {
-        name: "Dr. RAJU J",
+        name: "Dr. Pradheep T",
+        title: "Assistant Director",
+        img: "/images/team/pradheep.png",
+      },
+      {
+        name: "Dr. Rajashekar Reddy Mutra",
+        title: "Assistant Director",
+        img: "/images/team/rajashekhar.png",
+      },
+      {
+        name: "Dr. Raju J",
         title: "Assistant Director",
         img: "/images/team/raju.png",
       },
       {
-        name: "Dr. PRADHEEP T",
+        name: "Dr. Varalakshmi M",
         title: "Assistant Director",
-        img: "/images/team/pradheep.png",
+        img: "/images/team/varalakshmi.png",
       },
     ],
   },
