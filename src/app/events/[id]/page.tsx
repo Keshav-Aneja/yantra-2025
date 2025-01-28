@@ -13,6 +13,25 @@ import {EventData, fetchEvent} from "@/lib/api";
 import {toast} from "sonner";
 import {LoaderCircleIcon} from "lucide-react";
 
+function parseAndFormatDate(dateString: string) {
+  const [datePart] = dateString.split(" ");
+
+  // Convert to a Date object
+  const [day, month, year] = datePart.split("/").map(Number);
+  const dateObj = new Date(year, month - 1, day);
+
+  // Format the date to "3 March 2025"
+  return new Intl.DateTimeFormat('en-GB', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  }).format(dateObj);
+}
+
+function parseTime(dateString: string){
+  return dateString.split("     ")[1];
+}
+
 export default function EventPage() {
   const { id } = useParams<{ id: string }>();
 
@@ -67,11 +86,7 @@ export default function EventPage() {
           <p className={`text-lg max-md:text-sm font-semibold px-6`}>
             EVENT DATE:{" "}
             <span className="font-normal text-base max-md:text-xs">
-              {new Date(event.eventStart).toLocaleDateString("en-GB", {
-                day: "numeric",
-                month: "long",
-                year: "numeric",
-              })}
+              {parseAndFormatDate(event.eventStart)}
             </span>
           </p>
         </div>
@@ -80,7 +95,7 @@ export default function EventPage() {
           <p className={`text-lg max-md:text-sm font-semibold px-6`}>
             EVENT TIME:{" "}
             <span className="font-normal text-base max-md:text-xs">
-              {new Date(event.eventEnd).toLocaleTimeString()}
+              {parseTime(event.eventStart)}
             </span>
           </p>
         </div>
