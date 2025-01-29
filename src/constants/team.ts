@@ -153,6 +153,10 @@ export const teamPageData = [
         img: "/images/team/rohan_agr.png",
       },
       {
+        title: "Sponsorship and Finance",
+        img: "/images/team/chakravarthy.png",
+      },
+      {
         name: "R. Koushik",
         title: "Sponsorship and Finance",
         img: "/images/team/r_koushik_new.jpg",
