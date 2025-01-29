@@ -118,7 +118,7 @@ export const teamPageData = [
         img: "/images/team/pradheep.png",
       },
       {
-        name: "Dr. Rajashekar Reddy Mutra",
+        name: "Dr. Rajasekhara Reddy Mutra",
         title: "Assistant Director",
         img: "/images/team/rajashekhar.png",
       },
