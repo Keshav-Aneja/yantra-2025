@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "@/styles/globals.css";
 import Chatbot from "@/components/Chatbot";
-import {Toaster} from "sonner";
+import { Toaster } from "sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,6 +17,7 @@ export const metadata: Metadata = {
   title: "Yantra'25",
   description:
     "The 5th edition of Yantra, VIT's premier techno-management fest, revolves around Artificial Intelligence (AI) with the objective of advancing the United Nations Sustainable Development Goals. This event serves as an incubator for young visionaries to engage with avant-garde ideas, hone technical expertise, and craft solutions that address global challenges across economic, social, and environmental spheres. A prominent feature, Central Hack, in collaboration with IEEE CS, amplifies the hackathon experience, nurturing ingenuity and cross-disciplinary problem-solving.",
+  icons: ["/favicon.png"],
   openGraph: {
     images: ["/og_yantra.png"],
   },
@@ -32,7 +33,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Toaster position={"bottom-center"}  />
+        <Toaster position={"bottom-center"} />
         {children}
         <Chatbot />
       </body>

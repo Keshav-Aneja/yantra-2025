@@ -155,7 +155,7 @@ export const teamPageData = [
       {
         name: "R. Koushik",
         title: "Sponsorship and Finance",
-        img: "/images/team/r_koushik.jpg",
+        img: "/images/team/r_koushik_new.jpg",
       },
       {
         name: "Mani Preetham",
