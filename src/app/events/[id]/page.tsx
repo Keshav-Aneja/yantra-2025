@@ -16,11 +16,9 @@ import {LoaderCircleIcon} from "lucide-react";
 function parseAndFormatDate(dateString: string) {
   const [datePart] = dateString.split(" ");
 
-  // Convert to a Date object
   const [day, month, year] = datePart.split("/").map(Number);
   const dateObj = new Date(year, month - 1, day);
 
-  // Format the date to "3 March 2025"
   return new Intl.DateTimeFormat('en-GB', {
     day: 'numeric',
     month: 'long',
