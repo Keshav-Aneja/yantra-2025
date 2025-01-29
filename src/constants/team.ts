@@ -153,6 +153,7 @@ export const teamPageData = [
         img: "/images/team/rohan_agr.png",
       },
       {
+        name: "Chakravarthy S",
         title: "Sponsorship and Finance",
         img: "/images/team/chakravarthy.png",
       },
