@@ -62,8 +62,9 @@ const Hero = () => {
               />
               <span>PARTICIPANTS</span>
             </div>
-            <div className="flex items-center justify-center border text-base border-gray-300 p-6 border-l-0 ">
-              10L+
+            <div className="flex items-center justify-center border border-gray-300 p-6 border-l-0 text-xl">
+              10K+
+
             </div>
           </div>
           <div className="row-span-1 text-xs flex items-center justify-end text-gray-400 text-right lg:order-2 order-4"></div>

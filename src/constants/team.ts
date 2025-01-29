@@ -30,7 +30,7 @@ export const teamPageTopData = [
     title: "Chief Patron",
     people: [
       {
-        name: "Dr. G. Vishwanathan",
+        name: "Dr. G. Viswanathan",
         title: "Founder & Chancellor",
         img: "/images/team/chancellor_1.png",
       },
@@ -153,9 +153,9 @@ export const teamPageData = [
         img: "/images/team/rohan_agr.png",
       },
       {
-        name: "Chakravarthy S",
+        name: "R. Koushik",
         title: "Sponsorship and Finance",
-        img: "/images/team/chakravarthy.png",
+        img: "/images/team/r_koushik.jpg",
       },
       {
         name: "Mani Preetham",
