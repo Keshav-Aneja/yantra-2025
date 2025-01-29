@@ -104,14 +104,14 @@ export default function AboutSection() {
         <FadeIn>
           <p className="font-mono text-xs md:text-sm leading-relaxed opacity-80">
             Home is where the heart is, but the college journey can often feel
-            unmoored. This is where Student Welfare takes center stage—a dedicated
+            unmoored. This is where Students' Welfare takes center stage—a dedicated
             team comprising the Director of Students' Welfare, Assistant
             Directors, Student Council Members, and Programme Representatives, all
-            steadfastly committed to the holistic well-being of every VIT-ian.
+            steadfastly committed to the holistic well-being of every VITian.
             <br />
             <br />
             From the anticipation of induction to the heartfelt goodbyes of
-            graduation, Student Welfare accompanies you through every milestone of
+            graduation, Student's Welfare accompanies you through every milestone of
             your journey. We are the quiet counsel during midnight study sessions,
             the reassuring presence after rigorous exams, and the shared elation
             of cultural festivities. Beyond fostering academic success, we
@@ -122,7 +122,7 @@ export default function AboutSection() {
             Through vibrant clubs, chapters, OD’s, facilitation of external
             participation, and budgetary provisions, we empower you to excel and
             explore boundless opportunities. As the voice of the student body, the
-            Student Council ensures your aspirations are championed. At Student
+            Student Council ensures your aspirations are championed. At Students'
             Welfare, we are your unwavering pillar of support, dedicated to making
             your VIT journey an extraordinary and transformative chapter of your
             life.
@@ -157,7 +157,7 @@ export default function AboutSection() {
       <div className="border-r border-b border-border p-4 md:p-8">
         <p className="font-mono text-xs md:text-sm leading-relaxed opacity-80">
           <FadeIn>
-            Yantra, the annual flagship techno-management fest of VIT, is a
+            Yantra, the annual flagship techno-event fest of VIT, is a
             distinguished celebration of innovation and large-scale collaboration.
             Spanning an entire week, Yantra’25 garners participation from over
             35,000 students. Now in its 5th edition, Yantra showcases a

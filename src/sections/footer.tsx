@@ -78,7 +78,7 @@ const Footer = () => {
                   />
                   <p
                     className={
-                      "max-md:text-xs w-full break-all overflow-visible whitespace-normal"
+                      "max-md:text-xs w-full break-all overflow-visible whitespace-normal font-sans"
                     }
                   >
                     {contact.text}
