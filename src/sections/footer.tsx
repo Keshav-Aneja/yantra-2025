@@ -68,7 +68,7 @@ const Footer = () => {
             </p>
             <div className={"flex flex-col items-start gap-3 text-sm"}>
               {contactDetails.map((contact, index) => (
-                <div className={"flex gap-3"} key={index}>
+                <Link href={contact.href} target={"_blank"} className={"flex gap-3"} key={index}>
                   <Image
                     src={contact.iconSrc}
                     alt={contact.alt}
@@ -83,7 +83,7 @@ const Footer = () => {
                   >
                     {contact.text}
                   </p>
-                </div>
+                </Link>
               ))}
             </div>
           </div>
