@@ -1,6 +1,9 @@
 'use server'
+import axios from "axios"
 
-import { chatBotApi } from "./api"
+export const chatBotApi = axios.create({
+    baseURL: process.env.NEXT_PUBLIC_CHATBOT_URL,
+})
 
 interface ChatBotResponse {
   result?: string,

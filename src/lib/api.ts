@@ -102,9 +102,4 @@ export const fetchEvent = async ({
     }
 }
 
-export const chatBotApi = axios.create({
-    baseURL: process.env.NEXT_PUBLIC_CHATBOT_URL,
-})
-
-
 export default axiosInstance;
