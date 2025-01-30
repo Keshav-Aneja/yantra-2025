@@ -62,7 +62,7 @@ const EventsPage = () => {
     if (!res) return;
     if (res.status === "error") {
       //TOAST
-      toast.error("Something went wrong.");
+      toast.error("Could not fetch events.");
       return;
     }
     // console.log(res);
