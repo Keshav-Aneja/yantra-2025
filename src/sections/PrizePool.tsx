@@ -5,6 +5,7 @@ import {NumberTicker} from "@/components/ui/number-ticker";
 import {motion, useAnimation} from "framer-motion";
 import {useInView} from "motion/react";
 import {useEffect, useRef} from "react";
+import Link from "next/link";
 
 export default function PrizePool() {
 
@@ -69,13 +70,15 @@ export default function PrizePool() {
                 height={180}
                 className="w-40 object-contain p-4"
             />
-            <Image
-                src={"/icons/interact.png"}
-                width={288}
-                height={180}
-                className={"w-40 md:w-52 object-contain p-4"}
-                alt={"interact"}
-            />
+            <Link href={"https://interactnow.in"} target={"_blank"}>
+              <Image
+                  src={"/icons/interact.png"}
+                  width={288}
+                  height={180}
+                  className={"w-40 md:w-52 object-contain p-4"}
+                  alt={"interact"}
+              />
+            </Link>
           </motion.div>
         </div>
       </div>

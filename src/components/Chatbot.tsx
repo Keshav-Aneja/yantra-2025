@@ -14,7 +14,8 @@ export default function Chatbot() {
   const [isChatboxVisible, setChatboxVisible] = useState(false);
   const [question, setQuestion] = useState("");
   const [loading, setLoading] = useState(false);
-  const chatContainerRef = useRef<HTMLDivElement>(null)
+  const chatContainerRef = useRef<HTMLDivElement>(null);
+  const chatInputRef = useRef<HTMLInputElement>(null)
 
   const [chat, setChat] = useState<ChatMessage[]>([
       {
@@ -47,7 +48,7 @@ export default function Chatbot() {
         value: question
       }]);
 
-      setQuestion("");
+      if (chatInputRef.current) chatInputRef.current.value = "";
   }
 
     useEffect(() => {
@@ -71,6 +72,7 @@ export default function Chatbot() {
 
                 setLoading(() => {
                     setChat(chats);
+                    setQuestion("");
                     return false;
                 })
             }
@@ -159,8 +161,8 @@ export default function Chatbot() {
                     <input
                         type="text"
                         placeholder="Type a message..."
-                        value={question}
                         onChange={onInputChange}
+                        ref={chatInputRef}
                         className="bg-gray-800 flex-1 p-2 text-white rounded-xl text-sm"
                     />
                     <button
