@@ -2,7 +2,7 @@
 
 import {useEffect, useRef, useState} from "react";
 import Image from "next/image";
-import {askBot} from "@/lib/chatbot-server";
+import {askBot} from "@/lib/chat-server";
 import {IoMdClose} from "react-icons/io";
 
 interface ChatMessage {
