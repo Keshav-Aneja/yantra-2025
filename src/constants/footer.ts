@@ -10,16 +10,19 @@ export const contactDetails = [
     iconSrc: "/icons/phone.svg",
     alt: "call",
     text: "+91 8438162183",
+    href: "tel:+918438162183"
   },
   {
     iconSrc: "/icons/email.svg",
     alt: "email",
     text: "yantra.sw@vit.ac.in",
+    href: "mailto:yantra.sw@vit.ac.in"
   },
   {
     iconSrc: "/icons/location.svg",
     alt: "address",
     text: "GDN G24",
+    href: "https://maps.app.goo.gl/47RPXkibw5kaXU7j7?g_st=com.google.maps.preview.copy"
   },
 ];
 

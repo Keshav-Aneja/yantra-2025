@@ -111,7 +111,7 @@ export default function AboutSection() {
             <br />
             <br />
             From the anticipation of induction to the heartfelt goodbyes of
-            graduation, Student's Welfare accompanies you through every milestone of
+            graduation, Students' Welfare accompanies you through every milestone of
             your journey. We are the quiet counsel during midnight study sessions,
             the reassuring presence after rigorous exams, and the shared elation
             of cultural festivities. Beyond fostering academic success, we

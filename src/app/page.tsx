@@ -33,7 +33,7 @@ export default function Home() {
       }
       if (res.status === "error") {
         //TOAST
-        toast.error("Something went wrong. Could not fetch events.");
+        toast.error("Could not fetch events.");
         return;
       }
       // console.log(res);

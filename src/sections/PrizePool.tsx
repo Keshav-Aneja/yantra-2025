@@ -5,6 +5,7 @@ import {NumberTicker} from "@/components/ui/number-ticker";
 import {motion, useAnimation} from "framer-motion";
 import {useInView} from "motion/react";
 import {useEffect, useRef} from "react";
+import Link from "next/link";
 
 export default function PrizePool() {
 
@@ -39,36 +40,45 @@ export default function PrizePool() {
         <div className="border border-border py-8"
         >
           <motion.div
-            className={"flex flex-wrap items-center justify-center gap-[3%] md:gap-64"}
-            initial={{ scale: 0 }}
-            animate={controls}
-            variants={{
-              hidden: { scale: 0 },
-              visible: { scale: 1, transition: { duration: 0.5, ease: "easeOut" } },
-            }}
-            ref={motionRef}
+              className={"grid grid-cols-4 max-md:grid-cols-2 justify-items-center place-items-center p-4"}
+              initial={{scale: 0}}
+              animate={controls}
+              variants={{
+                hidden: {scale: 0},
+                visible: {scale: 1, transition: {duration: 0.5, ease: "easeOut"}},
+              }}
+              ref={motionRef}
           >
             <Image
-              src="/sdg.png"
-              alt="UN Sustainable Development Goals"
-              width={288}
-              height={180}
-              className="w-[30%] md:w-40 object-contain p-4"
+                src="/sdg.png"
+                alt="UN Sustainable Development Goals"
+                width={288}
+                height={180}
+                className="w-36 md:w-40 object-contain p-4"
             />
             <Image
-              src="/innovation.png"
-              alt="Institution's Innovation Council"
-              width={288}
-              height={180}
-              className="w-[30%] md:w-40 object-contain p-4"
+                src="/innovation.png"
+                alt="Institution's Innovation Council"
+                width={288}
+                height={180}
+                className="w-40 md:w-48 object-contain p-4"
             />
             <Image
-              src="/40.png"
-              alt="40th Anniversary Logo"
-              width={288}
-              height={180}
-              className="w-[30%] md:w-40 object-contain p-4"
+                src="/40.png"
+                alt="40th Anniversary Logo"
+                width={288}
+                height={180}
+                className="w-40 object-contain p-4"
             />
+            <Link href={"https://interactnow.in"} target={"_blank"}>
+              <Image
+                  src={"/icons/interact.png"}
+                  width={288}
+                  height={180}
+                  className={"w-40 md:w-52 object-contain p-4"}
+                  alt={"interact"}
+              />
+            </Link>
           </motion.div>
         </div>
       </div>
