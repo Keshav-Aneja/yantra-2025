@@ -37,7 +37,7 @@ export const teamPageTopData = [
     ],
   },
   {
-    title: "Patron",
+    title: "Patrons",
     people: [
       {
         name: "Mr.Sankar Viswanathan",
@@ -57,7 +57,7 @@ export const teamPageTopData = [
     ],
   },
   {
-    title: "Co-Patron",
+    title: "Co-Patrons",
     people: [
       {
         name: "Dr. Sandhya Pentareddy",
