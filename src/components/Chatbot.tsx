@@ -66,7 +66,7 @@ export default function Chatbot() {
                 } else {
                     chats.push({
                         type: "answer",
-                        value: response.message
+                        value: response.message.replace(/\n/g, "<br />")
                     })
                 }
 
@@ -126,9 +126,9 @@ export default function Chatbot() {
                             return (
                                 <div className="flex justify-end mb-2">
                                     <div className="bg-white p-4 rounded-2xl text-black max-w-[90%]">
-                                        <p className="text-sm tracking-wider">
-                                            {chatMessage.value}
-                                        </p>
+                                        <p className="text-sm tracking-wider" dangerouslySetInnerHTML={{
+                                            __html: chatMessage.value
+                                        }} />
                                     </div>
                                 </div>
                             )
@@ -136,9 +136,9 @@ export default function Chatbot() {
                             return (
                                 <div className="flex justify-start mb-2">
                                     <div className="bg-gray-800 p-4 rounded-2xl text-white max-w-[90%] w-auto">
-                                        <p className="text-sm tracking-wider">
-                                            {chatMessage.value}
-                                        </p>
+                                        <p className="text-sm tracking-wider" dangerouslySetInnerHTML={{
+                                            __html: chatMessage.value
+                                        }} />
                                     </div>
                                 </div>
                             )
