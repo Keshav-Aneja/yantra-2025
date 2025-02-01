@@ -190,7 +190,7 @@ export const teamPageData = [
       {
         name: "Nikita Rajpurohit",
         title: "Registration",
-        img: "/images/team/nikita.png",
+        img: "/images/team/nikita.jpg",
       },
     ],
   },

@@ -16,7 +16,7 @@ export const EventImageContainer = ({
     <div className={`${!removeBg && "event-image-gradient"} relative`}>
       {" "}
       {/* Gradient */}
-      {!removeBg && (
+          {!removeBg && (
         <>
           {" "}
           <div
