@@ -17,7 +17,7 @@ import {toast} from "sonner";
 const EventsPage = () => {
   const [data, setData] = useState<EventData[]>([]);
   const [search, setSearch] = useState<string>("");
-  const debouncedSearchQuery = useDebounce(search);
+  const debouncedSearchQuery = useDebounce(search, 500);
   const [selectedEventType, setSelectedEventType] = useState("ALL");
   const abortController = useRef<AbortController | null>(null);
   const [pagination, setPagination] = useState<Pagination>({
