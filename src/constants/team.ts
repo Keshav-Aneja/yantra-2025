@@ -138,13 +138,13 @@ export const teamPageData = [
     title: "Faculty Advisors",
     people: [
       {
-        name: "Sharmila N",
-        img: "/images/team/sharmila.jpg",
+        name: "Aarthi S.L",
+        img: "/images/team/aarthy.jpg",
         title: "Faculty Advisor"
       },
       {
-        name: "Aarthi S.L",
-        img: "/images/team/aarthy.jpg",
+        name: "Sharmila N",
+        img: "/images/team/sharmila.jpg",
         title: "Faculty Advisor"
       }
     ]
