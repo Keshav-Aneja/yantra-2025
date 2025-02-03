@@ -16,7 +16,6 @@ const TimelineHover = ({ className, image, title, description }: Props) => {
       }}
     >
       <span className="absolute bottom-0 p-2 md:p-4 left-0  z-50">
-        {" "}
         <h1 className="text-white text-xs md:text-xl font-semibold font-roboto uppercase">
           {title}
         </h1>
