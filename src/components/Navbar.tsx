@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import {useEffect, useState} from "react";
 import Link from "next/link";
 import Image from "next/image";
+import {toast} from "sonner";
 
 export default function Navbar() {
   const [activeLink, setActiveLink] = useState<string>("/");
@@ -14,7 +15,15 @@ export default function Navbar() {
     { label: "EVENTS", href: "/events" },
     { label: "TEAM", href: "/team" },
     { label: "FAQs", href: "/faq" },
+    { label: "Results", href: '#' }
   ];
+
+  useEffect(() => {
+    if (activeLink === '#'){
+      toast.error('To be announced after Yantra')
+      setActiveLink('/')
+    }
+  }, [activeLink]);
 
   return (
     <nav className="w-full flex justify-between items-center font-roboto text-sm border-b border-border bg-[#161616] h-16 relative z-[9999]">
