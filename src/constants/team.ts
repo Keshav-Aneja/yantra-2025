@@ -138,7 +138,7 @@ export const teamPageData = [
     title: "Faculty Advisors",
     people: [
       {
-        name: "Aarthi S.L",
+        name: "Aarthy S.L",
         img: "/images/team/aarthy.jpg",
         title: "Faculty Advisor"
       },
