@@ -140,14 +140,14 @@ export const teamPageData = [
       {
         name: "Dr. Aarthy S.L",
         img: "/images/team/aarthy.jpg",
-        title: "Faculty Advisor"
+        title: "Faculty Advisor",
       },
       {
         name: "Dr. Sharmila N",
         img: "/images/team/sharmila.jpg",
-        title: "Faculty Advisor"
-      }
-    ]
+        title: "Faculty Advisor",
+      },
+    ],
   },
   {
     title: "Student Organizers",
@@ -215,15 +215,15 @@ export const teamPageData = [
       {
         name: "Devabathini Chinmay",
         img: "/images/team/chinmay.png",
-        title: "Student Advisor"
+        title: "Student Advisor",
       },
       {
         name: "Sanjeeva Reddy S",
         img: "/images/team/sanjeeva.png",
-        title: "Student Advisor"
-      }
-    ]
-  }
+        title: "Student Advisor",
+      },
+    ],
+  },
 ];
 
 export const studentCouncil = [
@@ -321,13 +321,13 @@ export const studentCouncil = [
   { domain: "Tech", name: "ROUNAK AGRAWAL" },
   { domain: "Tech", name: "KESHAV ANEJA" },
   { domain: "Tech", name: "ARYAN BHARTI" },
-  { domain: "Tech", name: "SANJAI SENTHIL S" }
-];
+  { domain: "Tech", name: "SANJAI SENTHIL S" },
+].reverse();
 
 export const studentCouncilWithDomains = [
   {
-    "title": "Design",
-    "people": [
+    title: "Design",
+    people: [
       "SMRITI KUMARI",
       "NAVANEEKRISHNAN",
       "JAGAN M",
@@ -335,19 +335,16 @@ export const studentCouncilWithDomains = [
       "NAMAN JAIN M",
       "V SUNDARA MURTHY",
       "A SRUTHI",
-      "ASHMITA RAVI"
-    ]
+      "ASHMITA RAVI",
+    ],
   },
   {
-    "title": "Documentation",
-    "people": [
-      "ARPIT TIWARI",
-      "AADITYA RAJ"
-    ]
+    title: "Documentation",
+    people: ["ARPIT TIWARI", "AADITYA RAJ"],
   },
   {
-    "title": "Events and Documentation",
-    "people": [
+    title: "Events and Documentation",
+    people: [
       "ISHAN JAIN",
       "ROHAN AGRAWAL",
       "KARTHIK POOVENTHAN R",
@@ -373,12 +370,12 @@ export const studentCouncilWithDomains = [
       "AMAR HAMDAN",
       "KEERTHANA T",
       "SANJAY A",
-      "KARKI SOHAN"
-    ]
+      "KARKI SOHAN",
+    ],
   },
   {
-    "title": "Guest Care",
-    "people": [
+    title: "Guest Care",
+    people: [
       "MOHIT PANKAJ MUNDRA",
       "JEFIN MATHEW KURIAN",
       "HARSHIT GAUR",
@@ -386,12 +383,12 @@ export const studentCouncilWithDomains = [
       "KESHAV S KAUSHISH",
       "AAYUSH NEGI",
       "PRITHA SHARMA",
-      "SIDDHARTH MAHINDRAKAR"
-    ]
+      "SIDDHARTH MAHINDRAKAR",
+    ],
   },
   {
-    "title": "Halls and Refereshments",
-    "people": [
+    title: "Halls and Refereshments",
+    people: [
       "BOGOLU MANI PREETHAM",
       "G VASUDHA",
       "ALAPATI PRAJITH",
@@ -407,24 +404,24 @@ export const studentCouncilWithDomains = [
       "VANSH ARYA",
       "G YASWANTHKUMAR",
       "DHRUVIE KHANNA",
-      "AKSHAYA CHIDAMBARA RAJAN"
-    ]
+      "AKSHAYA CHIDAMBARA RAJAN",
+    ],
   },
   {
-    "title": "Purchase",
-    "people": [
+    title: "Purchase",
+    people: [
       "CHAMAN TAHSEEN K N",
       "SREEMATHI M",
       "SIDDHARTH DAS",
       "ADITYA PRABHU",
       "MOHAMMED AFAAN SHERIEF",
       "SWATHI A",
-      "THEJAL T JOHN"
-    ]
+      "THEJAL T JOHN",
+    ],
   },
   {
-    "title": "Registeration",
-    "people": [
+    title: "Registeration",
+    people: [
       "SNEHA SHREE R",
       "RAJPUROHIT NIKITA",
       "SHARANYA PAL",
@@ -437,12 +434,12 @@ export const studentCouncilWithDomains = [
       "ASWINKARTHICK K T",
       "KAMARAJU VYSHNAVI DEVI",
       "ANKIT SUBEDI",
-      "DEVANANDA P A"
-    ]
+      "DEVANANDA P A",
+    ],
   },
   {
-    "title": "Sponsorship and Finance",
-    "people": [
+    title: "Sponsorship and Finance",
+    people: [
       "KOUSHIK R",
       "CHAKRAVARTHY S",
       "HARSHVARDHAN K",
@@ -452,20 +449,20 @@ export const studentCouncilWithDomains = [
       "E PANIMALAR",
       "ATMAJEET SAMAL",
       "ARTHUR LESLIE",
-      "KAJAL R"
-    ]
+      "KAJAL R",
+    ],
   },
   {
-    "title": "Tech",
-    "people": [
+    title: "Tech",
+    people: [
       "PATIL VEDANT RAJENDRA",
       "ROUNAK AGRAWAL",
       "KESHAV ANEJA",
       "ARYAN BHARTI",
-      "SANJAI SENTHIL S"
-    ]
-  }
-]
+      "SANJAI SENTHIL S",
+    ],
+  },
+];
 
 /*
 <div className={"w-full flex flex-col items-center gap-2"}>
