@@ -14,10 +14,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 export const metadata: Metadata = {
-  title: "Yantra'25 | VIT Vellore's Premier Techno-Management Fest",
+  title: "Yantra'25 | VIT Vellore's Premier Technical Week",
 
   description:
-    "The 5th edition of Yantra, VIT's premier techno-management fest, revolves around Artificial Intelligence (AI) with the objective of advancing the United Nations Sustainable Development Goals. This event serves as an incubator for young visionaries to engage with avant-garde ideas, hone technical expertise, and craft solutions that address global challenges across economic, social, and environmental spheres. A prominent feature, Central Hack, in collaboration with IEEE CS, amplifies the hackathon experience, nurturing ingenuity and cross-disciplinary problem-solving.",
+    "The 5th edition of Yantra, VIT's premier technical week, revolves around Artificial Intelligence (AI) with the objective of advancing the United Nations Sustainable Development Goals. This event serves as an incubator for young visionaries to engage with avant-garde ideas, hone technical expertise, and craft solutions that address global challenges across economic, social, and environmental spheres. A prominent feature, Central Hack, in collaboration with IEEE CS, amplifies the hackathon experience, nurturing ingenuity and cross-disciplinary problem-solving.",
   icons: ["/favicon.png"],
   keywords: [
     "Yantra 2025",
@@ -60,9 +60,9 @@ export const metadata: Metadata = {
     "inter-college tech events",
   ],
   openGraph: {
-    title: "Yantra'25 | VIT Vellore's Premier Techno-Management Fest",
+    title: "Yantra'25 | VIT Vellore's Premier Technical Week",
     description:
-      "Join us at Yantra 2025, VIT's flagship techno-management festival, featuring AI-driven innovation, hackathons, and interdisciplinary competitions.",
+      "Join us at Yantra 2025, VIT's flagship technical week, featuring AI-driven innovation, hackathons, and interdisciplinary competitions.",
     url: "https://yantra.swvit.in",
     type: "website",
     images: [
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
         url: "/og_yantra.png",
         width: 1200,
         height: 630,
-        alt: "Yantra 2025 - VIT's Premier Techno-Management Fest",
+        alt: "Yantra 2025 - VIT's Premier Technical Week",
       },
     ],
   },
@@ -101,7 +101,7 @@ export const metadata: Metadata = {
       },
       image: ["https://yantra.swvit.in/og_yantra.png"],
       description:
-        "Yantra 2025 is VIT's premier techno-management festival featuring AI-driven innovation, hackathons, and interdisciplinary competitions.",
+        "Yantra 2025 is VIT's premier technical week featuring AI-driven innovation, hackathons, and interdisciplinary competitions.",
       organizer: {
         "@type": "Organization",
         name: "VIT Vellore",
