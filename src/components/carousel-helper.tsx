@@ -44,6 +44,56 @@ export const usePrevNextButtons = (
     }
 }
 
+type IUseCarouselTabs = {
+    selectedIndex: number
+    scrollSnaps: number[]
+    handleTabSelect: (index: number) => void
+}
+
+export const useCarouselTabs = (
+  emblaApi: CarouselApi | undefined,
+  options?: {
+    onTabSelect?: (emblaApi: CarouselApi) => void;
+  }
+): IUseCarouselTabs => {
+    const [selectedIndex, setSelectedIndex] = useState(0)
+    const [scrollSnaps, setScrollSnaps] = useState<number[]>([])
+
+    const handleTabSelect = useCallback(
+      (index: number) => {
+          if (!emblaApi) return
+          emblaApi.scrollTo(index)
+          if (options?.onTabSelect) options.onTabSelect(emblaApi)
+      },
+      [emblaApi, options?.onTabSelect]
+    )
+
+    const onInit = useCallback((emblaApi: CarouselApi) => {
+        if (!emblaApi) return;
+        setScrollSnaps(emblaApi.scrollSnapList())
+    }, [])
+
+    const onSelect = useCallback((emblaApi: CarouselApi) => {
+        if (!emblaApi) return;
+        setSelectedIndex(emblaApi.selectedScrollSnap())
+    }, [])
+
+    useEffect(() => {
+        if (!emblaApi) return
+
+        onInit(emblaApi)
+        onSelect(emblaApi)
+
+        emblaApi.on('reInit', onInit).on('reInit', onSelect).on('select', onSelect)
+    }, [emblaApi, onInit, onSelect])
+
+    return {
+        selectedIndex,
+        scrollSnaps,
+        handleTabSelect
+    }
+}
+
 export const NextBtn = (props: React.ComponentPropsWithoutRef<'button'>)=>{
     return (
         <button type={"button"} className={"size-7"} {...props}>
@@ -82,5 +132,3 @@ export const PrevBtn = (props: React.ComponentPropsWithoutRef<'button'>) => {
         </button>
     )
 }
-
-export default usePrevNextButtons;

@@ -67,3 +67,26 @@ html {
 .--timeline-banner {
   clip-path: polygon(5% 0, 100% 0, 100% 85%, 95% 100%, 0% 100%, 0 15%);
 }
+
+.text-gradient {
+  @apply bg-gradient-to-tr from-[#76C38F] via-[#60CF8C] to-[#A7C12C] text-transparent bg-clip-text
+}
+
+.embla__parallax {
+  height: 100%;
+  overflow: hidden;
+}
+
+.embla__parallax__layer {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.embla__parallax__img {
+  max-width: none;
+  flex: 0 0 calc(115% + (var(--slide-spacing) * 2));
+  object-fit: cover;
+}

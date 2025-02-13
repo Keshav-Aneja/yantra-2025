@@ -1,12 +1,12 @@
-import React, { useEffect, useRef } from "react";
+import React, {useEffect, useRef} from "react";
 import "@/styles/events/event-card.css";
 import Image from "next/image";
 import EventImageContainer from "@/components/event-image";
 import Link from "next/link";
-import { cn } from "@/lib/utils";
-import { useInView, useAnimation, motion } from "motion/react";
-import { EventData } from "@/lib/api";
-import { getEventColor } from "@/constants/events";
+import {cn} from "@/lib/utils";
+import {useInView, useAnimation, motion} from "motion/react";
+import {EventData} from "@/lib/api";
+import {getEventColor} from "@/constants/events";
 
 interface Organisation {
   logo: string;
@@ -24,15 +24,15 @@ interface Event {
 }
 
 const EventCardContainer = ({
-  children,
-  containerClass,
-  id,
-}: {
+                              children,
+                              containerClass,
+                              id,
+                            }: {
   children: React.ReactNode;
   containerClass?: string;
   id?: string;
 }) => {
-  const motionRef = useRef<HTMLDivElement>(null);
+  const motionRef = useRef<HTMLDivElement | null>(null);
   const controls = useAnimation();
   const inView = useInView(motionRef, {
     once: false,
@@ -50,13 +50,13 @@ const EventCardContainer = ({
     <Link href={`/events/${id}`}>
       <motion.div
         className={`w-fit h-full  ${containerClass}`}
-        initial={{ opacity: 0, scale: 0.9 }}
+        initial={{opacity: 0, scale: 0.9}}
         animate={controls}
         variants={{
           visible: {
             scale: 1,
             opacity: 1,
-            transition: { duration: 0.5, ease: "easeOut" },
+            transition: {duration: 0.5, ease: "easeOut"},
           },
         }}
         ref={motionRef}
@@ -70,8 +70,8 @@ const EventCardContainer = ({
 };
 
 export interface EventCardProps extends EventData {
-  containerClass?: string;
-  related?: boolean;
+  containerClass?: string,
+  related?: boolean,
 }
 
 function truncateText(text: string, wordLimit: number): string {
@@ -89,11 +89,11 @@ const EventCard = (props: EventCardProps) => {
         <div className={"flex items-center gap-1.5"}>
           <>
             {props.eventLogo.length > 0 && <Image
-              src={props.eventLogo[0].trim()}
-              height={24}
-              width={24}
-              className={"bg-black size-6"}
-              alt={props.clubName}
+                src={props.eventLogo[0].trim()}
+                height={24}
+                width={24}
+                className={"bg-black size-6"}
+                alt={props.clubName}
             />}
             {props.isCollaborative && props.eventLogo.length > 1 && (
               <Image
@@ -117,7 +117,7 @@ const EventCard = (props: EventCardProps) => {
         </div>
         <div>
           <p
-            style={{ color: getEventColor(props.eventType) }}
+            style={{color: getEventColor(props.eventType)}}
             className={cn(
               "font-space_mono font-semibold text-xs md:text-sm uppercase line-clamp-1",
               props.related && "hidden md:block"
@@ -130,12 +130,12 @@ const EventCard = (props: EventCardProps) => {
 
       <EventImageContainer>
         {props.eventPoster && <Image
-          src={props.eventPoster.trim()}
-          alt={props.eventName}
-          width={800}
-          height={400}
+            src={props.eventPoster.trim()}
+            alt={props.eventName}
+            width={800}
+            height={400}
           // bg-black (for event posters with no bg)
-          className={"shadow-2xl backdrop-blur-2xl w-full h-full object-cover"}
+            className={"shadow-2xl backdrop-blur-2xl w-full h-full object-cover"}
         />}
       </EventImageContainer>
 
