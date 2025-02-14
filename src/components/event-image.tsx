@@ -9,14 +9,14 @@ interface EventImageContainerProps {
 }
 
 export const EventImageContainer = ({
-  children,
-  removeBg,
-}: EventImageContainerProps) => {
+                                      children,
+                                      removeBg,
+                                    }: EventImageContainerProps) => {
   return (
     <div className={`${!removeBg && "event-image-gradient"} relative`}>
       {" "}
       {/* Gradient */}
-          {!removeBg && (
+      {!removeBg && (
         <>
           {" "}
           <div

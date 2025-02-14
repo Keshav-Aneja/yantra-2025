@@ -15,15 +15,8 @@ export default function Navbar() {
     { label: "EVENTS", href: "/events" },
     { label: "TEAM", href: "/team" },
     { label: "FAQs", href: "/faq" },
-    { label: "Results", href: '#' }
+    { label: "Results", href: '/results' }
   ];
-
-  useEffect(() => {
-    if (activeLink === '#'){
-      toast.error('To be announced after Yantra')
-      setActiveLink('/')
-    }
-  }, [activeLink]);
 
   return (
     <nav className="w-full flex justify-between items-center font-roboto text-sm border-b border-border bg-[#161616] h-16 relative z-[9999]">

@@ -8,6 +8,12 @@ export const eventTypes = [
   "TECH COMPETITION",
 ];
 
+export const eventsWithResultType = [
+  "ALL",
+  "HACKATHON",
+  "TECH COMPETITION",
+]
+
 export const getEventColor = (eventType: string)=>{
   switch(eventType){
     case "HACKATHON": return "#E0AC00";
