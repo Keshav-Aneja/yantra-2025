@@ -22,7 +22,7 @@ import { Circle, Loader, LoaderCircleIcon, Search } from "lucide-react";
 import ResultsIcon from "@/app/results/_components/results-icon";
 import { useRouter, useSearchParams } from "next/navigation";
 import ResultCarousel from "@/app/results/_components/result-carousel";
-import { VITHackathons, dummyCarouselWinners } from "@/constants/result";
+import { VITHackathons } from "@/constants/result";
 import FadeIn from "@/components/ui/fade-in";
 
 const ResultsPage = () => {
@@ -110,7 +110,7 @@ const ResultsPage = () => {
           page: pagination.page,
           limit: pagination.limit,
           search: debouncedSearchQuery,
-          eventType: selectedEventType === "ALL" ? "" : selectedEventType,
+          eventType: selectedEventType === "ALL" ? "hackathon,tech competition" : selectedEventType,
         },
       });
     })();
@@ -136,7 +136,7 @@ const ResultsPage = () => {
       </div>
       <div
         className={
-          "w-wrapper-sm md:w-wrapper flex flex-col justify-center gap-7 max-md:gap-4 items-center max-md:justify-center border border-border border-t-0 pb-2 max-md:pb-1"
+          "w-wrapper-sm md:w-wrapper flex flex-col justify-center gap-7 max-md:gap-4 items-center max-md:justify-center border border-border border-t-0 pb-4 max-md:pb-2"
         }
       >
         <div className="w-full flex">
@@ -154,8 +154,12 @@ const ResultsPage = () => {
           ))}
         </div>
         <ResultCarousel
-          winners={VITHackathons[hackTab].winners}
+          // winners={VITHackathons[hackTab].winners}
           title={VITHackathons[hackTab].title}
+          image={VITHackathons[hackTab].image}
+          onClick={()=>{
+            router.push(`/results/sw-event/${VITHackathons[hackTab].slug}`)
+          }}
         />
       </div>
       <div className={"w-wrapper-sm md:w-wrapper relative"}>
