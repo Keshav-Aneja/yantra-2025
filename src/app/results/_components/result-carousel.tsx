@@ -121,7 +121,7 @@ export default function ResultCarousel(props: IResultCarousel){
             alt={"arrow-right"}
           />
         </div>
-        <div className={"font-roboto_mono text-white text-lg md:text-xl font-medium"}>{title}</div>
+        <div className={"font-roboto_mono text-white text-lg md:text-xl max-sm:text-sm font-medium"}>{title}</div>
       </div>
       <div className={"border-2 md:border-[4px] border-white"}>
         <Image
