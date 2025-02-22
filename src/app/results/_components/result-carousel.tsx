@@ -123,13 +123,13 @@ export default function ResultCarousel(props: IResultCarousel){
         </div>
         <div className={"font-roboto_mono text-white text-lg md:text-xl max-sm:text-sm font-medium"}>{title}</div>
       </div>
-      <div className={"border-2 md:border-[4px] border-white"}>
+      <div className={"border-2 md:border-[4px] border-white hover:border-[#60CF8C] transition-all duration-300 ease-in-out"}>
         <Image
           width={1920}
           height={720}
           src={image}
           alt={title}
-          className={"h-full w-full max-h-[25rem]"}
+          className={"h-full w-full max-h-[25rem] cursor-pointer"}
           onClick={onClick}
         />
       </div>
