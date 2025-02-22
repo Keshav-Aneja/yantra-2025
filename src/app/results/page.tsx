@@ -2,7 +2,6 @@
 import "@/styles/events/events-page.css";
 
 import React, { useEffect, useRef, useState } from "react";
-import OurEvents from "@/app/events/_components/our-events";
 import { eventsWithResultType } from "@/constants/events";
 import useDebounce from "@/hooks/use-debounce";
 import { NextBtn, PrevBtn } from "@/components/carousel-helper";
@@ -20,37 +19,28 @@ import ResultCard, {
 } from "@/app/results/_components/result-card";
 import { Circle, Loader, LoaderCircleIcon, Search } from "lucide-react";
 import ResultsIcon from "@/app/results/_components/results-icon";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import ResultCarousel from "@/app/results/_components/result-carousel";
 import { VITHackathons } from "@/constants/result";
 import FadeIn from "@/components/ui/fade-in";
 
 const ResultsPage = () => {
   const router = useRouter();
-  const searchParams = useSearchParams();
   const [data, setData] = useState<EventData[]>([]);
   const [search, setSearch] = useState<string>("");
   const debouncedSearchQuery = useDebounce(search, 500);
   const [selectedEventType, setSelectedEventType] = useState(
-    searchParams.get("type")?.toUpperCase() || "ALL"
+     "ALL"
   );
   const abortController = useRef<AbortController | null>(null);
   const [loading, setLoading] = useState(false);
   const [hackTab, setHackTab] = useState(0);
   const [pagination, setPagination] = useState<Pagination>({
-    page: parseInt(searchParams.get("page") || "1"),
+    page:  1,
     totalPages: 1,
     limit: 9,
     total: 9,
   });
-
-  useEffect(() => {
-    const params = new URLSearchParams();
-    params.set("page", String(pagination.page));
-    params.set("type", selectedEventType.toLowerCase());
-
-    router.push(`?${params.toString()}`, { scroll: false });
-  }, [pagination.page, debouncedSearchQuery, selectedEventType]);
 
   const [pageRange, setPageRange] = useState(getPageRange(1, 1));
 
