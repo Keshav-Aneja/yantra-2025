@@ -107,7 +107,7 @@ export default function EventResultsPage() {
             {Object.entries(eventResult.result).map(([position, teams], index)=>(
               <div className="flex flex-col lg:flex-row border border-neutral-600" key={position}>
                 <div className="lg:w-1/3 w-full flex justify-center items-center border border-border">
-                  <p className="text-lg max-md:text-base uppercase py-2 text-green-400 text-center">{position}</p>
+                  <p className="text-lg max-md:text-base py-2 text-green-400 text-center">{position}</p>
                 </div>
                 {Array.isArray(teams) ? <div className={"lg:w-2/3 w-full flex flex-col"}>
                     {teams.map((team: TeamResult, index: number)=>(
