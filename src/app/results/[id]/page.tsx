@@ -139,7 +139,7 @@ export default function EventResultsPage() {
             {Object.entries(eventResult.result).map(([position, teams], index)=>(
               <div className="flex flex-col lg:flex-row border border-neutral-600" key={position}>
                 <div className="lg:w-1/3 w-full flex justify-center items-center border border-border">
-                  <p className="text-lg max-md:text-base py-2 text-green-400 text-center">{position}</p>
+                  <p className="text-lg max-md:text-base py-2 text-green-400 text-center font-medium px-2">{position}</p>
                 </div>
                 {Array.isArray(teams) ? <div className={"lg:w-2/3 w-full flex flex-col"}>
                     {teams.map((team: TeamResult, index)=>(
@@ -157,7 +157,7 @@ export default function EventResultsPage() {
                   <div className="lg:w-2/3 w-full flex flex-col max-md:border-t-2 max-md:border-neutral-600">
                   <div className={"px-2 py-2 w-full text-center text-sm font-semibold"}>{teams.team}</div>
                   {teams.members.map((student: Member) => (
-                    <div className="flex flex-row border border-border max-md:text-sm" key={student.name}>
+                    <div className="flex flex-row border border-border max-md:text-sm max-sm:text-xs" key={student.name}>
                       <div className="w-1/2 px-2 text-center border-r border-border py-2">{student.name}</div>
                       <div className="w-1/2 px-2 text-center py-2">{student.regno}</div>
                     </div>

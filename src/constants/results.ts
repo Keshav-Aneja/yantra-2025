@@ -920,7 +920,8 @@ export const eventResults: EventResults = [
           { name: "LAKSHMI SARUPA VENKADESH", regno: "23BCE0463" },
           { name: "VERMA DIVYANSH SHAMIT", regno: "23BDS0183" },
           { name: "NITIN S", regno: "23BIT0388" },
-          { name: "MAHENDRA SAJJAN CHOUDHARY", regno: "23BCE0701" }
+          { name: "MAHENDRA SAJJAN CHOUDHARY", regno: "23BCE0701" },
+          { name: "ROHIT PHANIRAM SAKAMURI", regno: "23BDS0051" }
         ]
       },
       "Best Fresher": {
