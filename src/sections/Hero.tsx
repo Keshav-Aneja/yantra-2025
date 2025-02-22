@@ -94,7 +94,7 @@ const Hero = () => {
           <div className="row-span-4 text-sm flex items-center justify-end text-gray-400 text-right pr-6 lg:order-7 order-9"></div>
           <div className="row-span-4 text-sm grid  lg:order-8 order-2">
             <div className="row-span-2 justify-end p-4 text-base items-center flex  border border-1 border-gray-300 border-b-0 gap-6 font-bold ">
-              <h1 className="font-roboto">Yantra is live</h1>
+              <h1 className="font-roboto">See you soon</h1>
               {/* <TbClockHour4 />
               <CountdownTimer targetDate="2025-02-03T08:00:00" /> */}
             </div>
