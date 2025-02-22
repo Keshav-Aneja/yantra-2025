@@ -100,7 +100,7 @@ export default function EventPage() {
 
         <div className="border border-[#313135] p-2 py-3 md:p-4 text-white">
           <p className={`text-lg max-md:text-sm font-semibold px-6`}>
-            Venue:{" "}
+            VENUE:{" "}
             <span className="font-normal text-base max-md:text-xs">
               {event.venue}
             </span>

@@ -7,7 +7,8 @@ const nextConfig: NextConfig = {
       { hostname: "imgur.com" }, 
       { hostname: "drive.usercontent.google.com"  }, 
       { hostname: "drive.google.com" },
-      { hostname: "images.pexels.com" }
+      { hostname: "images.pexels.com" },
+      { hostname: "interactnow.in" }
     ],
   },
 };
