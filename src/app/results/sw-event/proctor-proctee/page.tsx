@@ -114,7 +114,7 @@ export default function EventResultsPage() {
                       <div className="w-full flex flex-col max-md:border-t-2 max-md:border-neutral-600" key={index}>
                         <div className={"px-2 py-2 w-full text-center text-sm font-semibold"}>{team.team}</div>
                         {team.members.map(student => (
-                          <div className="flex flex-row border border-border max-md:text-sm" key={student.name}>
+                          <div className="flex flex-row border border-border max-md:text-sm max-sm:text-xs" key={student.name}>
                             <div className="w-1/2 px-2 text-center border-r border-border py-2">{student.name}</div>
                             <div className="w-1/2 px-2 text-center py-2">{student.regno}</div>
                           </div>
