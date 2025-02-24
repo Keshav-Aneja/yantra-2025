@@ -23,6 +23,50 @@ type EventResults = EventResult[];
 
 export const eventResults: EventResults = [
   {
+    id: "67987f6d09417fdee12784c2",
+    clubName: "RoboVITics",
+    eventName: "Design to Duel",
+    result: {
+      "1st": {
+        team: "Infernus",
+        members: [
+          { name: "Abhigyan Chaturvedi", regno: "24BME0671" },
+          { name: "Hitarth Sharma", regno: "24BME0653" },
+          { name: "Hriddhima Saraswat", regno: "24BEE0143" },
+          { name: "Nandita Krishnan", regno: "24BEL0056" }
+        ]
+      },
+      "2nd": {
+        team: "Byte Me",
+        members: [
+          { name: "Abhyuday Mathur", regno: "24BBS0122" },
+          { name: "Abhishek Singal", regno: "24BKT0083" },
+          { name: "Zayn Khan", regno: "24BCE2553" },
+          { name: "Tarini Sangram Chavan", regno: "24BKT0023" },
+        ]
+      },
+      "3rd": [
+        {
+          team: "Bytebots",
+          members: [
+            { name: "Parvathy Kiran", regno: "24BVD0150" },
+            { name: "Advay Gopalkrishnan", regno: "24BVD0191" },
+            { name: "Neeraja Suresh", regno: "24BEC0427" },
+            { name: "N Purvamitra", regno: "24BVD0223" }
+          ]
+        },
+        {
+          team: "joebidenfanclub",
+          members: [
+            { name: "Elroy Wilson Neralaily", regno: "23BME0503" },
+            { name: "Akshar Sinha", regno: "23BDS0288" },
+            { name: "Mrithula T", regno: "24BIT0508" }
+          ]
+        }
+      ]
+    }
+  },
+  {
     id: "67987f6d09417fdee12784d4",
     clubName: "THE BIOTECH RESEARCH SOCIETY INDIA (BRSI)",
     eventName: "BiosensAItion - Innovation through Intelligence",
