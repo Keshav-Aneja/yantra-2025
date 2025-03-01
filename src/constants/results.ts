@@ -45,25 +45,31 @@ export const eventResults: EventResults = [
           { name: "Tarini Sangram Chavan", regno: "24BKT0023" },
         ]
       },
-      "3rd": [
-        {
-          team: "Bytebots",
-          members: [
-            { name: "Parvathy Kiran", regno: "24BVD0150" },
-            { name: "Advay Gopalkrishnan", regno: "24BVD0191" },
-            { name: "Neeraja Suresh", regno: "24BEC0427" },
-            { name: "N Purvamitra", regno: "24BVD0223" }
-          ]
-        },
-        {
-          team: "joebidenfanclub",
-          members: [
-            { name: "Elroy Wilson Neralaily", regno: "23BME0503" },
-            { name: "Akshar Sinha", regno: "23BDS0288" },
-            { name: "Mrithula T", regno: "24BIT0508" }
-          ]
-        }
-      ]
+      "3rd": {
+        team: "joebidenfanclub",
+        members: [
+          { name: "Elroy Wilson Neralaily", regno: "23BME0503" },
+          { name: "Akshar Sinha", regno: "23BDS0288" },
+          { name: "Mrithula T", regno: "24BIT0508" }
+        ]
+      },
+      "Best Freshers": {
+        team: "Bytebots",
+        members: [
+          { name: "Parvathy Kiran", regno: "24BVD0150" },
+          { name: "Advay Gopalkrishnan", regno: "24BVD0191" },
+          { name: "Neeraja Suresh", regno: "24BEC0427" },
+          { name: "N Purvamitra", regno: "24BVD0223" }
+        ]
+      },
+      "Best Design": {
+        team: "Kratos",
+        members: [
+          { name: "Soham Mahesh Ghodake", regno: "24BME0491" },
+          { name: "Ganishk M", regno: "24BME0500" },
+          { name: "Anirudhan S", regno: "24BME0521" },
+        ]
+      }
     }
   },
   {
